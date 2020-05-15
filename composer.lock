@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fd888f853a65e68c6a1fcf36c4d9205",
+    "content-hash": "dd4b1376bec07f5ce2cc601d914e9b5d",
     "packages": [
         {
             "name": "aura/intl",
@@ -1108,6 +1108,39 @@
                 "phinx"
             ],
             "time": "2020-04-11T07:17:48+00:00"
+        },
+        {
+            "name": "sdtorresl/materialize-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sdtorresl/matherialize-theme.git",
+                "reference": "4441d06181ddef747b180397a02b8698fe945e1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sdtorresl/matherialize-theme/zipball/4441d06181ddef747b180397a02b8698fe945e1a",
+                "reference": "4441d06181ddef747b180397a02b8698fe945e1a",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "MaterializeTheme\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "MaterializeTheme plugin for CakePHP",
+            "time": "2020-05-08T22:30:32+00:00"
         },
         {
             "name": "symfony/config",
@@ -4579,9 +4612,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "cakephp/migrations": 10,
+        "sdtorresl/materialize-theme": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,
