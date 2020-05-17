@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd4b1376bec07f5ce2cc601d914e9b5d",
+    "content-hash": "8e3003bf184e76b935495500743f350c",
     "packages": [
         {
             "name": "aura/intl",
@@ -1114,13 +1114,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sdtorresl/matherialize-theme.git",
-                "reference": "4441d06181ddef747b180397a02b8698fe945e1a"
+                "url": "https://github.com/sdtorresl/materialize-theme.git",
+                "reference": "a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sdtorresl/matherialize-theme/zipball/4441d06181ddef747b180397a02b8698fe945e1a",
-                "reference": "4441d06181ddef747b180397a02b8698fe945e1a",
+                "url": "https://api.github.com/repos/sdtorresl/materialize-theme/zipball/a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c",
+                "reference": "a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c",
                 "shasum": ""
             },
             "require": {
@@ -1140,7 +1140,7 @@
                 "MIT"
             ],
             "description": "MaterializeTheme plugin for CakePHP",
-            "time": "2020-05-08T22:30:32+00:00"
+            "time": "2020-05-17T03:48:19+00:00"
         },
         {
             "name": "symfony/config",
@@ -4612,7 +4612,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "cakephp/migrations": 10,
         "sdtorresl/materialize-theme": 20,

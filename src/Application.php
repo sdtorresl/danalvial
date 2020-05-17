@@ -58,6 +58,7 @@ class Application extends BaseApplication
         }
 
         // Load more plugins here
+        $this->addPlugin('MaterializeTheme');
     }
 
     /**
