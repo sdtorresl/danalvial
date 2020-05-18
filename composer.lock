@@ -1115,12 +1115,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sdtorresl/materialize-theme.git",
-                "reference": "a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c"
+                "reference": "4ff076bee0c5ae7801e445be26c3f451b79c018c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sdtorresl/materialize-theme/zipball/a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c",
-                "reference": "a2589976e9c1b67bf63c3b77d64bd7a2d6a3a79c",
+                "url": "https://api.github.com/repos/sdtorresl/materialize-theme/zipball/4ff076bee0c5ae7801e445be26c3f451b79c018c",
+                "reference": "4ff076bee0c5ae7801e445be26c3f451b79c018c",
                 "shasum": ""
             },
             "require": {
@@ -1140,7 +1140,7 @@
                 "MIT"
             ],
             "description": "MaterializeTheme plugin for CakePHP",
-            "time": "2020-05-17T03:48:19+00:00"
+            "time": "2020-05-17T22:31:26+00:00"
         },
         {
             "name": "symfony/config",

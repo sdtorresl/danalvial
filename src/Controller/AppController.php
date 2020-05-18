@@ -55,6 +55,6 @@ class AppController extends Controller
     public function beforeRender(EventInterface $event) {
         parent::beforeRender($event);
     
-        $this->viewBuilder()->setLayout('MaterializeTheme.materialize');
+        $this->viewBuilder()->setLayout('admin');
     }
 }
