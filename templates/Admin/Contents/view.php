@@ -50,6 +50,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $content->id], ['confirm' => __('Are you sure you want to delete # {0}?', $content->id), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $content->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $user->id], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>
