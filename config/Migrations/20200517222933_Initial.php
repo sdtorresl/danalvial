@@ -25,7 +25,7 @@ class Initial extends AbstractMigration
                 'limit' => 45,
                 'null' => true,
             ])
-            ->addColumn('result', 'tinyinteger', [
+            ->addColumn('result', 'boolean', [
                 'default' => null,
                 'limit' => 4,
                 'null' => false,
@@ -157,7 +157,7 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => false,
             ])
-            ->addColumn('viewed', 'tinyinteger', [
+            ->addColumn('viewed', 'boolean', [
                 'default' => '0',
                 'limit' => 4,
                 'null' => false,
@@ -175,7 +175,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('contents')
-            ->addColumn('key', 'string', [
+            ->addColumn('identifier', 'string', [
                 'default' => null,
                 'limit' => 45,
                 'null' => false,
@@ -242,7 +242,7 @@ class Initial extends AbstractMigration
             ])
             ->addIndex(
                 [
-                    'key',
+                    'identifier',
                 ],
                 ['unique' => true]
             )
@@ -498,7 +498,7 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => true,
             ])
-            ->addColumn('token_used', 'tinyinteger', [
+            ->addColumn('token_used', 'boolean', [
                 'default' => '0',
                 'limit' => 4,
                 'null' => false,
