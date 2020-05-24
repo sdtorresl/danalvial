@@ -59,15 +59,46 @@ class UsersTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->scalar('first_name')
+            ->maxLength('first_name', 45)
+            ->requirePresence('first_name', 'create')
+            ->notEmptyString('first_name');
+
+        $validator
+            ->scalar('last_name')
+            ->maxLength('last_name', 45)
+            ->requirePresence('last_name', 'create')
+            ->notEmptyString('last_name');
+
+        $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email');
+            ->notEmptyString('email')
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('password')
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
+
+        $validator
+            ->scalar('rol')
+            ->maxLength('rol', 45)
+            ->allowEmptyString('rol');
+
+        $validator
+            ->scalar('token')
+            ->maxLength('token', 36)
+            ->allowEmptyString('token')
+            ->add('token', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
+            ->dateTime('token_expiry_date')
+            ->allowEmptyDateTime('token_expiry_date');
+
+        $validator
+            ->notEmptyString('token_used');
 
         return $validator;
     }
@@ -82,6 +113,7 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->isUnique(['token']));
 
         return $rules;
     }

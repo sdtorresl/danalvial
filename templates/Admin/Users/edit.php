@@ -19,8 +19,11 @@ $this->loadHelper('Form', [
                 
 <?= $this->Form->create($user, ['class' => 'form']) ?>
 <?php
+    echo $this->Form->control('first_name');
+    echo $this->Form->control('last_name');
     echo $this->Form->control('email');
     echo $this->Form->control('password');
+    echo $this->Form->control('rol');
 ?>
 <div class="form-submit d-flex jc-end">
     <?= $this->Html->link(__('Cancel'), ['controller' => 'users', 'action' => 'index'], ['class' => ['btn', 'cancel']]) ?>
