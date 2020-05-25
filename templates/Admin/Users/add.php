@@ -21,7 +21,7 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('last_name');
                     echo $this->Form->control('email');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('rol', ['options' => $roles]);
+                    echo $this->Form->control('role', ['options' => $roles]);
                 ?>
                 <div class="form-submit d-flex jc-end">
                     <?= $this->Html->link(__('Cancel'), ['controller' => 'users', 'action' => 'index'], ['class' => ['btn', 'cancel']]) ?>

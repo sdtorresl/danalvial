@@ -24,8 +24,8 @@
                         <td><?= h($user->email) ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Rol') ?></th>
-                        <td><?= $roles[$user->rol] ?></td>
+                        <th><?= __('Role') ?></th>
+                        <td><?= $roles[$user->role] ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
@@ -44,7 +44,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete the user {0}?', $user->first_name . " " . $user->last_name), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn']) ?>
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $user->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@
                     <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('rol') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -28,7 +28,7 @@
                     <td><?= h($user->first_name) ?></td>
                     <td><?= h($user->last_name) ?></td>
                     <td><?= h($user->email) ?></td>
-                    <td><?= $roles[$user->rol] ?></td>
+                    <td><?= $roles[$user->role] ?></td>
                     <td><?= h($user->created) ?></td>
                     <td><?= h($user->modified) ?></td>
             
