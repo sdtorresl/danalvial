@@ -28,7 +28,7 @@
                     <td><?= h($user->first_name) ?></td>
                     <td><?= h($user->last_name) ?></td>
                     <td><?= h($user->email) ?></td>
-                    <td><?= h($user->rol) ?></td>
+                    <td><?= $roles[$user->rol] ?></td>
                     <td><?= h($user->created) ?></td>
                     <td><?= h($user->modified) ?></td>
             

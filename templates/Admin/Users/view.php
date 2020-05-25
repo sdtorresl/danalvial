@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Rol') ?></th>
-                        <td><?= h($user->rol) ?></td>
+                        <td><?= $roles[$user->rol] ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
