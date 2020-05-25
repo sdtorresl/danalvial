@@ -67,7 +67,7 @@ class QuestionsTable extends Table
 
         $validator
             ->scalar('question')
-            ->maxLength('question', 45)
+            ->maxLength('question', 400)
             ->requirePresence('question', 'create')
             ->notEmptyString('question');
 
@@ -76,12 +76,6 @@ class QuestionsTable extends Table
             ->maxLength('category', 45)
             ->requirePresence('category', 'create')
             ->notEmptyString('category');
-
-        $validator
-            ->scalar('answer_description')
-            ->maxLength('answer_description', 150)
-            ->requirePresence('answer_description', 'create')
-            ->notEmptyString('answer_description');
 
         $validator
             ->scalar('title')

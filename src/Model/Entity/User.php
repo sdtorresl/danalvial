@@ -13,10 +13,10 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property string $email
  * @property string $password
- * @property string|null $rol
+ * @property string $role
  * @property string|null $token
  * @property \Cake\I18n\FrozenTime|null $token_expiry_date
- * @property int $token_used
+ * @property bool $token_used
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
@@ -36,7 +36,7 @@ class User extends Entity
         'last_name' => true,
         'email' => true,
         'password' => true,
-        'rol' => true,
+        'role' => true,
         'token' => true,
         'token_expiry_date' => true,
         'token_used' => true,

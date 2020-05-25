@@ -83,9 +83,10 @@ class UsersTable extends Table
             ->notEmptyString('password');
 
         $validator
-            ->scalar('rol')
-            ->maxLength('rol', 45)
-            ->allowEmptyString('rol');
+            ->scalar('role')
+            ->maxLength('role', 45)
+            ->requirePresence('role', 'create')
+            ->notEmptyString('role');
 
         $validator
             ->scalar('token')
@@ -98,6 +99,7 @@ class UsersTable extends Table
             ->allowEmptyDateTime('token_expiry_date');
 
         $validator
+            ->boolean('token_used')
             ->notEmptyString('token_used');
 
         return $validator;

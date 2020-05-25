@@ -12,7 +12,6 @@ use Cake\ORM\Entity;
  * @property int $test_id
  * @property string $question
  * @property string $category
- * @property string $answer_description
  * @property string $title
  * @property string|null $image
  * @property string|null $image_dir
@@ -38,7 +37,6 @@ class Question extends Entity
         'test_id' => true,
         'question' => true,
         'category' => true,
-        'answer_description' => true,
         'title' => true,
         'image' => true,
         'image_dir' => true,

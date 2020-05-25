@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Content Entity
  *
  * @property int $id
- * @property string $key
+ * @property string $identifier
  * @property string $title
  * @property string $text
  * @property string|null $primary_image
@@ -35,7 +35,7 @@ class Content extends Entity
      * @var array
      */
     protected $_accessible = [
-        'key' => true,
+        'identifier' => true,
         'title' => true,
         'text' => true,
         'primary_image' => true,

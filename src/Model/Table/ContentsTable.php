@@ -59,11 +59,11 @@ class ContentsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('key')
-            ->maxLength('key', 45)
-            ->requirePresence('key', 'create')
-            ->notEmptyString('key')
-            ->add('key', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->scalar('identifier')
+            ->maxLength('identifier', 45)
+            ->requirePresence('identifier', 'create')
+            ->notEmptyString('identifier')
+            ->add('identifier', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('title')
@@ -128,7 +128,7 @@ class ContentsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['key']));
+        $rules->add($rules->isUnique(['identifier']));
 
         return $rules;
     }

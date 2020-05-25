@@ -67,10 +67,11 @@ class AnswersTable extends Table
 
         $validator
             ->scalar('answer')
-            ->maxLength('answer', 45)
+            ->maxLength('answer', 500)
             ->allowEmptyString('answer');
 
         $validator
+            ->boolean('result')
             ->requirePresence('result', 'create')
             ->notEmptyString('result');
 

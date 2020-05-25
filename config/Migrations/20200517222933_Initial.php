@@ -22,7 +22,7 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('answer', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 500,
                 'null' => true,
             ])
             ->addColumn('result', 'boolean', [
@@ -373,17 +373,12 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('question', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 400,
                 'null' => false,
             ])
             ->addColumn('category', 'string', [
                 'default' => null,
                 'limit' => 45,
-                'null' => false,
-            ])
-            ->addColumn('answer_description', 'string', [
-                'default' => null,
-                'limit' => 150,
                 'null' => false,
             ])
             ->addColumn('title', 'string', [
@@ -483,10 +478,10 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('rol', 'string', [
+            ->addColumn('role', 'string', [
                 'default' => null,
                 'limit' => 45,
-                'null' => true,
+                'null' => false,
             ])
             ->addColumn('token', 'string', [
                 'default' => null,

@@ -57,7 +57,7 @@ class TestsController extends AppController
             if ($this->Tests->save($test)) {
                 $this->Flash->success(__('The test has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'questions', 'action' => 'add', $test->id]);
             }
             $this->Flash->error(__('The test could not be saved. Please, try again.'));
         }

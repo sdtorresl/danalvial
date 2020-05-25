@@ -49,20 +49,22 @@ class QuestionsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($test_id = null)
     {
+        
         $question = $this->Questions->newEmptyEntity();
         if ($this->request->is('post')) {
             $question = $this->Questions->patchEntity($question, $this->request->getData());
+            $question->test_id = strval($test_id);
             if ($this->Questions->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'answers', 'action' => 'add']);
             }
             $this->Flash->error(__('The question could not be saved. Please, try again.'));
         }
         $tests = $this->Questions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('question', 'tests'));
+        $this->set(compact('question', 'tests', 'test_id'));
     }
 
     /**
