@@ -17,10 +17,10 @@ $this->loadHelper('Form', [
             <div class="row">
                 <div class="col s12">
 
-                    <?= $this->Form->create($branch, ['class' => 'form']) ?>
+                    <?= $this->Form->create($branch, ['class' => 'form', 'type' => 'file']) ?>
                     <?php
                         echo $this->Form->control('name');
-                        echo $this->Form->control('image');
+                        echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Logo')]);
                         echo $this->Form->control('address');
                         echo $this->Form->control('contact_number_1');
                         echo $this->Form->control('contact_number_2');

@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>
-                        <td><?= h($branch->image) ?></td>
+                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $branch->image_dir) . DS . $branch->image ?>" alt="Branch Logo"></td>
                     </tr>
                     <tr>
                         <th><?= __('Address') ?></th>
@@ -55,7 +55,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $branch->id], ['confirm' => __('Are you sure you want to delete the branche {0}?', $branch->name), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $branch->id], ['class' => 'btn']) ?>
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $user->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>

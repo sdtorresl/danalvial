@@ -48,6 +48,13 @@ class BranchesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('File', [
+            'image' => [
+                'file' => 'image',
+                'file_dir' => 'image_dir',
+                'file_type' => 'image_type'
+            ]
+        ]);
 
         $this->hasMany('Contacts', [
             'foreignKey' => 'branch_id',
@@ -80,28 +87,20 @@ class BranchesTable extends Table
             ->add('name', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->scalar('image')
-            ->maxLength('image', 255)
             ->requirePresence('image', 'create')
             ->notEmptyFile('image');
 
         $validator
-            ->scalar('image_dir')
             ->maxLength('image_dir', 255)
-            ->requirePresence('image_dir', 'create')
-            ->notEmptyFile('image_dir');
+            ->allowEmptyString('image_dir');
 
         $validator
-            ->scalar('image_size')
             ->maxLength('image_size', 45)
-            ->requirePresence('image_size', 'create')
-            ->notEmptyFile('image_size');
+            ->allowEmptyString('image_size');
 
         $validator
-            ->scalar('image_type')
             ->maxLength('image_type', 45)
-            ->requirePresence('image_type', 'create')
-            ->notEmptyFile('image_type');
+            ->allowEmptyString('image_type');
 
         $validator
             ->scalar('address')
