@@ -49,6 +49,12 @@ class FileBehavior extends Behavior
         return $field . '-' . strtolower($name);
     }
 
+    protected function clean($string) {
+        $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+     
+        return preg_replace('/[^A-Za-z0-9.\-]/', '', $string); // Removes special chars.
+    }
+
     protected function fileize(EntityInterface $entity)
     {
         $config = $this->getConfig();
@@ -70,6 +76,7 @@ class FileBehavior extends Behavior
             }
 
             $fileName = $this->getFileName($entity, $field, $file->getClientFilename());
+            $fileName = $this->clean($fileName);
             $fileDir = $this->getRootFolder();
             $fileType = $file->getClientMediaType();
             $file->moveTo($this->getRootFolder() . DS . $fileName);
