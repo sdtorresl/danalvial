@@ -48,7 +48,7 @@ class AnswersTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('Questions', [
-            'foreignKey' => 'questions_id',
+            'foreignKey' => 'question_id',
             'joinType' => 'INNER',
         ]);
     }
@@ -87,7 +87,7 @@ class AnswersTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['questions_id'], 'Questions'));
+        $rules->add($rules->existsIn(['question_id'], 'Questions'));
 
         return $rules;
     }

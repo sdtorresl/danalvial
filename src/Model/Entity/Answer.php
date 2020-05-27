@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Answer Entity
  *
  * @property int $id
- * @property int $questions_id
+ * @property int $question_id
  * @property string|null $answer
  * @property bool $result
  * @property \Cake\I18n\FrozenTime $created
@@ -29,7 +29,7 @@ class Answer extends Entity
      * @var array
      */
     protected $_accessible = [
-        'questions_id' => true,
+        'question_id' => true,
         'answer' => true,
         'result' => true,
         'created' => true,
