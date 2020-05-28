@@ -12,8 +12,8 @@
             <div class="col s12">
                 <table>
                     <tr>
-                        <th><?= __('Key') ?></th>
-                        <td><?= h($content->key) ?></td>
+                        <th><?= __('Identifier') ?></th>
+                        <td><?= h($content->identifier) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Title') ?></th>
@@ -50,7 +50,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $content->id], ['confirm' => __('Are you sure you want to delete # {0}?', $content->id), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $content->id], ['class' => 'btn']) ?>
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $user->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>

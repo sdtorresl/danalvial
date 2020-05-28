@@ -57,7 +57,14 @@ class TestsController extends AppController
             if ($this->Tests->save($test)) {
                 $this->Flash->success(__('The test has been saved.'));
 
-                return $this->redirect(['controller' => 'questions', 'action' => 'add', $test->id]);
+                $redirect = $this->request->getQuery('redirect', false);
+                $redirect = boolval($redirect);
+                if ($redirect==true) {
+                    return $this->redirect(['action' => 'view', $test->id]);
+                }
+                else {
+                    return $this->redirect(['controller' => 'Questions', 'action' => 'add', $test->id]);
+                }
             }
             $this->Flash->error(__('The test could not be saved. Please, try again.'));
         }
@@ -82,7 +89,7 @@ class TestsController extends AppController
             if ($this->Tests->save($test)) {
                 $this->Flash->success(__('The test has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $test->id]);
             }
             $this->Flash->error(__('The test could not be saved. Please, try again.'));
         }

@@ -59,9 +59,10 @@
 
         <div class="row">
             <div class="d-flex jc-end">
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $test->id], ['confirm' => __('Are you sure you want to delete  the test {0}?', $test->name), 'class' => ['btn', 'cancel']]); ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $test->id], ['confirm' => __('Are you sure you want to delete the test {0}?', $test->name), 'class' => ['btn', 'cancel']]); ?>
+                <?= $this->Html->link(__('View tests'), ['action' => 'index'], ['class' => 'btn']) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $test->id], ['class' => 'btn']) ?>
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $user->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Add Question'), ['controller' => 'Questions', 'action' => 'add', $test->id], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>

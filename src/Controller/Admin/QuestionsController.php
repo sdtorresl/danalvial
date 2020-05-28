@@ -51,15 +51,21 @@ class QuestionsController extends AppController
      */
     public function add($test_id = null)
     {
-        
         $question = $this->Questions->newEmptyEntity();
         if ($this->request->is('post')) {
             $question = $this->Questions->patchEntity($question, $this->request->getData());
             $question->test_id = strval($test_id);
             if ($this->Questions->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
-
-                return $this->redirect(['controller' => 'answers', 'action' => 'add']);
+                
+                $redirect = $this->request->getQuery('redirect', false);
+                $redirect = boolval($redirect);
+                if ($redirect==true) {
+                    return $this->redirect(['action' => 'view', $question->id]);
+                }
+                else {
+                    return $this->redirect(['controller' => 'answers', 'action' => 'add', $question->id]);
+                }
             }
             $this->Flash->error(__('The question could not be saved. Please, try again.'));
         }
@@ -84,7 +90,7 @@ class QuestionsController extends AppController
             if ($this->Questions->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $question->id]);
             }
             $this->Flash->error(__('The question could not be saved. Please, try again.'));
         }
@@ -109,6 +115,6 @@ class QuestionsController extends AppController
             $this->Flash->error(__('The question could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller' => 'Tests', 'action' => 'view', $question->test_id]);
     }
 }
