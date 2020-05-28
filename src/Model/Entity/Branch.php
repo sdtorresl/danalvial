@@ -15,8 +15,8 @@ use Cake\ORM\Entity;
  * @property string $image_size
  * @property string $image_type
  * @property string $address
- * @property string $contact_number_1
- * @property string|null $contact_number_2
+ * @property int $contact_number_1
+ * @property int|null $contact_number_2
  * @property string $schedule
  * @property string $location
  * @property \Cake\I18n\FrozenTime $created

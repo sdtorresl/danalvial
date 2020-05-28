@@ -109,13 +109,13 @@ class BranchesTable extends Table
             ->notEmptyString('address');
 
         $validator
-            ->scalar('contact_number_1')
+            ->integer('contact_number_1')
             ->maxLength('contact_number_1', 15)
             ->requirePresence('contact_number_1', 'create')
             ->notEmptyString('contact_number_1');
 
         $validator
-            ->scalar('contact_number_2')
+            ->integer('contact_number_2')
             ->maxLength('contact_number_2', 15)
             ->allowEmptyString('contact_number_2');
 

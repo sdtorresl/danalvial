@@ -15,7 +15,7 @@ class Initial extends AbstractMigration
     public function up()
     {
         $this->table('answers')
-            ->addColumn('questions_id', 'integer', [
+            ->addColumn('question_id', 'integer', [
                 'default' => null,
                 'limit' => 11,
                 'null' => false,
@@ -42,7 +42,7 @@ class Initial extends AbstractMigration
             ])
             ->addIndex(
                 [
-                    'questions_id',
+                    'question_id',
                 ]
             )
             ->create();
@@ -78,12 +78,12 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('contact_number_1', 'string', [
+            ->addColumn('contact_number_1', 'integer', [
                 'default' => null,
                 'limit' => 15,
                 'null' => false,
             ])
-            ->addColumn('contact_number_2', 'string', [
+            ->addColumn('contact_number_2', 'integer', [
                 'default' => null,
                 'limit' => 15,
                 'null' => true,
@@ -132,14 +132,14 @@ class Initial extends AbstractMigration
                 'limit' => 45,
                 'null' => false,
             ])
-            ->addColumn('message', 'string', [
+            ->addColumn('message', 'text', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => null,
                 'null' => false,
             ])
-            ->addColumn('telephone', 'string', [
+            ->addColumn('telephone', 'integer', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 15,
                 'null' => false,
             ])
             ->addColumn('course_id', 'integer', [
@@ -524,7 +524,7 @@ class Initial extends AbstractMigration
 
         $this->table('answers')
             ->addForeignKey(
-                'questions_id',
+                'question_id',
                 'questions',
                 'id',
                 [
@@ -603,7 +603,7 @@ class Initial extends AbstractMigration
     {
         $this->table('answers')
             ->dropForeignKey(
-                'questions_id'
+                'question_id'
             )->save();
 
         $this->table('contacts')

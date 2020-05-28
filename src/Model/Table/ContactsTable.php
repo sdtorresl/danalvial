@@ -89,17 +89,16 @@ class ContactsTable extends Table
 
         $validator
             ->scalar('message')
-            ->maxLength('message', 45)
             ->requirePresence('message', 'create')
             ->notEmptyString('message');
 
         $validator
-            ->scalar('telephone')
-            ->maxLength('telephone', 45)
+            ->integer('telephone')
             ->requirePresence('telephone', 'create')
             ->notEmptyString('telephone');
 
         $validator
+            ->boolean('viewed')
             ->notEmptyString('viewed');
 
         return $validator;

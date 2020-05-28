@@ -13,11 +13,11 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property string $email
  * @property string $message
- * @property string $telephone
+ * @property int $telephone
  * @property int $course_id
  * @property int $branch_id
  * @property \Cake\I18n\FrozenTime $created
- * @property int $viewed
+ * @property bool $viewed
  *
  * @property \App\Model\Entity\Course $course
  * @property \App\Model\Entity\Branch $branch
