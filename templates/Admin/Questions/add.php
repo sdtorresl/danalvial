@@ -16,13 +16,13 @@ $this->loadHelper('Form', [
         <div class="row">
             <div class="col s12">
 
-                <?= $this->Form->create($question, ['class' => 'form']) ?>
+                <?= $this->Form->create($question, ['class' => 'form', 'type' => 'file']) ?>
                 <?php
                     echo $this->Form->control('test_id', ['options' => $tests, 'value' => $test_id, 'disabled']);
                     echo $this->Form->control('question');
                     echo $this->Form->control('category');
                     echo $this->Form->control('title');
-                    echo $this->Form->control('image');
+                    echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image')]);
                 ?>
                 <div class="form-submit d-flex jc-end">
                     <?= $this->Html->link(__('Cancel'), ['controller' => 'Tests', 'action' => 'view', $test_id], ['class' => ['btn', 'cancel']]) ?>

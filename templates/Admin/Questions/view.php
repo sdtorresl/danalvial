@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>
-                        <td><?= h($question->image) ?></td>
+                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $question->image_dir) . DS . $question->image ?>" alt="Course Image"></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
