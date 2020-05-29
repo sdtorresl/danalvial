@@ -18,16 +18,16 @@ $this->loadHelper('Form', [
 
                 <?= $this->Form->create($question, ['class' => 'form']) ?>
                 <?php
-                    echo $this->Form->control('test_id', ['options' => $tests]);
+                    echo $this->Form->control('test_id', ['options' => $tests, 'value' => $test_id, 'disabled']);
                     echo $this->Form->control('question');
                     echo $this->Form->control('category');
-                    echo $this->Form->control('answer_description');
                     echo $this->Form->control('title');
                     echo $this->Form->control('image');
-?>
+                ?>
                 <div class="form-submit d-flex jc-end">
-                    <?= $this->Html->link(__('Cancel'), ['controller' => 'questions', 'action' => 'index'], ['class' => ['btn', 'cancel']]) ?>
-                    <?= $this->Form->button(__('Submit'), ['class' => 'btn']) ?>
+                    <?= $this->Html->link(__('Cancel'), ['controller' => 'Tests', 'action' => 'view', $test_id], ['class' => ['btn', 'cancel']]) ?>
+                    <?= $this->Form->button(__('Save'), ['class' => 'btn', 'formaction' => $test_id . '?redirect=true']) ?>
+                    <?= $this->Form->button(__('Save and Add Answer'), ['class' => 'btn', 'formaction' => $test_id]) ?>
                 </div>
 
                 <?= $this->Form->end() ?>

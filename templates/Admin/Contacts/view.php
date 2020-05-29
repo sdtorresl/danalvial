@@ -56,7 +56,7 @@
 
         <div class="row">
             <div class="d-flex jc-end">
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index', $contact->id], ['class' => ['btn', 'cancel']]) ?>
+                <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => ['btn', 'cancel']]) ?>
             </div>
         </div>
     </div>

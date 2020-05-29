@@ -49,20 +49,21 @@ class AnswersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($question_id = null)
     {
         $answer = $this->Answers->newEmptyEntity();
         if ($this->request->is('post')) {
             $answer = $this->Answers->patchEntity($answer, $this->request->getData());
+            $answer->question_id = strval($question_id);
             if ($this->Answers->save($answer)) {
                 $this->Flash->success(__('The answer has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Questions', 'action' => 'view', $question_id]);
             }
             $this->Flash->error(__('The answer could not be saved. Please, try again.'));
         }
         $questions = $this->Answers->Questions->find('list', ['limit' => 200]);
-        $this->set(compact('answer', 'questions'));
+        $this->set(compact('answer', 'questions', 'question_id'));
     }
 
     /**
@@ -82,7 +83,7 @@ class AnswersController extends AppController
             if ($this->Answers->save($answer)) {
                 $this->Flash->success(__('The answer has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Questions', 'action' => 'view', $answer->question_id]);
             }
             $this->Flash->error(__('The answer could not be saved. Please, try again.'));
         }
@@ -107,6 +108,6 @@ class AnswersController extends AppController
             $this->Flash->error(__('The answer could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller' => 'Questions', 'action' => 'view', $answer->question_id]);
     }
 }
