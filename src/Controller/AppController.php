@@ -55,6 +55,21 @@ class AppController extends Controller
     public function beforeRender(EventInterface $event) {
         parent::beforeRender($event);
     
-        $this->viewBuilder()->setLayout('admin');
+        $controller = $event->getSubject();
+        $request = $controller->getRequest();
+        $params = $request->getAttribute("params");
+        
+        // Use admin layout on admin prefix
+        if ( array_key_exists("prefix", $params) ) {
+            if($params['prefix'] == 'Admin') {
+                if ($controller->name == 'Users' && $params['action'] == 'login') {
+                    $this->viewBuilder()->setLayout('login');
+                }
+                else {
+                    $this->viewBuilder()->setLayout('admin');
+                }
+                return;
+            }
+        }
     }
 }
