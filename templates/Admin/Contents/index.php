@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('key') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('identifier') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -24,7 +24,7 @@
                 <?php foreach ($contents as $content): ?>
                 <tr>
                     <td><?= $this->Number->format($content->id) ?></td>
-                    <td><?= h($content->key) ?></td>
+                    <td><?= h($content->identifier) ?></td>
                     <td><?= h($content->title) ?></td>
                     <td><?= h($content->created) ?></td>
                     <td><?= h($content->modified) ?></td>
@@ -33,7 +33,7 @@
                         <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $content->id], ['escape' => false, 'title' => __('View')] ) ?>
                         <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $content->id], ['escape' => false, 'title' => __('Edit')] ) ?>
                         <?= $this->Form->postLink('<i class="fal fa-trash"></i>', ['action' => 'delete', $content->id], [
-                            'confirm' => __('Are you sure you want to delete the content {0}?', $content->key),
+                            'confirm' => __('Are you sure you want to delete the content {0}?', $content->identifier),
                             'escape' => false,
                             'class' => 'delete',
                             'title' => __('Delete')]) ?>

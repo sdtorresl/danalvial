@@ -19,7 +19,7 @@ $this->loadHelper('Form', [
                 
 <?= $this->Form->create($content, ['class' => 'form']) ?>
 <?php
-    echo $this->Form->control('key');
+    echo $this->Form->control('identifier');
     echo $this->Form->control('title');
     echo $this->Form->control('text');
     echo $this->Form->control('primary_image');

@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('questions_id') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('question_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('answer') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('result') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -24,13 +24,13 @@
             <tbody>
                 <?php foreach ($answers as $answer): ?>
                 <tr>
-                                                                                <td><?= $this->Number->format($answer->id) ?></td>
-                                                                            <td><?= $answer->has('question') ? $this->Html->link($answer->question->title, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?></td>
-                                                                                                            <td><?= h($answer->answer) ?></td>
-                                                                                            <td><?= $this->Number->format($answer->result) ?></td>
-                                                                                            <td><?= h($answer->created) ?></td>
-                                                                                            <td><?= h($answer->modified) ?></td>
-            
+                    <td><?= $this->Number->format($answer->id) ?></td>
+                    <td><?= $answer->has('question') ? $this->Html->link($answer->question->title, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?></td>
+                    <td><?= h($answer->answer) ?></td>
+                    <td><?= $this->Number->format($answer->result) ?></td>
+                    <td><?= h($answer->created) ?></td>
+                    <td><?= h($answer->modified) ?></td>
+
                     <td class="actions">
                         <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $answer->id], ['escape' => false, 'title' => __('View')] ) ?>
                         <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $answer->id], ['escape' => false, 'title' => __('Edit')] ) ?>
@@ -44,7 +44,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        
+
         <div class="paginator center-align">
             <ul class="pagination">
                 <?= $this->Paginator->first('<<') ?>
