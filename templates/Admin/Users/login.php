@@ -15,7 +15,7 @@
         <div class="form">
             <?= $this->Form->create() ?>
             <div class="form form-control">
-                <?= $this->Form->control('username', ['placeholder' => __('Please input your username')]) ?>
+                <?= $this->Form->control('email', ['placeholder' => __('Please input your username')]) ?>
                 <?= $this->Form->control('password', ['placeholder' => __('Please input your password')]) ?>
                 <div id="login-btn">
                     <?= $this->Form->submit(__('Login'), ['class' => 'btn']); ?>
