@@ -52,6 +52,10 @@
                         <td><?= $this->Number->format($course->price) ?></td>
                     </tr>
                     <tr>
+                        <th><?= __('Image') ?></th>
+                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $course->image_dir) . DS . $course->image ?>" alt="Course Image"></td>
+                    </tr>
+                    <tr>
                         <th><?= __('Created') ?></th>
                         <td><?= h($course->created) ?></td>
                     </tr>

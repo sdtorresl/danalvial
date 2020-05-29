@@ -47,6 +47,13 @@ class CoursesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('File', [
+            'image' => [
+                'file' => 'image',
+                'file_dir' => 'image_dir',
+                'file_type' => 'image_type'
+            ]
+        ]);
 
         $this->belongsTo('Branches', [
             'foreignKey' => 'branch_id',
@@ -120,24 +127,20 @@ class CoursesTable extends Table
             ->allowEmptyString('price');
 
         $validator
-            ->scalar('image')
-            ->maxLength('image', 255)
-            ->allowEmptyFile('image');
+            ->requirePresence('image', 'create')
+            ->notEmptyFile('image');
 
         $validator
-            ->scalar('image_dir')
             ->maxLength('image_dir', 255)
-            ->allowEmptyFile('image_dir');
+            ->allowEmptyString('image_dir');
 
         $validator
-            ->scalar('image_size')
             ->maxLength('image_size', 45)
-            ->allowEmptyFile('image_size');
+            ->allowEmptyString('image_size');
 
         $validator
-            ->scalar('image_type')
             ->maxLength('image_type', 45)
-            ->allowEmptyFile('image_type');
+            ->allowEmptyString('image_type');
 
         return $validator;
     }
