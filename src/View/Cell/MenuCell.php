@@ -35,33 +35,17 @@ class MenuCell extends Cell
     public function display()
     {
         $menuItems = [
+            "contents" => [
+                "label" => __("Content"),
+                "icon" => "fal fa-th-list",
+                "actions" => [
+                    "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
             "courses" => [
-                "label" => __("Courses-label"),
-                "icon" => "fal fa-book",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "podcasts" => [
-                "label" => __("Podcasts"),
-                "icon" => "fal fa-podcast",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "products" => [
-                "label" => __("Products"),
-                "icon" => "fal fa-shopping-bag",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "discounts" => [
-                "label" => __("Discounts"),
-                "icon" => "fal fa-percent",
+                "label" => __("Courses"),
+                "icon" => "fal fa-road",
                 "actions" => [
                     "index" => __("Ver"),
                     "add" => __("Crear")
@@ -72,6 +56,35 @@ class MenuCell extends Cell
                 "icon" => "fal fa-users",
                 "actions" => [
                     "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "branches" => [
+                "label" => __("Branches"),
+                "icon" => "fal fa-building",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "tests" => [
+                "label" => __("Tests"),
+                "icon" => "fal fa-book-open",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "contacts" => [
+                "label" => __("Contacts"),
+                "icon" => "fal fa-comment-alt-dots",
+                "action" => "index"
+            ],
+            "frequent_questions" => [
+                "label" => __("Frequent questions"),
+                "icon" => "fal fa-question",
+                "actions" => [
+                    "index" => __("Ver"),
                     "add" => __("Crear")
                 ]
             ],
