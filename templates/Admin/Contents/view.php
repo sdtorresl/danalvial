@@ -20,12 +20,16 @@
                         <td><?= h($content->title) ?></td>
                     </tr>
                     <tr>
+                        <th><?= __('Text') ?></th>
+                        <td><?= h($content->text) ?></td>
+                    </tr>
+                    <tr>
                         <th><?= __('Primary Image') ?></th>
-                        <td><?= h($content->primary_image) ?></td>
+                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $content->primary_image_dir) . DS . $content->primary_image ?>" alt="Image_1"></td>
                     </tr>
                     <tr>
                         <th><?= __('Secondary Image') ?></th>
-                        <td><?= h($content->secondary_image) ?></td>
+                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $content->secondary_image_dir) . DS . $content->secondary_image ?>" alt="Image_2"></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
@@ -36,12 +40,6 @@
                         <td><?= h($content->modified) ?></td>
                     </tr>
                 </table>
-                <div class="text">
-                    <strong><?= __('Text') ?></strong>
-                    <blockquote>
-                        <?= $this->Text->autoParagraph(h($content->text)); ?>
-                    </blockquote>
-                </div>
 
             </div>
         </div>
