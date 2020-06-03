@@ -32,6 +32,18 @@
                         <td><?= h($course->category) ?></td>
                     </tr>
                     <tr>
+                        <th><?= __('Practical Time') ?></th>
+                        <td><?= h($course->practical_time) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= __('Theoretical Time') ?></th>
+                        <td><?= h($course->theoretical_time) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= __('Workshop Time') ?></th>
+                        <td><?= h($course->workshop_time) ?></td>
+                    </tr>
+                    <tr>
                         <th><?= __('Type') ?></th>
                         <td><?= h($course->type) ?></td>
                     </tr>

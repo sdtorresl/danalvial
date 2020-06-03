@@ -19,12 +19,15 @@ use Cake\ORM\Entity;
  * @property string $medical_exam
  * @property string $requirements
  * @property int|null $price
- * @property string|null $image
+ * @property |null $image
  * @property string|null $image_dir
  * @property string|null $image_size
  * @property string|null $image_type
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
+ * @property int $practical_time
+ * @property int $theoretical_time
+ * @property int $workshop_time
  *
  * @property \App\Model\Entity\Branch $branch
  * @property \App\Model\Entity\Contact[] $contacts
@@ -57,6 +60,9 @@ class Course extends Entity
         'image_type' => true,
         'created' => true,
         'modified' => true,
+        'practical_time' => true,
+        'theoretical_time' => true,
+        'workshop_time' => true,
         'branch' => true,
         'contacts' => true,
     ];

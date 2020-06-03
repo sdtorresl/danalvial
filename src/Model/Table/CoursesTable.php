@@ -142,6 +142,21 @@ class CoursesTable extends Table
             ->maxLength('image_type', 45)
             ->allowEmptyString('image_type');
 
+        $validator
+            ->integer('practical_time')
+            ->maxLength('practical_time', 3)
+            ->notEmptyString('practical_time');
+
+        $validator
+            ->integer('theoretical_time')
+            ->maxLength('theoretical_time', 3)
+            ->notEmptyString('theoretical_time');
+
+        $validator
+            ->integer('workshop_time')
+            ->maxLength('workshop_time', 3)
+            ->notEmptyString('workshop_time');
+
         return $validator;
     }
 

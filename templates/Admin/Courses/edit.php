@@ -24,6 +24,9 @@ $this->loadHelper('Form', [
                         echo $this->Form->control('short_description');
                         echo $this->Form->control('long_description');
                         echo $this->Form->control('category');
+                        echo $this->Form->control('practical_time');
+                        echo $this->Form->control('theoretical_time');
+                        echo $this->Form->control('workshop_time');
                         echo $this->Form->control('type', ['options' => $types]);
                         echo $this->Form->control('schedule');
                         echo $this->Form->control('medical_exam');
