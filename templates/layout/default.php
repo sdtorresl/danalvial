@@ -36,6 +36,7 @@ $cakeDescription = 'Danalvial';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+    <?= $this->cell('HomeMenu'); ?>
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
