@@ -44,6 +44,19 @@ class ContentsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->addBehavior('File', [
+            'primary_image' => [
+                'file' => 'primary_image',
+                'file_dir' => 'primary_image_dir',
+                'file_type' => 'primary_image_type'
+            ],
+            'secondary_image' => [
+                'file' => 'secondary_image',
+                'file_dir' => 'secondary_image_dir',
+                'file_type' => 'secondary_image_type'
+            ]
+        ]);
     }
 
     /**
@@ -77,44 +90,36 @@ class ContentsTable extends Table
             ->notEmptyString('text');
 
         $validator
-            ->scalar('primary_image')
-            ->maxLength('primary_image', 255)
-            ->allowEmptyFile('primary_image');
+            ->requirePresence('primary_image', 'create')
+            ->notEmptyFile('primary_image');
 
         $validator
-            ->scalar('primary_image_dir')
             ->maxLength('primary_image_dir', 255)
-            ->allowEmptyFile('primary_image_dir');
+            ->allowEmptyString('primary_image_dir');
 
         $validator
-            ->scalar('primary_image_size')
             ->maxLength('primary_image_size', 45)
-            ->allowEmptyFile('primary_image_size');
+            ->allowEmptyString('primary_image_size');
 
         $validator
-            ->scalar('primary_image_type')
             ->maxLength('primary_image_type', 45)
-            ->allowEmptyFile('primary_image_type');
+            ->allowEmptyString('primary_image_type');
 
         $validator
-            ->scalar('secondary_image')
-            ->maxLength('secondary_image', 255)
+            ->requirePresence('secondary_image', 'create')
             ->allowEmptyFile('secondary_image');
 
         $validator
-            ->scalar('secondary_image_dir')
             ->maxLength('secondary_image_dir', 255)
-            ->allowEmptyFile('secondary_image_dir');
+            ->allowEmptyString('secondary_image_dir');
 
         $validator
-            ->scalar('secondary_image_size')
             ->maxLength('secondary_image_size', 45)
-            ->allowEmptyFile('secondary_image_size');
+            ->allowEmptyString('secondary_image_size');
 
         $validator
-            ->scalar('secondary_image_type')
             ->maxLength('secondary_image_type', 45)
-            ->allowEmptyFile('secondary_image_type');
+            ->allowEmptyString('secondary_image_type');
 
         return $validator;
     }
