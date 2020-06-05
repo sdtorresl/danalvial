@@ -75,8 +75,7 @@ class ContentsTable extends Table
             ->scalar('identifier')
             ->maxLength('identifier', 45)
             ->requirePresence('identifier', 'create')
-            ->notEmptyString('identifier')
-            ->add('identifier', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->notEmptyString('identifier');
 
         $validator
             ->scalar('title')
@@ -91,7 +90,7 @@ class ContentsTable extends Table
 
         $validator
             ->requirePresence('primary_image', 'create')
-            ->notEmptyFile('primary_image');
+            ->allowEmptyFile('primary_image');
 
         $validator
             ->maxLength('primary_image_dir', 255)
@@ -122,19 +121,5 @@ class ContentsTable extends Table
             ->allowEmptyString('secondary_image_type');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->isUnique(['identifier']));
-
-        return $rules;
     }
 }
