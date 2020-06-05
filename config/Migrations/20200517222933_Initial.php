@@ -240,12 +240,6 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => false,
             ])
-            ->addIndex(
-                [
-                    'identifier',
-                ],
-                ['unique' => true]
-            )
             ->create();
 
         $this->table('courses')
