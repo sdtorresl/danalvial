@@ -41,6 +41,40 @@
                     </tr>
                 </table>
 
+                <div class="related">
+                    <h4><?= __('Related Answers') ?></h4>
+                    <?php if (!empty($question->answers)) : ?>
+                    <div class="table-responsive">
+                        <table>
+                            <tr>
+                                <th><?= __('Question') ?></th>
+                                <th><?= __('Status') ?></th>
+                                <th><?= __('Created') ?></th>
+                                <th><?= __('Modified') ?></th>
+                                <th class="actions"><?= __('Actions') ?></th>
+                            </tr>
+                            <?php foreach ($question->answers as $answers) : ?>
+                            <tr>
+                                <td><?= h($answers->answer) ?></td>
+                                <td>
+                                    <?php if ($answers->result == TRUE) : ?>
+                                    Incorrect
+                                    <?php else : ?>
+                                    Correct
+                                    <?php endif; ?>
+                                </td>
+                                <td><?= h($answers->created) ?></td>
+                                <td><?= h($answers->modified) ?></td>
+                                <td class="actions">
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Answers', 'action' => 'edit', $answers->id]) ?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
             </div>
         </div>
 

@@ -58,6 +58,10 @@ class QuestionsTable extends Table
             'foreignKey' => 'test_id',
             'joinType' => 'INNER',
         ]);
+        
+        $this->hasMany('Answers', [
+            'foreignKey' => 'question_id',
+        ]);
     }
 
     /**
