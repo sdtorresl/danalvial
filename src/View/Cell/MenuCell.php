@@ -43,6 +43,14 @@ class MenuCell extends Cell
                     "add" => __("Crear")
                 ]
             ],
+            "advantages" => [
+                "label" => __("Advantages"),
+                "icon" => "fal fa-th-list",
+                "actions" => [
+                    "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
             "courses" => [
                 "label" => __("Courses"),
                 "icon" => "fal fa-road",
