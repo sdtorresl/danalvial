@@ -25,9 +25,12 @@ class HomeController extends AppController
 
         $coursesTable = TableRegistry::getTableLocator()->get('Courses');
         $courses = $coursesTable->find();
+
+        $advantagesTable = TableRegistry::getTableLocator()->get('Advantages');
+        $advantages = $advantagesTable->find();
         //$home = $this->paginate($this->Home);
 
-        $this->set(compact('contents', 'courses'));
+        $this->set(compact('contents', 'courses', 'advantages'));
     }
 
 }
