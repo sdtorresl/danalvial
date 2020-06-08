@@ -27,7 +27,7 @@ $cakeDescription = 'Danalvial - Admin Panel';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('/node_modules/materialize-css/dist/css/materialize.min.css') ?>
-    <?= $this->Html->css('main.min.css') ?>
+    <?= $this->Html->css('admin.min.css') ?>
 
     <?= $this->Html->script('/node_modules/materialize-css/dist/js/materialize.min.js') ?>
 
