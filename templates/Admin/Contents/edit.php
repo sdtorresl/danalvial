@@ -22,8 +22,8 @@ $this->loadHelper('Form', [
                         echo $this->Form->control('identifier');
                         echo $this->Form->control('title');
                         echo $this->Form->control('text');
-                        echo $this->Form->control('image_1', ['type' => 'file', 'label' => false, 'placeholder' => __('Image 1')]);
-                        echo $this->Form->control('image_2');
+                        echo $this->Form->control('primary_image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image 1')]);
+                        echo $this->Form->control('secondary_image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image 2')]);
                     ?>
                     <div class="form-submit d-flex jc-end">
                         <?= $this->Html->link(__('Cancel'), ['controller' => 'contents', 'action' => 'index'], ['class' => ['btn', 'cancel']]) ?>
