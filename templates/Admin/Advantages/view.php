@@ -3,6 +3,11 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Advantage $advantage
  */
+
+use nadar\quill\Lexer;
+
+$description = new Lexer($advantage->description);
+
 ?>
 
 <section class="advantages view card">
@@ -17,7 +22,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Description') ?></th>
-                        <td><?= $this->h($advantage->description) ?></td>
+                        <td><?= $description->render() ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Logo') ?></th>
@@ -39,6 +44,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $advantage->id], ['confirm' => __('Are you sure you want to delete {0}?', $advantage->id), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $advantage->id], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['controller' => 'advantages', 'action' => 'index'], ['class' => ['btn']]) ?>
             </div>
         </div>
     </div>
