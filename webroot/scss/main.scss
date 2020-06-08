@@ -1,0 +1,126 @@
+@import '_variables.scss';
+@import '../node_modules/materialize-css/sass/materialize.scss';
+
+@import './fontawesome/fontawesome.scss';
+@import './fontawesome/fa-light.scss';
+@import './fontawesome/fa-regular.scss';
+@import './fontawesome/fa-solid.scss';
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/montserrat/Montserrat-Regular.ttf');
+}
+
+$primary-green: #14a6c7;
+$primary-green-hover: #374f5a;
+$primary-dark: #333;
+$secondary-dark: #979797;
+$primary-red: #D6456A;
+
+html {
+    font-family: 'Montserrat'
+}
+
+h1 {
+    font-size: 1.3rem;
+}
+h2 {
+    font-size: 1.25rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+h4 {
+    font-size: 1.15rem;
+}
+h5 {
+    font-size: 1.1rem;
+}
+
+strong {
+    font-weight: 900;
+}
+
+nav {
+    background: white;
+    color: $primary-dark;
+    height: 50px;
+    line-height: 50px;
+
+    i {
+        color: $primary-dark;
+    }
+
+    ul {
+        a {
+            color: $primary-dark;
+        }
+    }
+}
+
+#gallery {
+    padding-bottom: 20px;
+    background-color: $secondary-color;
+
+    .carousel {
+        height: 500px;
+    }
+}
+
+#advantages_section {
+    padding: 60px 0px;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    #advantage_items {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0px;
+
+        .advantage_item {
+            width: 250px;
+            border: solid black 1px;
+    
+            i {
+                font-size: 5rem;
+                color: $primary-color;
+            }
+
+            h3 {
+                font-weight: bold;
+            }
+
+            li {
+                list-style-type: disc;
+                margin-left: 40px;
+            }
+        }
+        
+    }
+
+    
+}
+
+
+@media #{$small-and-down} {// styles for small screens and down
+    
+}
+
+@media #{$medium-and-up} { // styles for medium screens and larger
+    
+}
+
+@media #{$medium-and-down} { // styles for medium screens and down
+    
+}
+
+@media #{$large-and-up} { // styles for large screens and up
+    
+}
+
+@media #{$extra-large-and-up} { // styles for extra large screens and up
+    
+}

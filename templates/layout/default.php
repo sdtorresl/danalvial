@@ -15,7 +15,9 @@
  */
 
 $cakeDescription = 'Danalvial';
+$menuCell = $this->cell('HomeMenu');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +29,6 @@ $cakeDescription = 'Danalvial';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('/node_modules/materialize-css/dist/css/materialize.min.css') ?>
     <?= $this->Html->script('/node_modules/materialize-css/dist/js/materialize.min.js') ?>
     <?= $this->Html->css('main.min.css') ?>
 
@@ -35,20 +36,29 @@ $cakeDescription = 'Danalvial';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
-    <?= $this->cell('HomeMenu'); ?>
+    <?= $menuCell ?>
     <main class="main">
-        <div class="container">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
-        </div>
+        <?= $this->Flash->render() ?>
+        <?= $this->fetch('content') ?>
     </main>
+
     <footer>
     
     </footer>
 
     <script type="text/javascript">
-        M.AutoInit();
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true
+            });
+        });
+        
+
     </script>
 
 </body>
