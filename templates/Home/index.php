@@ -26,20 +26,62 @@
         </div>
     </div>
 
-    <div id="advantages_section" class="container">
+    <div id="advantages_section">
         <h2 class="center-align"><?= __('Why choose us?') ?></h2>
-        <div id="advantage_items">
-        <?php foreach ($advantages as $advantage): ?>
+        <div id="advantages">
+            <?php foreach ($advantages as $advantage): ?>
             <div class="advantage_item">
                 <i class="<?= $advantage->logo ?>"></i>
                 <h3><?= h($advantage->title) ?></h3>
-                <p><?php $description = new Lexer($advantage->description);?>
+                <?php $description = new Lexer($advantage->description);?>
                 <?= $description->render() ?>
-                </p>
             </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
-        <a class="waves-effect waves-light btn center-align">Saber más de la compañia</a>
+        <div class="advantages-button">
+            <a class="waves-effect waves-light btn center">Saber más de la compañia</a>
+        </div>
     </div>
 
+    <?php 
+    $imagePath = str_replace(WWW_ROOT, '', $contentSection3[0]->primary_image_dir) . DS . $contentSection3[0]->primary_image;
+    $imageURL = str_replace('\\', '/', $imagePath);
+    ?>
+    <div id="section-3" style="background-image: url('<?= $imageURL ?>');">
+        <!--<p><h2 class="center-align"><?= $contentSection3[0]->title ?></h2>-->
+        <?php if (is_null($contentSection3[0]->text) == FALSE) : ?>
+            <!--<p><?= $contentSection3[0]->text ?></p>-->
+        <?php endif; ?>
+    </div>
+
+    <div id="courses-section">
+        <div id="courses">
+            <?php foreach ($courses as $course) :?>
+            <div class="course_item">
+                <div class="course_content">
+                    <h3 class="category center-align"><?= ($course->category) ?></h3>
+                    <h2><?= ($course->title) ?></h2>
+                    <p><?= ($course->short_description) ?></p>
+                    <ul>
+                        <li>
+                            <i class="fal fa-car"></i>
+                            <?= ($course->practical_time) ?> horas de clase práctica.
+                        </li>
+                        <li>
+                            <i class="fal fa-book"></i>
+                            <?= ($course->theoretical_time) ?> horas de clase teórica.
+                        </li>
+                        <li>
+                            <i class="fal fa-clock"></i>
+                            <?= ($course->workshop_time) ?> horas de talleres.
+                        </li>
+                    </ul>
+                </div>
+                <div class="course-button">
+                    <a class="waves-effect waves-light btn center">Ver más información</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 </section>

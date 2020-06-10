@@ -21,16 +21,19 @@ class HomeController extends AppController
     {
 
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contents = $contentsTable->find();
+        $contentSection3 = $contentsTable->findByIdentifier('homepage-section3');
+        $contentSection3 = $contentSection3->toArray();
 
         $coursesTable = TableRegistry::getTableLocator()->get('Courses');
         $courses = $coursesTable->find();
 
         $advantagesTable = TableRegistry::getTableLocator()->get('Advantages');
         $advantages = $advantagesTable->find();
+
+        
         //$home = $this->paginate($this->Home);
 
-        $this->set(compact('contents', 'courses', 'advantages'));
+        $this->set(compact('courses', 'advantages', 'contentSection3'));
     }
 
 }
