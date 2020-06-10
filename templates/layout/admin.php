@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'EMS - Exea Monitoring System';
+$cakeDescription = 'Danalvial';
 $menuCell = $this->cell('Menu');
 ?>
 <!DOCTYPE html>
