@@ -19,7 +19,7 @@ $this->loadHelper('Form', [
 
                     <?= $this->Form->create($answer, ['class' => 'form']) ?>
                     <?php
-                        echo $this->Form->control('question_id', ['options' => $questions]);
+                        echo $this->Form->control('question_id', ['options' => $questions, 'disabled']);
                         echo $this->Form->control('answer');
                         echo $this->Form->control('result');
                     ?>

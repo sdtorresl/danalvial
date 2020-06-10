@@ -19,7 +19,7 @@ $this->loadHelper('Form', [
 
                     <?= $this->Form->create($question, ['class' => 'form', 'type' => 'file']) ?>
                     <?php
-                        echo $this->Form->control('test_id', ['options' => $tests]);
+                        echo $this->Form->control('test_id', ['options' => $tests, 'disabled']);
                         echo $this->Form->control('question');
                         echo $this->Form->control('category');
                         echo $this->Form->control('title');

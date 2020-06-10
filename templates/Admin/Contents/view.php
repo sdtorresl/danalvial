@@ -13,7 +13,7 @@
                 <table>
                     <tr>
                         <th><?= __('Identifier') ?></th>
-                        <td><?= h($content->identifier) ?></td>
+                        <td><?= h($identifiers[$content->identifier]) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Title') ?></th>

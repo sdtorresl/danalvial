@@ -12,7 +12,6 @@
         <table class="centered responsive-table">
             <thead>
                 <tr>
-                    <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('identifier') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -23,8 +22,7 @@
             <tbody>
                 <?php foreach ($contents as $content): ?>
                 <tr>
-                    <td><?= $this->Number->format($content->id) ?></td>
-                    <td><?= h($content->identifier) ?></td>
+                    <td><?= h($identifiers[$content->identifier]) ?></td>
                     <td><?= h($content->title) ?></td>
                     <td><?= h($content->created) ?></td>
                     <td><?= h($content->modified) ?></td>
