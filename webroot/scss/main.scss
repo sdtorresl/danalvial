@@ -58,16 +58,37 @@ nav {
     }
 }
 
-#gallery {
+#section-1 {
     padding-bottom: 20px;
     background-color: $secondary-color;
 
     .carousel {
-        height: 500px;
+        height: 600px;
+
+        .carousel-item {
+            background: url("/img/carousel_1.png") center center;
+            background-size: cover;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            
+            .carousel-content {
+                border: solid black 1px; //BORRAR
+
+                h2 {
+                    font-size: 4rem;
+                    font-weight: 900;
+                    line-height: 70px;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
     }
 }
 
-#advantages_section {
+#section-2 {
     padding: 60px 10%;
     
     h2 {
@@ -87,7 +108,7 @@ nav {
             align-items: center;
             width: 250px;
             margin: 20px;
-            //border: solid black 1px;
+            //border: solid black 1px; //BORRAR
     
             i {
                 font-size: 5rem;
@@ -125,10 +146,17 @@ nav {
     }
 }
 
-#courses-section {
-    height: 500px;
+#section-4 {
     background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
     padding: 20px;
+    padding: 100px 10%;
+
+    #course-header {
+        font-size: 2.7rem;
+        font-weight: 900;
+        color: white;
+        margin: 50px 0px;
+    }
 
     #courses {
         display: flex;
@@ -138,9 +166,10 @@ nav {
         
         .course_item {
             background-color: white;
-            border: solid black 1px;
+            border: solid black 1px; // BORRAR
             width: 320px;
             padding: 0 30px;
+            margin: 20px;
 
             .course_content {
 
@@ -166,6 +195,57 @@ nav {
         }
     }
 
+}
+
+#section-5 {
+    margin: 0;
+    height: 450px;
+
+    #section-5-img {
+        padding: 0;
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+        }
+        
+    }
+
+    #section-5-content {
+        border: 1px black solid; // BORRAR
+
+        h2 {
+            font-size: 2.7rem;
+            font-weight: 900;
+        }
+    }
+}
+
+
+footer {
+
+    #info-footer {
+        margin: 0;
+        padding: 15px;
+        background-color: #373737;
+        color: white;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    #logos-footer {
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 

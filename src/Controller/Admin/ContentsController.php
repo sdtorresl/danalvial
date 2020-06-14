@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\EventInterface;
 
 /**
  * Contents Controller
@@ -13,6 +14,13 @@ use App\Controller\AppController;
  */
 class ContentsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        $identifiers = ["homepage-section5" => __("Home Page - Section 5")];
+
+        $this->set(compact('identifiers'));
+    }
+
     /**
      * Index method
      *

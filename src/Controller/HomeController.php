@@ -21,8 +21,8 @@ class HomeController extends AppController
     {
 
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contentSection3 = $contentsTable->findByIdentifier('homepage-section3');
-        $contentSection3 = $contentSection3->toArray();
+        $contentSection5 = $contentsTable->findByIdentifier('homepage-section5');
+        $contentSection5 = $contentSection5->toArray();
 
         $coursesTable = TableRegistry::getTableLocator()->get('Courses');
         $courses = $coursesTable->find();
@@ -30,10 +30,13 @@ class HomeController extends AppController
         $advantagesTable = TableRegistry::getTableLocator()->get('Advantages');
         $advantages = $advantagesTable->find();
 
+        $brancesTable = TableRegistry::getTableLocator()->get('Branches');
+        $branch = $brancesTable->findByName('Medellin');
+        $branch = $branch->toArray();
         
         //$home = $this->paginate($this->Home);
 
-        $this->set(compact('courses', 'advantages', 'contentSection3'));
+        $this->set(compact('courses', 'advantages', 'contentSection5', 'branch'));
     }
 
 }

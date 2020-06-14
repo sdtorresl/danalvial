@@ -1,32 +1,37 @@
 <?php use nadar\quill\Lexer; ?>
 
 <section>
-    <div id="gallery">
+    <section id="section-1">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
             </div>
-            <div class="carousel-item red white-text" href="#one!">
-                <h2>First Panel</h2>
-                <p class="white-text">This is your first panel</p>
+            <div class="carousel-item white-text" href="#one!">
+                <div class="carousel-content left-align container">
+                    <div class="row">
+                        <h2 class="col s10"> Expertos en personas nerviosas</h2>
+                        <p class="col s7 white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                    </div>
+                    <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
+                </div>
             </div>
-            <div class="carousel-item amber white-text" href="#two!">
-                <h2>Second Panel</h2>
-                <p class="white-text">This is your second panel</p>
+            <div class="carousel-item white-text" href="#two!">
+                <h2>Expertos en personas nerviosas</h2>
+                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
             </div>
-            <div class="carousel-item green white-text" href="#three!">
-                <h2>Third Panel</h2>
-                <p class="white-text">This is your third panel</p>
+            <div class="carousel-item white-text" href="#three!">
+                <h2>Expertos en personas nerviosas</h2>
+                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.l</p>
             </div>
-            <div class="carousel-item blue white-text" href="#four!">
-                <h2>Fourth Panel</h2>
-                <p class="white-text">This is your fourth panel</p>
+            <div class="carousel-item white-text" href="#four!">
+                <h2>Expertos en personas nerviosas</h2>
+                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
             </div>
             <ul class="indicators"></ul>
         </div>
-    </div>
+    </section>
 
-    <div id="advantages_section">
+    <section id="section-2">
         <h2 class="center-align"><?= __('Why choose us?') ?></h2>
         <div id="advantages">
             <?php foreach ($advantages as $advantage): ?>
@@ -39,22 +44,23 @@
             <?php endforeach; ?>
         </div>
         <div class="advantages-button">
-            <a class="waves-effect waves-light btn center">Saber más de la compañia</a>
+            <a class="waves-effect waves-light btn center"><?= __('Know mor about the company') ?></a>
         </div>
-    </div>
+    </section>
 
     <?php 
-    $imagePath = str_replace(WWW_ROOT, '', $contentSection3[0]->primary_image_dir) . DS . $contentSection3[0]->primary_image;
-    $imageURL = str_replace('\\', '/', $imagePath);
+    //$imagePath = str_replace(WWW_ROOT, '', $contentSection3[0]->primary_image_dir) . DS . $contentSection3[0]->primary_image;
+    //$imageURL = str_replace('\\', '/', $imagePath);
     ?>
-    <div id="section-3" style="background-image: url('<?= $imageURL ?>');">
+    <section id="section-3" style="background-image: url('<?= $imageURL ?>');">
         <!--<p><h2 class="center-align"><?= $contentSection3[0]->title ?></h2>-->
-        <?php if (is_null($contentSection3[0]->text) == FALSE) : ?>
+        <!--<?php if (is_null($contentSection3[0]->text) == FALSE) : ?>-->
             <!--<p><?= $contentSection3[0]->text ?></p>-->
-        <?php endif; ?>
-    </div>
+        <!--<?php endif; ?>-->
+    </section>
 
-    <div id="courses-section">
+    <section id="section-4">
+        <h3 id="course-header" class="center-align"><?=__('Discover the category you need')?></h3>
         <div id="courses">
             <?php foreach ($courses as $course) :?>
             <div class="course_item">
@@ -83,5 +89,21 @@
             </div>
             <?php endforeach; ?>
         </div>
-    </div>
+    </section>
+
+    <?php 
+    $imagePath = str_replace(WWW_ROOT, '', $contentSection5[0]->primary_image_dir) . DS;
+    $imageURL = str_replace('\\', '/', $imagePath);
+    ?>
+    <section id="section-5" class="row">
+        <div id="section-5-img" class="col s6">
+            <?= $this->Html->image($contentSection5[0]->primary_image, ['pathPrefix' => $imageURL]) ?>
+        </div>
+        <div class="col s6">
+            <div id="section-5-content" class="container">
+                <h2><?= $contentSection5[0]->title ?></h2>
+                <p><?= $contentSection5[0]->text ?></p>
+            </div>
+        </div>
+    </section>
 </section>
