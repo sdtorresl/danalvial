@@ -96,13 +96,14 @@
     $imageURL = str_replace('\\', '/', $imagePath);
     ?>
     <section id="section-5" class="row">
-        <div id="section-5-img" class="col s6">
-            <?= $this->Html->image($contentSection5[0]->primary_image, ['pathPrefix' => $imageURL]) ?>
+        <div id="image" class="col s6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
+            <!--<?= $this->Html->image($contentSection5[0]->primary_image, ['pathPrefix' => $imageURL]) ?>-->
         </div>
-        <div class="col s6">
-            <div id="section-5-content" class="container">
+        <div id="content" class="col s6">
+            <div id="content-text" class="container">
                 <h2><?= $contentSection5[0]->title ?></h2>
                 <p><?= $contentSection5[0]->text ?></p>
+                <a class="waves-effect waves-light btn center"><?= __('Take a theoretical test') ?></a>
             </div>
         </div>
     </section>
