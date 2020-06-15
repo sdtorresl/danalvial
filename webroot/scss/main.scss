@@ -98,7 +98,7 @@ nav {
     
     #advantages{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         margin: 50px 0px;
 
@@ -108,7 +108,6 @@ nav {
             align-items: center;
             width: 250px;
             margin: 20px;
-            //border: solid black 1px; //BORRAR
     
             i {
                 font-size: 5rem;
@@ -148,8 +147,7 @@ nav {
 
 #section-4 {
     background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
-    padding: 20px;
-    padding: 100px 10%;
+    padding: 40px 0;
 
     #course-header {
         font-size: 2.7rem;
@@ -166,7 +164,6 @@ nav {
         
         .course_item {
             background-color: white;
-            border: solid black 1px; // BORRAR
             width: 320px;
             padding: 0 30px;
             margin: 20px;
@@ -202,19 +199,24 @@ nav {
     min-height: 500px;
     display: flex;
     flex: 1;
+    flex-wrap: wrap;
 
     
     #image {
         padding: 0;
+        min-height: 200px;
     }
 
     #content {
+<<<<<<< HEAD
+=======
         padding: 80px 0px;
+>>>>>>> 2caf3ffe0168755ab2797ce794599d9e7ba5611c
+        padding: 0px 10px;
         display: flex;
         align-items: center;
 
         #content-text {
-            border: 1px black solid; // BORRAR
     
             h2 {
                 font-size: 2.7rem;
@@ -245,10 +247,14 @@ footer {
     }
 
     #logos-footer {
-        padding: 20px 0px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        img {
+            margin: 20px 30px;
+        }
     }
 }
 
@@ -258,7 +264,21 @@ footer {
 }
 
 @media #{$medium-and-up} { // styles for medium screens and larger
-    
+    #section-4 {
+        padding: 70px 10%;
+    }
+
+    #section-5 {
+        #content {
+            padding: 80px 0px;
+        }
+    }
+
+    footer {
+        #info-footer {
+            padding: 15px 5%;
+        }
+    }
 }
 
 @media #{$medium-and-down} { // styles for medium screens and down
@@ -266,7 +286,9 @@ footer {
 }
 
 @media #{$large-and-up} { // styles for large screens and up
-    
+    #section-4 {
+        padding: 100px 10%;
+    }
 }
 
 @media #{$extra-large-and-up} { // styles for extra large screens and up
