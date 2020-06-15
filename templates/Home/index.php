@@ -9,8 +9,8 @@
             <div class="carousel-item white-text" href="#one!">
                 <div class="carousel-content left-align container">
                     <div class="row">
-                        <h2 class="col s10"> Expertos en personas nerviosas</h2>
-                        <p class="col s7 white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        <h2 class="col m10"> Expertos en personas nerviosas</h2>
+                        <p class="col m9 white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
                     </div>
                     <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
                 </div>
@@ -96,10 +96,9 @@
     $imageURL = str_replace('\\', '/', $imagePath);
     ?>
     <section id="section-5" class="row">
-        <div id="image" class="col s6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
-            <!--<?= $this->Html->image($contentSection5[0]->primary_image, ['pathPrefix' => $imageURL]) ?>-->
+        <div id="image" class="col s12 m5 l6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
         </div>
-        <div id="content" class="col s6">
+        <div id="content" class="col s12 m7 l6">
             <div id="content-text" class="container">
                 <h2><?= $contentSection5[0]->title ?></h2>
                 <p><?= $contentSection5[0]->text ?></p>
