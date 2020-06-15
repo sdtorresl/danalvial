@@ -332,12 +332,6 @@ class Initial extends AbstractMigration
             ->addIndex(
                 [
                     'branch_id',
-                ],
-                ['unique' => true]
-            )
-            ->addIndex(
-                [
-                    'branch_id',
                 ]
             )
             ->create();

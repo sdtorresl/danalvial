@@ -9,6 +9,7 @@
   "author": "Sergio Torres",
   "license": "ISC",
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+    "quill": "^1.3.7"
   }
 }
