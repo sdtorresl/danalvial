@@ -39,4 +39,11 @@ class HomeController extends AppController
         $this->set(compact('courses', 'advantages', 'contentSection5', 'branch'));
     }
 
+    public function option()
+    {
+        $branchesTable = TableRegistry::getTableLocator()->get('Branches');
+        $branches = $branchesTable->find();
+
+        $this->set(compact('branches'));
+    }
 }

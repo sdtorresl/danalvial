@@ -72,5 +72,8 @@ class AppController extends Controller
                 return;
             }
         }
+        elseif ($controller->name == 'Home' && $params['action'] == 'option') {
+            //$this->viewBuilder()->disableAutoLayout();
+        }
     }
 }
