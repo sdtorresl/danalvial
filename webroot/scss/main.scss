@@ -58,177 +58,262 @@ nav {
     }
 }
 
-#branch-options {
+#branches-options {
     background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
-}
 
-#section-1 {
-    padding-bottom: 20px;
-    background-color: $secondary-color;
-
-    .carousel {
-        height: 600px;
-
-        .carousel-item {
-            background: url("/img/carousel_1.png") center center;
-            background-size: cover;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            
-            .carousel-content {
-                border: solid black 1px; //BORRAR
-
-                h2 {
-                    font-size: 4rem;
-                    font-weight: 900;
-                    line-height: 70px;
-                }
-
-                p {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-    }
-}
-
-#section-2 {
-    padding: 60px 10%;
-    
-    h2 {
-        font-size: 2.5rem;
-        font-weight: 900;
-    }
-    
-    #advantages{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin: 50px 0px;
-
-        .advantage_item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 250px;
-            margin: 20px;
-    
-            i {
-                font-size: 5rem;
-                color: $primary-color;
-            }
-
-            h3 {
-                font-weight: bold;
-            }
-
-            li {
-                list-style-type: disc;
-                margin-left: 15px;
-            }
-        }
-        
-    }
-
-    .advantages-button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-#section-3 {
-    background-color: gray;
-    min-height: 500px;
-    background-size: 100% auto;
-
-    h2 {
-        font-size: 4rem;
-        font-weight: 900;
-        color: white;
-    }
-}
-
-#section-4 {
-    background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
-    padding: 40px 0;
-
-    #course-header {
-        font-size: 2.7rem;
-        font-weight: 900;
-        color: white;
-        margin: 50px 0px;
-    }
-
-    #courses {
+    .container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        
-        .course_item {
-            background-color: white;
-            width: 320px;
-            padding: 0 30px;
+
+        .option-item {
+            border: 1px solid black; //BORRAR
             margin: 20px;
+        }
+    }
+}
 
-            .course_content {
+#home-page {
 
-                .category {
-                    color: $primary-color;
-                    font-size: 5rem;
-                    font-weight: 900;
+    #section-1 {
+        padding-bottom: 20px;
+        background-color: $secondary-color;
+    
+        .carousel {
+            height: 600px;
+    
+            .carousel-item {
+                background: url("/img/carousel_1.png") center center;
+                background-size: cover;
+                padding-top: 60px;
+                padding-bottom: 60px;
+                
+                .carousel-content {
+                    h2 {
+                        font-size: 4rem;
+                        font-weight: 900;
+                        line-height: 70px;
+                    }
+    
+                    p {
+                        font-size: 1.2rem;
+                    }
                 }
             }
+        }
+    }
+    
+    #section-2 {
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        
+        #advantages{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 0px;
+    
+            .advantage_item {
+                display: flex;
+                flex-direction: row;
+                width: 350px;
+                margin: 10px;
+                padding: 15px;
+                background-color: #129DBE;
+        
+                .icon {
+                    width: 110px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    
+                    i {
+                        font-size: 5rem;
+                    }
+                }
+    
+                h3 {
+                    font-weight: bold;
+                }
+    
+                li {
+                    list-style-type: disc;
+                    margin-left: 15px;
+                }
+            }
+            
+        }
+    
+    }
+    
+    #section-3 {
+        background-color: gray;
+        min-height: 500px;
+        background-size: 100% auto;
+    
+        h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+        }
+    }
+    
+    #section-4 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0px;
+        
+        
+        .query-item {
+            width: 350px;
+            margin: 10px;
+            padding: 40px;
+            padding-bottom: 90px;
+            background-color: #F7F7F7;
+            position: relative;
+            
+            h2 {
+                font-size: 2.3rem;
+                font-weight: bold;
+            }
+            
+            a {
+                position: absolute;
+                bottom: 40px;
+                
+            }
+        }
+    }
 
-            .course-button {
+    #section-5 {
+        background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
+        padding: 40px 0;
+    
+        #course-header {
+            font-size: 2.7rem;
+            font-weight: 900;
+            color: white;
+            margin: 50px 0px;
+        }
+    
+        #courses {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+            .course_item {
+                background-color: white;
+                width: 320px;
+                padding: 0 30px;
+                margin: 20px;
+    
+                .course_content {
+    
+                    .category {
+                        color: $primary-color;
+                        font-size: 5rem;
+                        font-weight: 900;
+                    }
+                }
+    
+                .course-button {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 30px 0px;
+                }
+    
+                i {
+                    font-size: 1.5rem;
+                    width: 30px;
+                    color: $primary-color;
+                }
+            }
+        }
+    
+    }
+    
+    #section-6 {
+        margin: 90px auto;
+
+        #reinforcement {
+            background: #FC5F6D;
+            color: white;
+            padding: 45px 20px 30px 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            #reinforcement-time {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin: 30px 0px;
+                min-width: 170px;
+                margin: 20px 20px 20px 0px;
+
+                i {
+                    font-size: 6rem;
+                }
+            }
+            
+            #reinforcement-info {
+                h2 {
+                    font-weight: bold;
+                    font-size: 1.7rem;
+                    margin-bottom: 2rem;
+                    margin-top: 0;
+                }
+    
+                ul {
+                    padding-left: 20px;
+                }
             }
 
-            i {
-                font-size: 1.5rem;
-                width: 30px;
-                color: $primary-color;
-            }
         }
     }
 
-}
-
-#section-5 {
-    margin: 0;
-    min-height: 500px;
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-
-    
-    #image {
-        padding: 0;
-        min-height: 200px;
-    }
-
-    #content {
-        padding: 0px 10px;
+    #section-7 {
+        margin: 0;
+        min-height: 500px;
         display: flex;
-        align-items: center;
-
-        #content-text {
+        flex: 1;
+        flex-wrap: wrap;
     
-            h2 {
-                font-size: 2.7rem;
-                font-weight: 900;
-            }
-
-            a {
-                margin: 20px 0px;
+        
+        #image {
+            padding: 0;
+            min-height: 200px;
+        }
+    
+        #content {
+            padding: 0px 10px;
+            display: flex;
+            align-items: center;
+    
+            #content-text {
+        
+                h2 {
+                    font-size: 2.7rem;
+                    font-weight: 900;
+                }
+    
+                a {
+                    margin: 20px 0px;
+                }
             }
         }
     }
 }
+
 
 
 footer {
@@ -260,15 +345,48 @@ footer {
 
 
 @media #{$small-and-down} {// styles for small screens and down
-    
+    #section-2 {
+        #advantages{    
+            .advantage_item {
+                width: 350px !important;
+            }
+        }
+    }
+
+    #section-4 {
+        .query-item {
+            width: 350px !important;
+        }
+    }
 }
 
 @media #{$medium-and-up} { // styles for medium screens and larger
+    #section-2 {
+        #advantages{    
+            .advantage_item {
+                width: 380px !important;
+            }
+        }
+    }
+    
     #section-4 {
-        padding: 70px 10%;
+        .query-item {
+            width: 380px !important;
+        }
     }
 
     #section-5 {
+        padding: 70px 10%;
+    }
+
+    
+    #section-6 {
+        #reinforcement {
+            flex-wrap: nowrap !important;
+        }
+    }
+
+    #section-7 {
         #content {
             padding: 80px 0px;
         }
@@ -286,7 +404,21 @@ footer {
 }
 
 @media #{$large-and-up} { // styles for large screens and up
+    #section-2 {
+        #advantages{    
+            .advantage_item {
+                width: 530px !important;
+            }
+        }
+    }
+
     #section-4 {
+        .query-item {
+            width: 530px !important;
+        }
+    }
+
+    #section-5 {
         padding: 100px 10%;
     }
 }

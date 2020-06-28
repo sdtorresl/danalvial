@@ -1,6 +1,6 @@
 <?php use nadar\quill\Lexer; ?>
 
-<section>
+<section id="home-page">
     <section id="section-1">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
@@ -35,16 +35,17 @@
         <h2 class="center-align"><?= __('Why choose us?') ?></h2>
         <div id="advantages">
             <?php foreach ($advantages as $advantage): ?>
-            <div class="advantage_item">
-                <i class="<?= $advantage->logo ?>"></i>
-                <h3><?= h($advantage->title) ?></h3>
-                <?php $description = new Lexer($advantage->description);?>
-                <?= $description->render() ?>
+            <div class="advantage_item white-text">
+                <div class="icon">
+                    <i class="<?= $advantage->logo ?>"></i>
+                </div>
+                <div class="advantage-content">
+                    <h3><?= h($advantage->title) ?></h3>
+                    <?php $description = new Lexer($advantage->description);?>
+                    <?= $description->render() ?>
+                </div>
             </div>
             <?php endforeach; ?>
-        </div>
-        <div class="advantages-button">
-            <a class="waves-effect waves-light btn center"><?= __('Know mor about the company') ?></a>
         </div>
     </section>
 
@@ -60,6 +61,19 @@
     </section>
 
     <section id="section-4">
+            <div class="query-item">
+                <h2>Consulta datos sobre tu licencia de conducción ante el RUNT</h2>
+                <p>Consulta este módulo que te permitirá conocer datos específicos sobre tu licencia de conducción, sus certificaciones y otros documentos relacionados con tu información como conductor ante el RUNT.</p>
+                <a class="waves-effect waves-light btn center"><?= __('Check RUNT') ?></a>
+            </div>
+            <div class="query-item">
+                <h2>Consulta de comparendos, multas e infracciones de tránsito</h2>
+                <p>Consulta la información sobre multas por comparendos e infracciones a las normas de tránsito. Esta consulta es requisito para la obtención de tu licencia de conducción.</p>
+                <a class="waves-effect waves-light btn center"><?= __('Check comparendo') ?></a>
+            </div>
+    </section>
+
+    <section id="section-5">
         <h3 id="course-header" class="center-align"><?=__('Discover the category you need')?></h3>
         <div id="courses">
             <?php foreach ($courses as $course) :?>
@@ -91,11 +105,29 @@
         </div>
     </section>
 
-    <?php 
-    $imagePath = str_replace(WWW_ROOT, '', $contentSection5[0]->primary_image_dir) . DS;
-    $imageURL = str_replace('\\', '/', $imagePath);
-    ?>
-    <section id="section-5" class="row">
+    <section id="section-6" class="container">
+        <div id="reinforcement">
+            <div id="reinforcement-time">
+                <i class="fal fa-clock"></i>
+                <p>2h - 4h - 6h - 8h - 10h</p>
+            </div>
+            <div id="reinforcement-info">
+                <h2>Clases de refuerzo</h2>
+                <p>En Danalvial pensamos en tu seguridad, contamos con diferentes paquetes de horas para que refuerces tus habilidades y conocimientos asociados a la conducción.</p>
+                <ul class="browser-default">
+                    <li>Horas en vías de la ciudad y en la pista. Rutas adaptadas para cumplir con el propósito diseñado.</li>
+                    <li>Directamente con carros del centro de enseñanza. Garantía de aprendizaje.</li>
+                    <li>Tú eliges que temas ver de acuerdo con tus dificultades.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-7" class="row">
+        <?php 
+        $imagePath = str_replace(WWW_ROOT, '', $contentSection5[0]->primary_image_dir) . DS;
+        $imageURL = str_replace('\\', '/', $imagePath);
+        ?>
         <div id="image" class="col s12 m5 l6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
         </div>
         <div id="content" class="col s12 m7 l6">
