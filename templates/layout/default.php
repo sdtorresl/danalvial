@@ -61,12 +61,15 @@ $menuCell = $this->cell('HomeMenu');
             </div>
         </div>
         <div id="logos-footer">
-            <?= $this->Html->image('min-transporte.png') ?>
-            <?= $this->Html->image('min-educacion.png') ?>
-            <?= $this->Html->image('aulapp.png') ?>
-            <?= $this->Html->image('icc.png') ?>
-            <?= $this->Html->image('vigilado-st.png') ?>
-            <?= $this->Html->image('runt.png') ?>
+            <p><?= __('WHATCHED BY') ?></p>
+            <div id="logos">
+                <?= $this->Html->image('min-transporte.png') ?>
+                <?= $this->Html->image('vigilado-st.png') ?>
+                <?= $this->Html->image('runt.png') ?>
+                <?= $this->Html->image('icc.png') ?>
+                <?= $this->Html->image('aulapp.png') ?>
+                <?= $this->Html->image('min-educacion.png') ?>
+            </div>
         </div>
     </footer>
 
