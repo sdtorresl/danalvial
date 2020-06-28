@@ -26,7 +26,7 @@ class MenuCell extends Cell
     public function initialize(): void
     {
     }
-
+    
     /**
      * Default display method.
      *
@@ -35,11 +35,27 @@ class MenuCell extends Cell
     public function display()
     {
         $menuItems = [
+            "branches" => [
+                "label" => __("Branches"),
+                "icon" => "fal fa-building",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
             "contents" => [
                 "label" => __("Content"),
                 "icon" => "fal fa-th-list",
                 "actions" => [
                     "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "gallery" => [
+                "label" => __("Gallery"),
+                "icon" => "fal fa-images",
+                "actions" => [
+                    "index" => __("Listar"),
                     "add" => __("Crear")
                 ]
             ],
@@ -62,14 +78,6 @@ class MenuCell extends Cell
             "users" => [
                 "label" => __("Users"),
                 "icon" => "fal fa-users",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "branches" => [
-                "label" => __("Branches"),
-                "icon" => "fal fa-building",
                 "actions" => [
                     "index" => __("Listar"),
                     "add" => __("Crear")
