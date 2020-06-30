@@ -12,6 +12,7 @@
         <table class="centered responsive-table">
             <thead>
                 <tr>
+                    <th scope="col"><?= $this->Paginator->sort('branch_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -22,6 +23,8 @@
             <tbody>
                 <?php foreach ($advantages as $advantage): ?>
                 <tr>
+                    <td><?= $advantage->has('branch') ? $this->Html->link($advantage->branch->name, ['controller' => 'Branches', 'action' => 'view', $advantage->branch->id]) : '' ?>
+                    </td>
                     <td><?= h($advantage->title) ?></td>
                     <td><?= h($advantage->logo) ?></td>
                     <td><?= h($advantage->created) ?></td>

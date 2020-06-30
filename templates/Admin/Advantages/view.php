@@ -17,6 +17,10 @@ $description = new Lexer($advantage->description);
             <div class="col s12">
                 <table>
                     <tr>
+                        <th><?= __('Branch') ?></th>
+                        <td><?= $advantage->has('branch') ? $this->Html->link($advantage->branch->name, ['controller' => 'Branches', 'action' => 'view', $advantage->branch->id]) : '' ?></td>
+                    </tr>
+                    <tr>
                         <th><?= __('Title') ?></th>
                         <td><?= h($advantage->title) ?></td>
                     </tr>

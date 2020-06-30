@@ -44,6 +44,11 @@ class AdvantagesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Branches', [
+            'foreignKey' => 'branch_id',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**
@@ -76,5 +81,19 @@ class AdvantagesTable extends Table
             ->notEmptyString('logo');
 
         return $validator;
+    }
+
+        /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn(['branch_id'], 'Branches'));
+
+        return $rules;
     }
 }
