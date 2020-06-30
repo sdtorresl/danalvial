@@ -22,6 +22,7 @@ $this->loadHelper('Form', [
 
                     <?= $this->Form->create($advantage, ['class' => 'form']) ?>
                     <?php
+                        echo $this->Form->control('branch_id', ['options' => $branches]);
                         echo $this->Form->control('title');
                         echo $this->Form->control('logo');
                         echo $this->Form->hidden('description');

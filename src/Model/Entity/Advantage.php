@@ -32,5 +32,6 @@ class Advantage extends Entity
         'logo' => true,
         'created' => true,
         'modified' => true,
+        'branch_id' => true,
     ];
 }
