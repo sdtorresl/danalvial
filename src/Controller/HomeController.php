@@ -41,11 +41,21 @@ class HomeController extends AppController
         $this->set(compact('courses', 'advantages', 'contentSection5', 'branch', 'gallery'));
     }
 
-    public function option()
+    public function option($id = null)
     {
-        $branchesTable = TableRegistry::getTableLocator()->get('Branches');
-        $branches = $branchesTable->find();
+        $session = $this->request->getSession();
+        //$id = $session->read('Config.branch') ?? $id;
 
-        $this->set(compact('branches'));
+        if($id == null) {
+            $branchesTable = TableRegistry::getTableLocator()->get('Branches');
+            $branches = $branchesTable->find();
+
+            $this->set(compact('branches'));
+        }
+        else {
+            $session->write('Config.branch', $id);
+
+            return $this->redirect(['action' => 'index']);
+        }
     }
 }
