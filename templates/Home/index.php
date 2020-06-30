@@ -4,29 +4,22 @@
     <section id="section-1">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
-                <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
+                
             </div>
-            <div class="carousel-item white-text" href="#one!">
+            <?php foreach ($gallery as $gallery): ?>
+            <?php 
+            $galleryImagePath = str_replace(WWW_ROOT, '', $gallery->image_dir) . DS;
+            $galleryImageURL = str_replace('\\', '/', $galleryImagePath);
+            ?>
+            <div class="carousel-item white-text" style="background: url('<?= $galleryImageURL . $gallery->image ?>') center center; background-size: cover;">
                 <div class="carousel-content left-align container">
                     <div class="row">
-                        <h2 class="col m10"> Expertos en personas nerviosas</h2>
-                        <p class="col m9 white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        <h2 class="col m10"><?= $gallery->title ?></h2>
                     </div>
                     <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
                 </div>
             </div>
-            <div class="carousel-item white-text" href="#two!">
-                <h2>Expertos en personas nerviosas</h2>
-                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-            </div>
-            <div class="carousel-item white-text" href="#three!">
-                <h2>Expertos en personas nerviosas</h2>
-                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.l</p>
-            </div>
-            <div class="carousel-item white-text" href="#four!">
-                <h2>Expertos en personas nerviosas</h2>
-                <p class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-            </div>
+            <?php endforeach; ?>
             <ul class="indicators"></ul>
         </div>
     </section>
@@ -64,12 +57,12 @@
             <div class="query-item">
                 <h2>Consulta datos sobre tu licencia de conducción ante el RUNT</h2>
                 <p>Consulta este módulo que te permitirá conocer datos específicos sobre tu licencia de conducción, sus certificaciones y otros documentos relacionados con tu información como conductor ante el RUNT.</p>
-                <a class="waves-effect waves-light btn center"><?= __('Check RUNT') ?></a>
+                <a class="waves-effect waves-light btn center" href="https://www.runt.com.co/consultaCiudadana/#/consultaPersona" target="_blank"><?= __('Check RUNT') ?></a>
             </div>
             <div class="query-item">
                 <h2>Consulta de comparendos, multas e infracciones de tránsito</h2>
                 <p>Consulta la información sobre multas por comparendos e infracciones a las normas de tránsito. Esta consulta es requisito para la obtención de tu licencia de conducción.</p>
-                <a class="waves-effect waves-light btn center"><?= __('Check comparendo') ?></a>
+                <a class="waves-effect waves-light btn center" href="https://consulta2.simit.org.co/Simit/" target="_blank"><?= __('Check comparendo') ?></a>
             </div>
     </section>
 

@@ -7,7 +7,7 @@
             $imagePath = str_replace(WWW_ROOT, '', $branch->image_dir) . DS;
             echo $this->Html->image($branch->image , [
                 "alt" => "logo",
-                'url' => ['controller' => 'Home', 'action' => 'index'],
+                'url' => ['controller' => 'Home', 'action' => 'option', $branch->id],
                 'pathPrefix' => $imagePath
                 ]);
             ?>

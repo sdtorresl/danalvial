@@ -29,6 +29,8 @@ use Cake\Event\EventInterface;
  */
 class AppController extends Controller
 {
+    public $branchId = null;
+
     /**
      * Initialization hook method.
      *
@@ -45,6 +47,9 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
+        
+        $session = $this->request->getSession();
+        $this->branchId = $session->read('Config.branch');
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
@@ -74,6 +79,17 @@ class AppController extends Controller
         }
         elseif ($controller->name == 'Home' && $params['action'] == 'option') {
             $this->viewBuilder()->setLayout('blank');
+        }
+        else {
+            // Cheking branch session
+            $session = $request->getSession();
+            $this->branchId = $session->read('Config.branch');
+        
+            if($this->branchId == null) {
+                return $this->redirect(['controller' => 'Home', 'action' => 'option']);
+            }
+
+            $this->set('branchId', $this->branchId);
         }
     }
 }

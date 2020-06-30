@@ -19,6 +19,8 @@ class HomeController extends AppController
      */
     public function index()
     {
+        $galleriesTable = TableRegistry::getTableLocator()->get('Galleries');
+        $gallery = $galleriesTable->findByBranch_id('1');
 
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
         $contentSection5 = $contentsTable->findByIdentifier('homepage-section5');
@@ -36,14 +38,24 @@ class HomeController extends AppController
         
         //$home = $this->paginate($this->Home);
 
-        $this->set(compact('courses', 'advantages', 'contentSection5', 'branch'));
+        $this->set(compact('courses', 'advantages', 'contentSection5', 'branch', 'gallery'));
     }
 
-    public function option()
+    public function option($id = null)
     {
-        $branchesTable = TableRegistry::getTableLocator()->get('Branches');
-        $branches = $branchesTable->find();
+        $session = $this->request->getSession();
+        //$id = $session->read('Config.branch') ?? $id;
 
-        $this->set(compact('branches'));
+        if($id == null) {
+            $branchesTable = TableRegistry::getTableLocator()->get('Branches');
+            $branches = $branchesTable->find();
+
+            $this->set(compact('branches'));
+        }
+        else {
+            $session->write('Config.branch', $id);
+
+            return $this->redirect(['action' => 'index']);
+        }
     }
 }
