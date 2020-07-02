@@ -48,5 +48,6 @@ class Content extends Entity
         'secondary_image_type' => true,
         'created' => true,
         'modified' => true,
+        'branch_id' => true,
     ];
 }
