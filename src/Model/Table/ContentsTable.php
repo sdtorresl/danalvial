@@ -45,6 +45,11 @@ class ContentsTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsTo('Branches', [
+            'foreignKey' => 'branch_id',
+            'joinType' => 'INNER',
+        ]);
+
         $this->addBehavior('File', [
             'primary_image' => [
                 'file' => 'primary_image',
@@ -134,6 +139,7 @@ class ContentsTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->isUnique(['identifier']));
+        $rules->add($rules->existsIn(['branch_id'], 'Branches'));
 
         return $rules;
     }

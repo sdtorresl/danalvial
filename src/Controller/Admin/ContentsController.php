@@ -28,6 +28,9 @@ class ContentsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Branches'],
+        ];
         $contents = $this->paginate($this->Contents);
 
         $this->set(compact('contents'));
@@ -43,7 +46,7 @@ class ContentsController extends AppController
     public function view($id = null)
     {
         $content = $this->Contents->get($id, [
-            'contain' => [],
+            'contain' => ['Branches'],
         ]);
 
         $this->set(compact('content'));
@@ -66,7 +69,8 @@ class ContentsController extends AppController
             }
             $this->Flash->error(__('The content could not be saved. Please, try again.'));
         }
-        $this->set(compact('content'));
+        $branches = $this->Contents->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('content', 'branches'));
     }
 
     /**
@@ -90,7 +94,8 @@ class ContentsController extends AppController
             }
             $this->Flash->error(__('The content could not be saved. Please, try again.'));
         }
-        $this->set(compact('content'));
+        $branches = $this->Contents->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('content', 'branches'));
     }
 
     /**

@@ -12,6 +12,10 @@
             <div class="col s12">
                 <table>
                     <tr>
+                        <th><?= __('Branch') ?></th>
+                        <td><?= $content->has('branch') ? $this->Html->link($content->branch->name, ['controller' => 'Branches', 'action' => 'view', $content->branch->id]) : '' ?></td>
+                    </tr>
+                    <tr>
                         <th><?= __('Identifier') ?></th>
                         <td><?= h($identifiers[$content->identifier]) ?></td>
                     </tr>
