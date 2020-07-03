@@ -75,6 +75,14 @@ class MenuCell extends Cell
                     "add" => __("Crear")
                 ]
             ],
+            "branches_histories" => [
+                "label" => __("Branches Histories"),
+                "icon" => "fal fa-trophy",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
             "users" => [
                 "label" => __("Users"),
                 "icon" => "fal fa-users",
