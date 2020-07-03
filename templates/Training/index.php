@@ -40,4 +40,9 @@
             </div>
         </div>
     </section>
+    
+    <?= $this->element('courses') ?>
+
+    <?= $this->element('reinforcement') ?>
+
 </section>  

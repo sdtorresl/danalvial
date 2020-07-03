@@ -66,55 +66,9 @@
             </div>
     </section>
 
-    <section id="courses-section">
-        <h3 id="course-header" class="center-align"><?=__('Discover the category you need')?></h3>
-        <div id="courses">
-            <?php foreach ($courses as $course) :?>
-            <div class="course_item">
-                <div class="course_content">
-                    <h3 class="category center-align"><?= ($course->category) ?></h3>
-                    <h2><?= ($course->title) ?></h2>
-                    <p><?= ($course->short_description) ?></p>
-                    <ul>
-                        <li>
-                            <i class="fal fa-car"></i>
-                            <?= ($course->practical_time) ?> horas de clase práctica.
-                        </li>
-                        <li>
-                            <i class="fal fa-book"></i>
-                            <?= ($course->theoretical_time) ?> horas de clase teórica.
-                        </li>
-                        <li>
-                            <i class="fal fa-clock"></i>
-                            <?= ($course->workshop_time) ?> horas de talleres.
-                        </li>
-                    </ul>
-                </div>
-                <div class="course-button">
-                    <a class="waves-effect waves-light btn center">Ver más información</a>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+    <?= $this->element('courses') ?>
 
-    <section id="reinforcement-section" class="container">
-        <div id="reinforcement">
-            <div id="reinforcement-time">
-                <i class="fal fa-clock"></i>
-                <p>2h - 4h - 6h - 8h - 10h</p>
-            </div>
-            <div id="reinforcement-info">
-                <h2>Clases de refuerzo</h2>
-                <p>En Danalvial pensamos en tu seguridad, contamos con diferentes paquetes de horas para que refuerces tus habilidades y conocimientos asociados a la conducción.</p>
-                <ul class="browser-default">
-                    <li>Horas en vías de la ciudad y en la pista. Rutas adaptadas para cumplir con el propósito diseñado.</li>
-                    <li>Directamente con carros del centro de enseñanza. Garantía de aprendizaje.</li>
-                    <li>Tú eliges que temas ver de acuerdo con tus dificultades.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <?= $this->element('reinforcement') ?>
 
     <section id="" class="content-section row">
         <?php 
