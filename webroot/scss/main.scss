@@ -73,6 +73,18 @@ nav {
         }
     }
 }
+.item-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .item {
+        width: 350px;
+        margin: 10px;
+        //border: 1px solid black; //BORRAR
+    }
+}
 
 #home-page {
     
@@ -324,7 +336,41 @@ nav {
     }
 }
 
+#us {
+    #branches {
+        background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
+        padding: 60px 0px;
 
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .item {
+            width: 400px;
+            padding: 20px 40px;
+            background-color: white;
+
+            h3 {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            li {
+                margin: 10px 0px;
+                
+                i {
+                    color: #508941;
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
 
 footer {
 
