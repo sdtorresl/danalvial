@@ -1,7 +1,7 @@
 <?php use nadar\quill\Lexer; ?>
 
 <section id="home-page">
-    <section id="section-1">
+    <section id="gallery-section">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
                 
@@ -24,7 +24,7 @@
         </div>
     </section>
 
-    <section id="section-2">
+    <section id="advantages-section">
         <h2 class="center-align"><?= __('Why choose us?') ?></h2>
         <div id="advantages">
             <?php foreach ($advantages as $advantage): ?>
@@ -46,14 +46,14 @@
     //$imagePath = str_replace(WWW_ROOT, '', $contentSection3[0]->primary_image_dir) . DS . $contentSection3[0]->primary_image;
     //$imageURL = str_replace('\\', '/', $imagePath);
     ?>
-    <section id="section-3" style="background-image: url('<?= $imageURL ?>');">
+    <section id="video-section" style="background-image: url('<?= $imageURL ?>');">
         <!--<p><h2 class="center-align"><?= $contentSection3[0]->title ?></h2>-->
         <!--<?php if (is_null($contentSection3[0]->text) == FALSE) : ?>-->
             <!--<p><?= $contentSection3[0]->text ?></p>-->
         <!--<?php endif; ?>-->
     </section>
 
-    <section id="section-4">
+    <section id="query-section">
             <div class="query-item">
                 <h2>Consulta datos sobre tu licencia de conducción ante el RUNT</h2>
                 <p>Consulta este módulo que te permitirá conocer datos específicos sobre tu licencia de conducción, sus certificaciones y otros documentos relacionados con tu información como conductor ante el RUNT.</p>
@@ -66,7 +66,7 @@
             </div>
     </section>
 
-    <section id="section-5">
+    <section id="courses-section">
         <h3 id="course-header" class="center-align"><?=__('Discover the category you need')?></h3>
         <div id="courses">
             <?php foreach ($courses as $course) :?>
@@ -98,7 +98,7 @@
         </div>
     </section>
 
-    <section id="section-6" class="container">
+    <section id="reinforcement-section" class="container">
         <div id="reinforcement">
             <div id="reinforcement-time">
                 <i class="fal fa-clock"></i>
@@ -116,15 +116,15 @@
         </div>
     </section>
 
-    <section id="section-7" class="row">
+    <section id="" class="content-section row">
         <?php 
         $imagePath = str_replace(WWW_ROOT, '', $contentSection5[0]->primary_image_dir) . DS;
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
-        <div id="image" class="col s12 m5 l6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
+        <div id="" class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
         </div>
-        <div id="content" class="col s12 m7 l6">
-            <div id="content-text" class="container">
+        <div id="" class="content col s12 m7 l6">
+            <div id="" class="content-text container">
                 <h2><?= $contentSection5[0]->title ?></h2>
                 <p><?= $contentSection5[0]->text ?></p>
                 <a class="waves-effect waves-light btn center"><?= __('Take a theoretical test') ?></a>

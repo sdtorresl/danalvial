@@ -80,8 +80,7 @@ class ContentsTable extends Table
             ->scalar('identifier')
             ->maxLength('identifier', 45)
             ->requirePresence('identifier', 'create')
-            ->notEmptyString('identifier')
-            ->add('identifier', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->notEmptyString('identifier');
 
         $validator
             ->scalar('title')
@@ -138,7 +137,7 @@ class ContentsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['identifier']));
+        //$rules->add($rules->isUnique(['identifier']));
         $rules->add($rules->existsIn(['branch_id'], 'Branches'));
 
         return $rules;

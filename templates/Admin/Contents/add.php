@@ -19,7 +19,7 @@ $this->loadHelper('Form', [
                 <?= $this->Form->create($content, ['class' => 'form', 'type' => 'file']) ?>
                 <?php
                     echo $this->Form->control('branch_id', ['options' => $branches]);
-                    echo $this->Form->control('identifier');
+                    echo $this->Form->control('identifier', ['options' => $identifiers]);
                     echo $this->Form->control('title');
                     echo $this->Form->control('text');
                     echo $this->Form->control('primary_image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image 1')]);

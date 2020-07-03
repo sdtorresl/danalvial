@@ -23,7 +23,7 @@ class HomeController extends AppController
         $gallery = $galleriesTable->findByBranch_id('1');
 
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contentSection5 = $contentsTable->findByIdentifier('homepage-section5');
+        $contentSection5 = $contentsTable->findByIdentifier('homepage');
         $contentSection5 = $contentSection5->toArray();
 
         $coursesTable = TableRegistry::getTableLocator()->get('Courses');
