@@ -20,9 +20,12 @@ class TrainingController extends AppController
     public function index()
     {
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contentSection = $contentsTable->findByIdentifier('training');
-        $contentSection = $contentSection->toArray();
+        $contentTraining = $contentsTable->findByBranch_idAndIdentifier($this->branchId, 'training' . $this->branchId);
+        $contentTraining = $contentTraining->toArray();
 
-        $this->set(compact('contentSection'));
+        $coursesTable = TableRegistry::getTableLocator()->get('Courses');
+        $courses = $coursesTable->findByBranch_id($this->branchId);
+
+        $this->set(compact('contentTraining', 'courses'));
     }
 }
