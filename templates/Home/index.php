@@ -72,15 +72,15 @@
 
     <section id="" class="content-section row">
         <?php 
-        $imagePath = str_replace(WWW_ROOT, '', $contentSection5[0]->primary_image_dir) . DS;
+        $imagePath = str_replace(WWW_ROOT, '', $contentHome[0]->primary_image_dir) . DS;
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
-        <div id="" class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentSection5[0]->primary_image ?>') center center; background-size: cover;">
+        <div id="" class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentHome[0]->primary_image ?>') center center; background-size: cover;">
         </div>
         <div id="" class="content col s12 m7 l6">
             <div id="" class="content-text container">
-                <h2><?= $contentSection5[0]->title ?></h2>
-                <p><?= $contentSection5[0]->text ?></p>
+                <h2><?= $contentHome[0]->title ?></h2>
+                <p><?= $contentHome[0]->text ?></p>
                 <a class="waves-effect waves-light btn center"><?= __('Take a theoretical test') ?></a>
             </div>
         </div>

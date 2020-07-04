@@ -7,6 +7,9 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Event\EventInterface;
+use Cake\Datasource\EntityInterface; 
+use ArrayObject;
 
 /**
  * Contents Model
@@ -141,5 +144,10 @@ class ContentsTable extends Table
         $rules->add($rules->existsIn(['branch_id'], 'Branches'));
 
         return $rules;
+    }
+
+    public function beforeSave($event, $entity, $options)
+    {
+        $entity->identifier = $entity->identifier . $entity->branch_id;
     }
 }
