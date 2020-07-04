@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\EventInterface;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -89,7 +90,12 @@ class AppController extends Controller
                 return $this->redirect(['controller' => 'Home', 'action' => 'option']);
             }
 
+            $brancesTable = TableRegistry::getTableLocator()->get('Branches');
+            $branch = $brancesTable->findById($this->branchId);
+            $branch = $branch->toArray();
+
             $this->set('branchId', $this->branchId);
+            $this->set(compact('branch'));
         }
     }
 }

@@ -19,9 +19,7 @@ class HomeController extends AppController
      */
     public function index()
     {
-        $brancesTable = TableRegistry::getTableLocator()->get('Branches');
-        $branch = $brancesTable->findById($this->branchId);
-        $branch = $branch->toArray();
+
 
         $galleriesTable = TableRegistry::getTableLocator()->get('Galleries');
         $gallery = $galleriesTable->findByBranch_id($this->branchId);
@@ -36,7 +34,7 @@ class HomeController extends AppController
         $advantagesTable = TableRegistry::getTableLocator()->get('Advantages');
         $advantages = $advantagesTable->findByBranch_id($this->branchId);
 
-        $this->set(compact('courses', 'advantages', 'contentHome', 'branch', 'gallery'));
+        $this->set(compact('courses', 'advantages', 'contentHome', 'gallery'));
     }
 
     public function option($id = null)
