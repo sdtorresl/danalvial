@@ -45,7 +45,32 @@ $menuCell = $this->cell('HomeMenu');
     </main>
 
     <footer>
-    
+        <div id="info-footer" class="row">
+            <div class="col s12 l4">
+                <h1>Danalvial</h1>
+            </div>
+            <div class="col s6 l4">
+                <p>Danalvial escuela de conducción automovilística</p>
+                <p>Dirección: <?= $branch[0]->address ?></p>
+                <p>Correo electrónico: </p>
+                <p>Horario: <?= $branch[0]->schedule ?></p>
+            </div>
+            <div class="col s6 l4">
+                <p><?= $branch[0]->location ?></p>
+                <p>© Danalvial. Todos los derechos reservados.2020</p>
+            </div>
+        </div>
+        <div id="logos-footer">
+            <p><?= __('WHATCHED BY') ?></p>
+            <div id="logos">
+                <?= $this->Html->image('min-transporte.png') ?>
+                <?= $this->Html->image('vigilado-st.png') ?>
+                <?= $this->Html->image('runt.png') ?>
+                <?= $this->Html->image('icc.png') ?>
+                <?= $this->Html->image('aulapp.png') ?>
+                <?= $this->Html->image('min-educacion.png') ?>
+            </div>
+        </div>
     </footer>
 
     <script type="text/javascript">

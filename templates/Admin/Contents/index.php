@@ -12,6 +12,7 @@
         <table class="centered responsive-table">
             <thead>
                 <tr>
+                    <th scope="col"><?= $this->Paginator->sort('branch_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('identifier') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -22,7 +23,10 @@
             <tbody>
                 <?php foreach ($contents as $content): ?>
                 <tr>
-                    <td><?= h($identifiers[$content->identifier]) ?></td>
+                    <td><?= $content->has('branch') ? $this->Html->link($content->branch->name, ['controller' => 'Branches', 'action' => 'view', $content->branch->id]) : '' ?>
+                    </td>
+                    <?php $identifierKey = preg_replace('/[0-9]+/', '', $content->identifier) ?>
+                    <td><?= h($identifiers[$identifierKey]) ?></td>
                     <td><?= h($content->title) ?></td>
                     <td><?= h($content->created) ?></td>
                     <td><?= h($content->modified) ?></td>

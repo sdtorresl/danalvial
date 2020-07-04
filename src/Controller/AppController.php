@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\EventInterface;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -29,6 +30,8 @@ use Cake\Event\EventInterface;
  */
 class AppController extends Controller
 {
+    public $branchId = null;
+
     /**
      * Initialization hook method.
      *
@@ -45,6 +48,9 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
+        
+        $session = $this->request->getSession();
+        $this->branchId = $session->read('Config.branch');
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
@@ -71,6 +77,25 @@ class AppController extends Controller
                 }
                 return;
             }
+        }
+        elseif ($controller->name == 'Home' && $params['action'] == 'option') {
+            $this->viewBuilder()->setLayout('blank');
+        }
+        else {
+            // Cheking branch session
+            $session = $request->getSession();
+            $this->branchId = $session->read('Config.branch');
+        
+            if($this->branchId == null) {
+                return $this->redirect(['controller' => 'Home', 'action' => 'option']);
+            }
+
+            $brancesTable = TableRegistry::getTableLocator()->get('Branches');
+            $branch = $brancesTable->findById($this->branchId);
+            $branch = $branch->toArray();
+
+            $this->set('branchId', $this->branchId);
+            $this->set(compact('branch'));
         }
     }
 }

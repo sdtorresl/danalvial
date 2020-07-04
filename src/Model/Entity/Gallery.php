@@ -6,16 +6,21 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Advantage Entity
+ * Gallery Entity
  *
  * @property int $id
+ * @property int $branch_id
  * @property string $title
- * @property string $description
- * @property string $logo
+ * @property string $image
+ * @property string $image_dir
+ * @property string $image_size
+ * @property string $image_type
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ *
+ * @property \App\Model\Entity\Branch $branch
  */
-class Advantage extends Entity
+class Gallery extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -27,11 +32,14 @@ class Advantage extends Entity
      * @var array
      */
     protected $_accessible = [
+        'branch_id' => true,
         'title' => true,
-        'description' => true,
-        'logo' => true,
+        'image' => true,
+        'image_dir' => true,
+        'image_size' => true,
+        'image_type' => true,
         'created' => true,
         'modified' => true,
-        'branch_id' => true,
+        'branch' => true,
     ];
 }

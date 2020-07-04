@@ -58,77 +58,133 @@ nav {
     }
 }
 
-#gallery {
-    padding-bottom: 20px;
-    background-color: $secondary-color;
+#branches-options {
+    p {
+        font-size: 2.3rem;
+        font-weight: 900;
+        margin: 50px 0px;
+    }
 
-    .carousel {
-        height: 500px;
+    .item {
+        width: 380px;
+
+        .branch-image {
+            height: 270px;
+        }
+    }
+
+    .item:nth-child(4n-3) {
+        background-color: #129DBE;
+    }
+
+    .item:nth-child(4n-2) {
+        background-color: #FC5F6D;
+    }
+    
+    .item:nth-child(4n-1) {
+        background-color: #FF9800;
+    }
+    
+    .item:nth-child(4n) {
+        background-color: #508941;
     }
 }
 
-#advantages_section {
-    padding: 60px 10%;
-    
-    h2 {
-        font-size: 2.5rem;
-        font-weight: 900;
-    }
-    
-    #advantages{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin: 50px 0px;
+.item-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
-        .advantage_item {
+    .item {
+        width: 350px;
+        margin: 10px;
+        border: 1px solid black; //BORRAR
+    }
+}
+
+.content-section {
+    background-color: #F7F7F7;
+    margin: 0;
+    min-height: 500px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+
+    .content-image {
+        padding: 0;
+        min-height: 200px;
+    }
+
+    .content {
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+
+        .content-text {
+    
+            h2 {
+                font-size: 2.7rem;
+                font-weight: 900;
+            }
+
+            a {
+                margin: 20px 0px;
+            }
+        }
+    }
+}
+
+#reinforcement-section {
+    margin: 50px auto;
+
+    #reinforcement {
+        background: #FC5F6D;
+        color: white;
+        padding: 25px 35px 30px 35px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        #reinforcement-time {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 250px;
-            margin: 20px;
-            //border: solid black 1px;
-    
+            min-width: 170px;
+            margin: 20px 20px 20px 0px;
+
             i {
-                font-size: 5rem;
-                color: $primary-color;
-            }
-
-            h3 {
-                font-weight: bold;
-            }
-
-            li {
-                list-style-type: disc;
-                margin-left: 15px;
+                font-size: 6rem;
             }
         }
         
-    }
+        #reinforcement-info {
+            h2 {
+                font-weight: bold;
+                font-size: 1.7rem;
+                margin-bottom: 2rem;
+                margin-top: 0;
+            }
 
-    .advantages-button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
+            ul {
+                padding-left: 20px;
+            }
+        }
 
-#section-3 {
-    background-color: gray;
-    min-height: 500px;
-    background-size: 100% auto;
-
-    h2 {
-        font-size: 4rem;
-        font-weight: 900;
-        color: white;
     }
 }
 
 #courses-section {
-    height: 500px;
     background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
-    padding: 20px;
+    padding: 40px 0;
+
+    #course-header {
+        font-size: 2.7rem;
+        font-weight: 900;
+        color: white;
+        margin: 50px 0px;
+    }
 
     #courses {
         display: flex;
@@ -138,9 +194,9 @@ nav {
         
         .course_item {
             background-color: white;
-            border: solid black 1px;
             width: 320px;
             padding: 0 30px;
+            margin: 20px;
 
             .course_content {
 
@@ -168,13 +224,299 @@ nav {
 
 }
 
+#home-page {
+    
+    #gallery-section {
+        padding-bottom: 20px;
+        background-color: $secondary-color;
+    
+        .carousel {
+            height: 600px;
+    
+            .carousel-item {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                
+                .carousel-content {
+                    h2 {
+                        font-size: 4rem;
+                        font-weight: 900;
+                        line-height: 70px;
+                    }
+                }
+            }
+        }
+    }
+    
+    #advantages-section {
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        
+        #advantages{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 0px;
+    
+            .advantage_item:nth-child(4n-3) {
+                background-color: #129DBE;
+            }
+
+            .advantage_item:nth-child(4n-2) {
+                background-color: #508941;
+            }
+
+            .advantage_item:nth-child(4n-1) {
+                background-color: #FF9800;
+            }
+
+            .advantage_item:nth-child(4n) {
+                background-color: #FC5F6D;
+            }
+
+            .advantage_item {
+                display: flex;
+                flex-direction: row;
+                width: 350px;
+                margin: 10px;
+                padding: 15px;
+        
+                .icon {
+                    width: 110px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    
+                    i {
+                        font-size: 5rem;
+                    }
+                }
+    
+                h3 {
+                    font-weight: bold;
+                }
+    
+                li {
+                    list-style-type: disc;
+                    margin-left: 15px;
+                }
+            }
+            
+        }
+    
+    }
+    
+    #video-section {
+        background-color: gray;
+        min-height: 500px;
+        background-size: 100% auto;
+    
+        h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+        }
+    }
+    
+    #query-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0px;
+        
+        
+        .query-item {
+            width: 350px;
+            margin: 10px;
+            padding: 40px;
+            padding-bottom: 90px;
+            background-color: #F7F7F7;
+            position: relative;
+            
+            h2 {
+                font-size: 2.3rem;
+                font-weight: bold;
+            }
+            
+            a {
+                position: absolute;
+                bottom: 40px;
+                
+            }
+        }
+    }
+}
+
+#us {
+    #branches {
+        background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
+        padding: 60px 0px;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .item {
+            width: 400px;
+            padding: 20px 40px;
+            background-color: white;
+
+            h3 {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            li {
+                margin: 10px 0px;
+
+                i {
+                    color: #508941;
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
+
+#training-page {
+    #step-by-step-section {
+        width: 75%;
+
+        .center-align {
+            font-size: 2.7rem;
+            width: 90%;
+        }
+        .step-item {
+            padding: 25px;
+
+            i {
+                font-size: 4rem;
+                color: gray;
+            }
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+footer {
+
+    #info-footer {
+        margin: 0;
+        padding: 15px;
+        background-color: #373737;
+        color: white;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    #logos-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+
+        P {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        #logos {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+    
+            img {
+                margin: 20px 30px;
+            }
+        }
+    }
+}
+
 
 @media #{$small-and-down} {// styles for small screens and down
+    #home-page {
+        #advantages-section {
+            #advantages{    
+                .advantage_item {
+                    width: 350px !important;
+                }
+            }
+        }
     
+        #query-section {
+            .query-item {
+                width: 350px !important;
+            }
+        }
+    }
 }
 
 @media #{$medium-and-up} { // styles for medium screens and larger
+
+    #reinforcement-section {
+        #reinforcement {
+            flex-wrap: nowrap !important;
+            padding: 45px 20px 30px 20px !important;
+        }
+    }
+
+    #courses-section {
+        padding: 70px 10%;
+    }
+
+    #home-page {
+        #advantages-section {
+            #advantages{    
+                .advantage_item {
+                    width: 380px !important;
+                }
+            }
+        }
+        
+        #query-section {
+            .query-item {
+                width: 380px !important;
+            }
+        }
     
+        
+    }
+
+    #training-page {
+        #step-by-step-section {
+            width: 85%;
+        }
+    }
+
+    #content-section {
+        #content {
+            padding: 80px 0px;
+        }
+    }
+
+    footer {
+        #info-footer {
+            padding: 15px 5%;
+        }
+    }
 }
 
 @media #{$medium-and-down} { // styles for medium screens and down
@@ -182,7 +524,34 @@ nav {
 }
 
 @media #{$large-and-up} { // styles for large screens and up
+
+    #reinforcement-section {
+        margin: 90px auto !important;
+    }
+
+    #courses-section {
+        padding: 100px 10%;
+    }
+
+    #home-page {
+        #advantages-section {
+            #advantages{    
+                .advantage_item {
+                    width: 530px !important;
+                }
+            }
+        }
     
+        #query-section {
+            .query-item {
+                width: 530px !important;
+            }
+        }
+    
+        
+    
+        
+    }
 }
 
 @media #{$extra-large-and-up} { // styles for extra large screens and up

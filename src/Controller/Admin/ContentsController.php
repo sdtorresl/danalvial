@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\EventInterface;
 
 /**
  * Contents Controller
@@ -13,6 +14,13 @@ use App\Controller\AppController;
  */
 class ContentsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        $identifiers = ["homepage" => __("Home Page"), "training" => __("Training")];
+
+        $this->set(compact('identifiers'));
+    }
+
     /**
      * Index method
      *
@@ -20,6 +28,9 @@ class ContentsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Branches'],
+        ];
         $contents = $this->paginate($this->Contents);
 
         $this->set(compact('contents'));
@@ -35,7 +46,7 @@ class ContentsController extends AppController
     public function view($id = null)
     {
         $content = $this->Contents->get($id, [
-            'contain' => [],
+            'contain' => ['Branches'],
         ]);
 
         $this->set(compact('content'));
@@ -58,7 +69,8 @@ class ContentsController extends AppController
             }
             $this->Flash->error(__('The content could not be saved. Please, try again.'));
         }
-        $this->set(compact('content'));
+        $branches = $this->Contents->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('content', 'branches'));
     }
 
     /**
@@ -82,7 +94,8 @@ class ContentsController extends AppController
             }
             $this->Flash->error(__('The content could not be saved. Please, try again.'));
         }
-        $this->set(compact('content'));
+        $branches = $this->Contents->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('content', 'branches'));
     }
 
     /**

@@ -1,40 +1,37 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Advantage[]|\Cake\Collection\CollectionInterface $advantages
+ * @var \App\Model\Entity\Gallery[]|\Cake\Collection\CollectionInterface $galleries
  */
 ?>
 
-<section class="advantages index card">
+<section class="galleries index card">
     <div class="card-content">
-        <span class="card-title"><?=__('Advantages') ?></span>
+        <span class="card-title"><?=__('Galleries') ?></span>
 
         <table class="centered responsive-table">
             <thead>
                 <tr>
                     <th scope="col"><?= $this->Paginator->sort('branch_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($advantages as $advantage): ?>
+                <?php foreach ($galleries as $gallery): ?>
                 <tr>
-                    <td><?= $advantage->has('branch') ? $this->Html->link($advantage->branch->name, ['controller' => 'Branches', 'action' => 'view', $advantage->branch->id]) : '' ?>
-                    </td>
-                    <td><?= h($advantage->title) ?></td>
-                    <td><?= h($advantage->logo) ?></td>
-                    <td><?= h($advantage->created) ?></td>
-                    <td><?= h($advantage->modified) ?></td>
+                    <td><?= $gallery->has('branch') ? $this->Html->link($gallery->branch->name, ['controller' => 'Branches', 'action' => 'view', $gallery->branch->id]) : '' ?></td>
+                    <td><?= h($gallery->title) ?></td>
+                    <td><?= h($gallery->created) ?></td>
+                    <td><?= h($gallery->modified) ?></td>
 
                     <td class="actions">
-                        <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $advantage->id], ['escape' => false, 'title' => __('View')] ) ?>
-                        <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $advantage->id], ['escape' => false, 'title' => __('Edit')] ) ?>
-                        <?= $this->Form->postLink('<i class="fal fa-trash"></i>', ['action' => 'delete', $advantage->id], [
-                            'confirm' => __('Are you sure you want to delete {0}?', $advantage->id),
+                        <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $gallery->id], ['escape' => false, 'title' => __('View')] ) ?>
+                        <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $gallery->id], ['escape' => false, 'title' => __('Edit')] ) ?>
+                        <?= $this->Form->postLink('<i class="fal fa-trash"></i>', ['action' => 'delete', $gallery->id], [
+                            'confirm' => __('Are you sure you want to delete {0}?', $gallery->id),
                             'escape' => false,
                             'class' => 'delete',
                             'title' => __('Delete')]) ?>
@@ -58,7 +55,7 @@
 
         <div class="row">
             <div class="d-flex jc-end">
-                <?= $this->Html->link(__('Add advantage'), ['action' => 'add'], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Add gallery'), ['action' => 'add'], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>

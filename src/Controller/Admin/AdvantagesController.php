@@ -20,6 +20,9 @@ class AdvantagesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Branches'],
+        ];
         $advantages = $this->paginate($this->Advantages);
 
         $this->set(compact('advantages'));
@@ -35,7 +38,7 @@ class AdvantagesController extends AppController
     public function view($id = null)
     {
         $advantage = $this->Advantages->get($id, [
-            'contain' => [],
+            'contain' => ['Branches'],
         ]);
 
         $this->set(compact('advantage'));
@@ -58,7 +61,8 @@ class AdvantagesController extends AppController
             }
             $this->Flash->error(__('The advantage could not be saved. Please, try again.'));
         }
-        $this->set(compact('advantage'));
+        $branches = $this->Advantages->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('advantage', 'branches'));
     }
 
     /**
@@ -82,7 +86,8 @@ class AdvantagesController extends AppController
             }
             $this->Flash->error(__('The advantage could not be saved. Please, try again.'));
         }
-        $this->set(compact('advantage'));
+        $branches = $this->Advantages->Branches->find('list', ['limit' => 200]);
+        $this->set(compact('advantage', 'branches'));
     }
 
     /**

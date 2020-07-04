@@ -20,20 +20,38 @@ class HomeController extends AppController
     public function index()
     {
 
+
+        $galleriesTable = TableRegistry::getTableLocator()->get('Galleries');
+        $gallery = $galleriesTable->findByBranch_id($this->branchId);
+
         $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contentSection3 = $contentsTable->findByIdentifier('homepage-section3');
-        $contentSection3 = $contentSection3->toArray();
+        $contentHome = $contentsTable->findByBranch_idAndIdentifier($this->branchId, 'homepage' . $this->branchId);
+        $contentHome = $contentHome->toArray();
 
         $coursesTable = TableRegistry::getTableLocator()->get('Courses');
-        $courses = $coursesTable->find();
+        $courses = $coursesTable->findByBranch_id($this->branchId);
 
         $advantagesTable = TableRegistry::getTableLocator()->get('Advantages');
-        $advantages = $advantagesTable->find();
+        $advantages = $advantagesTable->findByBranch_id($this->branchId);
 
-        
-        //$home = $this->paginate($this->Home);
-
-        $this->set(compact('courses', 'advantages', 'contentSection3'));
+        $this->set(compact('courses', 'advantages', 'contentHome', 'gallery'));
     }
 
+    public function option($id = null)
+    {
+        $session = $this->request->getSession();
+        //$id = $session->read('Config.branch') ?? $id;
+
+        if($id == null) {
+            $branchesTable = TableRegistry::getTableLocator()->get('Branches');
+            $branches = $branchesTable->find();
+
+            $this->set(compact('branches'));
+        }
+        else {
+            $session->write('Config.branch', $id);
+
+            return $this->redirect(['action' => 'index']);
+        }
+    }
 }
