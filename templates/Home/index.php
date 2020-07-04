@@ -16,7 +16,7 @@
                     <div class="row">
                         <h2 class="col m10"><?= $gallery->title ?></h2>
                     </div>
-                    <a class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
+                    <a href="/training" class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
                 </div>
             </div>
             <?php endforeach; ?>
