@@ -31,6 +31,7 @@ $menuCell = $this->cell('HomeMenu');
 
     <?= $this->Html->script('/node_modules/materialize-css/dist/js/materialize.min.js') ?>
     <?= $this->Html->css('main.min.css') ?>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -52,7 +53,6 @@ $menuCell = $this->cell('HomeMenu');
             <div class="col s6 l4">
                 <p>Danalvial escuela de conducción automovilística</p>
                 <p>Dirección: <?= $branch[0]->address ?></p>
-                <p>Correo electrónico: </p>
                 <p>Horario: <?= $branch[0]->schedule ?></p>
             </div>
             <div class="col s6 l4">
