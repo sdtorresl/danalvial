@@ -22,9 +22,24 @@ class UsController extends AppController
         $branchesTable = TableRegistry::getTableLocator()->get('Branches');
         $branches = $branchesTable->find();
 
-        //$us = $this->paginate($this->Us);
+        $branches_historiesTable = TableRegistry::getTableLocator()->get('BranchesHistories');
+        $histories = $branches_historiesTable->findByBranch_id($this->branchId);
+        $histories = $histories->toArray();
 
-        $this->set(compact('branches'));
+        $this->set(compact('branches', 'histories'));
+    }
+
+    public function frequentQuestions()
+    {
+        $frequent_questionsTable = TableRegistry::getTableLocator()->get('FrequentQuestions');
+        $questions = $frequent_questionsTable->find();
+        $questions = $questions->toArray();
+
+        $contentsTable = TableRegistry::getTableLocator()->get('Contents');
+        $contentFrequentQuestions = $contentsTable->findByBranch_idAndIdentifier($this->branchId, 'frequent_questions' . $this->branchId);
+        $contentFrequentQuestions = $contentFrequentQuestions->toArray();
+
+        $this->set(compact('questions', "contentFrequentQuestions"));
     }
 
 }

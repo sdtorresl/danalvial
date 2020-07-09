@@ -1,34 +1,16 @@
 <?= $this->Html->script('/node_modules/aos/dist/aos.js') ?>
 <?= $this->Html->css('/node_modules/aos/dist/aos.css') ?>
 
-
-<div data-aos="fade-up">
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore inventore odit optio tenetur distinctio sapiente voluptatibus asperiores unde vel delectus dolores iusto nulla, molestiae ipsum omnis quisquam modi? Corporis, fugiat!
-</div>
-
-
-
-
-<div data-aos="fade-up">
-     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur unde ipsam sint doloremque minus. Eveniet eligendi hic dolorem delectus pariatur expedita aspernatur cumque animi ab quibusdam laboriosam, provident corporis repellat.
-</div>
-
-
-
-<div data-aos="fade-up">
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas itaque aspernatur ullam. Necessitatibus assumenda doloribus sed modi. Optio accusantium molestiae tenetur provident illum dolorem ratione quibusdam odit distinctio facilis.
-</div>
-
-
-
-<div data-aos="fade-up">
-     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident minima assumenda veniam odio nulla deleniti soluta suscipit reprehenderit optio atque consectetur obcaecati, ratione tenetur magnam tempora repellendus esse vitae animi.
-</div>
-
-
 <div id="us">
-     <section id="story">
-     
+     <section id="history">
+          <div class="container">
+               <?php foreach ($histories as $history): ?>
+               <div class="history_box" data-aos="zoom-in-up" >
+               <h3><?= $history->title ?></h3>
+               <p><?= $history->text ?></p>
+               </div>
+               <?php endforeach; ?>
+          </div>
      </section>
 
      <section id="branches">

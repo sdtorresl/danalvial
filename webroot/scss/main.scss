@@ -317,14 +317,8 @@ nav {
     
     #video-section {
         background-color: gray;
-        min-height: 500px;
-        background-size: 100% auto;
-    
-        h2 {
-            font-size: 4rem;
-            font-weight: 900;
-            color: white;
-        }
+        //min-height: 500px;
+        //background-size: 100% auto;
     } 
     
     #query-section {
@@ -358,6 +352,36 @@ nav {
 }
 
 #us {
+    
+    #history {
+        background-image: url('/img/road-us.png');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-attachment: fixed;
+        background-size: contain;//cover;
+        
+        .history_box {
+            border: 1px solid black; //BORRAR
+            padding: 0 15px 0 15px;
+            //margin: 150px 0;
+
+            h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .history_box:nth-child(2n-1) {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .history_box:nth-child(2n) {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+
     #branches {
         background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
         padding: 60px 0px;
@@ -389,6 +413,24 @@ nav {
                     width: 25px;
                 }
             }
+        }
+    }
+}
+
+#frequent-questions {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .content-section {
+        background-color: transparent;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        .collapsible-body {
+            background-color: white;
         }
     }
 }
@@ -517,6 +559,21 @@ footer {
         }
     }
 
+    #us {
+        #history {
+            .history_box:nth-child(2n-1) {
+                width: 45%;
+                margin-right: 55%;
+                margin-left: 0;
+            }
+            .history_box:nth-child(2n) {
+                width: 45%;
+                margin-left: 55%;
+                margin-right: 0;
+            }
+        }
+    }
+
     footer {
         #info-footer {
             padding: 15px 5%;
@@ -552,10 +609,19 @@ footer {
                 width: 530px !important;
             }
         }
-    
-        
-    
-        
+    }
+
+    #us {
+        #history {
+            .history_box:nth-child(2n-1) {
+                width: 40%;
+                margin-right: 60%;
+            }
+            .history_box:nth-child(2n) {
+                width: 40%;
+                margin-left: 60%;
+            }
+        }
     }
 }
 
