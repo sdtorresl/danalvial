@@ -16,7 +16,7 @@
                     <div class="row">
                         <h2 class="col m10"><?= $gallery->title ?></h2>
                     </div>
-                    <a href="/training" class="waves-effect waves-light btn center"><?= __('View categories') ?></a>
+                    <?= $this->Html->link(__('View categories'), ['controller' => 'training', 'action' => 'index'], ['class' => 'waves-effect waves-light btn center']) ?>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -42,15 +42,13 @@
         </div>
     </section>
 
-    <?php 
-    //$imagePath = str_replace(WWW_ROOT, '', $contentSection3[0]->primary_image_dir) . DS . $contentSection3[0]->primary_image;
-    //$imageURL = str_replace('\\', '/', $imagePath);
-    ?>
-    <section id="video-section" style="background-image: url('<?= $imageURL ?>');">
-        <!--<p><h2 class="center-align"><?= $contentSection3[0]->title ?></h2>-->
-        <!--<?php if (is_null($contentSection3[0]->text) == FALSE) : ?>-->
-            <!--<p><?= $contentSection3[0]->text ?></p>-->
-        <!--<?php endif; ?>-->
+    <section id="video-section">
+        <?= $this->Html->media('road-video.mp4', ['pathPrefix' => 'img/', ['autoplay'], 'width' => "100%"]) ?>
+        <div id="video-title">
+            <div id="video-title-pseudo">
+                <h2>¿Quieres aprender<br> a conducir?</h2>
+            </div>
+        </div>
     </section>
 
     <section id="query-section">

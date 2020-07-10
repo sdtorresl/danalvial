@@ -3,18 +3,18 @@
           <a href="#" class="brand-logo">Danalvial</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/home">Inicio</a></li>
-              <li><a href="/training">Formación de conductores</a></li>
-              <li><a href="/us">De dónde vengo yo</a></li>
-              <li><a href="/us/frequent-questions">Preguntas frecuentes</a></li>
-              <li><a href="">Contacto</a></li>
+              <li><?= $this->Html->link('Inicio', ['controller' => 'home', 'action' => 'index']) ?></li>
+              <li><?= $this->Html->link('Formación de conductores', ['controller' => 'training', 'action' => 'index']) ?></li>
+              <li><?= $this->Html->link('De dónde vengo yo', ['controller' => 'us', 'action' => 'index']) ?></li>
+              <li><?= $this->Html->link('Preguntas frecuentes', ['controller' => 'us', 'action' => 'frequentQuestions']) ?></li>
+              <li><?= $this->Html->link('Contacto', ['controller' => 'contacts', 'action' => 'index']) ?></li>
           </ul>
       </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
-      <li><a href="/home">Inicio</a></li>
-      <li><a href="/training">Formación de conductores</a></li>
-      <li><a href="/us">De dónde vengo yo</a></li>
-      <li><a href="/us/frequent-questions">Preguntas frecuentes</a></li>
-      <li><a href="">Contacto</a></li>
+      <li><?= $this->Html->link('Inicio', ['controller' => 'home', 'action' => 'index']) ?></li>
+      <li><?= $this->Html->link('Formación de conductores', ['controller' => 'training', 'action' => 'index']) ?></li>
+      <li><?= $this->Html->link('De dónde vengo yo', ['controller' => 'us', 'action' => 'index']) ?></li>
+      <li><?= $this->Html->link('Preguntas frecuentes', ['controller' => 'us', 'action' => 'frequentQuestions']) ?></li>
+      <li><?= $this->Html->link('Contacto', ['controller' => 'contacts', 'action' => 'index']) ?></li>
   </ul>

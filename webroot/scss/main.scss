@@ -320,9 +320,35 @@ nav {
     }
 
     #video-section {
-        background-color: gray;
-        //min-height: 500px;
-        //background-size: 100% auto;
+        position: relative;
+
+        #video-title {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            #video-title-pseudo {
+                position: relative;
+
+                h2 {
+                    color: white;
+                    font-weight: 900;
+                    font-size: 2rem;
+                    line-height: 130%;
+                }
+            }
+
+            #video-title-pseudo::after {
+                content: "";
+                position: absolute;
+                right: 30%;
+                left: 30%;
+                border: 3px solid $secondary-color;
+                top: -15px;
+            }
+        }
     }
 
     #query-section {
@@ -561,14 +587,32 @@ footer {
                 }
             }
         }
+        
+        #video-section {
+            #video-title {
+                top: 35%;
+
+                #video-title-pseudo {
+                    h2 {
+                        font-size: 4rem;
+                        line-height: 130%;
+                    }
+                }
+    
+                #video-title-pseudo::after {
+                    right: 30%;
+                    left: 30%;
+                    border: 5px solid $secondary-color;
+                    top: -15px;
+                }
+            }
+        }
 
         #query-section {
             .query-item {
                 width: 380px !important;
             }
         }
-
-
     }
 
     #training-page {
@@ -608,7 +652,7 @@ footer {
 
 // styles for medium screens and down
 @media #{$medium-and-down} {
-    
+
 }
 
 // styles for large screens and up
