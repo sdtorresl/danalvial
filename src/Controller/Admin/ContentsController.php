@@ -16,7 +16,7 @@ class ContentsController extends AppController
 {
     public function beforeFilter(EventInterface $event)
     {
-        $identifiers = ["homepage" => __("Home Page"), "training" => __("Training"), "frequent_questions" =>__("Frequent Questions")];
+        $identifiers = ["homepage" => __("Home Page"), "training" => __("Training"), "frequent_questions" =>__("Frequent Questions"), "contact_us" => __("Contact Us")];
 
         $this->set(compact('identifiers'));
     }

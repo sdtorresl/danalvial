@@ -24,15 +24,19 @@ html {
 h1 {
     font-size: 1.3rem;
 }
+
 h2 {
     font-size: 1.25rem;
 }
+
 h3 {
     font-size: 1.2rem;
 }
+
 h4 {
     font-size: 1.15rem;
 }
+
 h5 {
     font-size: 1.1rem;
 }
@@ -80,11 +84,11 @@ nav {
     .item:nth-child(4n-2) {
         background-color: #FC5F6D;
     }
-    
+
     .item:nth-child(4n-1) {
         background-color: #FF9800;
     }
-    
+
     .item:nth-child(4n) {
         background-color: #508941;
     }
@@ -122,7 +126,7 @@ nav {
         align-items: center;
 
         .content-text {
-    
+
             h2 {
                 font-size: 2.7rem;
                 font-weight: 900;
@@ -158,7 +162,7 @@ nav {
                 font-size: 6rem;
             }
         }
-        
+
         #reinforcement-info {
             h2 {
                 font-weight: bold;
@@ -191,7 +195,7 @@ nav {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        
+
         .course_item {
             display: flex;
             flex-direction: column;
@@ -229,18 +233,18 @@ nav {
 }
 
 #home-page {
-    
+
     #gallery-section {
         padding-bottom: 20px;
         background-color: $secondary-color;
-    
+
         .carousel {
             height: 600px;
-    
+
             .carousel-item {
                 padding-top: 60px;
                 padding-bottom: 60px;
-                
+
                 .carousel-content {
                     h2 {
                         font-size: 4rem;
@@ -251,21 +255,21 @@ nav {
             }
         }
     }
-    
+
     #advantages-section {
-        
+
         h2 {
             font-size: 2.5rem;
             font-weight: 900;
         }
-        
-        #advantages{
+
+        #advantages {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             margin: 50px 0px;
-    
+
             .advantage_item:nth-child(4n-3) {
                 background-color: #129DBE;
             }
@@ -288,10 +292,10 @@ nav {
                 width: 350px;
                 margin: 10px;
                 padding: 15px;
-        
+
                 .icon {
                     margin: 2rem 1rem 2rem 0rem;
-                    
+
                     i {
                         display: flex;
                         align-items: center;
@@ -300,35 +304,35 @@ nav {
                         width: 100px;
                     }
                 }
-    
+
                 h3 {
                     font-weight: bold;
                 }
-    
+
                 li {
                     list-style-type: disc;
                     margin-left: 15px;
                 }
             }
-            
+
         }
-    
+
     }
-    
+
     #video-section {
         background-color: gray;
         //min-height: 500px;
         //background-size: 100% auto;
-    } 
-    
+    }
+
     #query-section {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         margin: 50px 0px;
-        
-        
+
+
         .query-item {
             width: 350px;
             margin: 10px;
@@ -336,30 +340,30 @@ nav {
             padding-bottom: 90px;
             background-color: #F7F7F7;
             position: relative;
-            
+
             h2 {
                 font-size: 2.3rem;
                 font-weight: bold;
             }
-            
+
             a {
                 position: absolute;
                 bottom: 40px;
-                
+
             }
         }
     }
 }
 
 #us {
-    
+
     #history {
         background-image: url('/img/road-us.png');
         background-repeat: no-repeat;
         background-position: center bottom;
         background-attachment: fixed;
-        background-size: contain;//cover;
-        
+        background-size: contain; //cover;
+
         .history_box {
             border: 1px solid black; //BORRAR
             padding: 0 15px 0 15px;
@@ -375,6 +379,7 @@ nav {
             margin-left: 10%;
             margin-right: 10%;
         }
+
         .history_box:nth-child(2n) {
             width: 80%;
             margin-left: 10%;
@@ -391,6 +396,7 @@ nav {
             font-weight: bold;
             margin-bottom: 35px;
         }
+
         .item {
             width: 400px;
             padding: 20px 40px;
@@ -435,6 +441,20 @@ nav {
     }
 }
 
+#contact-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .content-section {
+        background-color: transparent;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+    }
+}
+
 #training-page {
     #step-by-step-section {
         width: 75%;
@@ -443,6 +463,7 @@ nav {
             font-size: 2.7rem;
             width: 90%;
         }
+
         .step-item {
             padding: 25px;
 
@@ -489,7 +510,7 @@ footer {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-    
+
             img {
                 margin: 20px 30px;
             }
@@ -498,16 +519,18 @@ footer {
 }
 
 
-@media #{$small-and-down} {// styles for small screens and down
+// styles for small screens and down
+@media #{$small-and-down} {
+
     #home-page {
         #advantages-section {
-            #advantages{    
+            #advantages {
                 .advantage_item {
                     width: 350px !important;
                 }
             }
         }
-    
+
         #query-section {
             .query-item {
                 width: 350px !important;
@@ -516,7 +539,8 @@ footer {
     }
 }
 
-@media #{$medium-and-up} { // styles for medium screens and larger
+// styles for medium screens and larger
+@media #{$medium-and-up} {
 
     #reinforcement-section {
         #reinforcement {
@@ -531,20 +555,20 @@ footer {
 
     #home-page {
         #advantages-section {
-            #advantages{    
+            #advantages {
                 .advantage_item {
                     width: 380px !important;
                 }
             }
         }
-        
+
         #query-section {
             .query-item {
                 width: 380px !important;
             }
         }
-    
-        
+
+
     }
 
     #training-page {
@@ -566,6 +590,7 @@ footer {
                 margin-right: 55%;
                 margin-left: 0;
             }
+
             .history_box:nth-child(2n) {
                 width: 45%;
                 margin-left: 55%;
@@ -581,11 +606,13 @@ footer {
     }
 }
 
-@media #{$medium-and-down} { // styles for medium screens and down
+// styles for medium screens and down
+@media #{$medium-and-down} {
     
 }
 
-@media #{$large-and-up} { // styles for large screens and up
+// styles for large screens and up
+@media #{$large-and-up} {
 
     #reinforcement-section {
         margin: 90px auto !important;
@@ -597,13 +624,13 @@ footer {
 
     #home-page {
         #advantages-section {
-            #advantages{    
+            #advantages {
                 .advantage_item {
                     width: 530px !important;
                 }
             }
         }
-    
+
         #query-section {
             .query-item {
                 width: 530px !important;
@@ -617,6 +644,7 @@ footer {
                 width: 40%;
                 margin-right: 60%;
             }
+
             .history_box:nth-child(2n) {
                 width: 40%;
                 margin-left: 60%;
@@ -625,6 +653,7 @@ footer {
     }
 }
 
-@media #{$extra-large-and-up} { // styles for extra large screens and up
-    
+// styles for extra large screens and up
+@media #{$extra-large-and-up} {
+
 }
