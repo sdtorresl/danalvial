@@ -6,6 +6,10 @@
         ?>
         <div id="" class="content-image col s12 m5 l6"
             style="background: url('<?= $imageURL . $contentTraining[0]->primary_image ?>') center center; background-size: cover;">
+            <div style="background: url('/img/mask_3.png');
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;"></div>
         </div>
         <div id="" class="content col s12 m7 l6">
             <div id="" class="content-text container">
