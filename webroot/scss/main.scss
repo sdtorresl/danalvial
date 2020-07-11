@@ -456,13 +456,21 @@ nav {
     .content-section {
         background-color: transparent;
 
+        .content-image {
+            min-height: 0;
+        }
+
         h2 {
             font-size: 2.5rem;
             font-weight: 900;
         }
 
-        .collapsible-body {
-            background-color: white;
+        .collapsible {
+            margin-top: 35px;
+
+            .collapsible-body {
+                background-color: white;
+            }
         }
     }
 }
@@ -474,9 +482,19 @@ nav {
     .content-section {
         background-color: transparent;
 
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
+        .content-image {
+            min-height: 0;
+        }
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    .form {
+        .row {
+            margin-bottom: 0;
         }
     }
 }
@@ -512,11 +530,13 @@ footer {
         padding: 15px;
         background-color: #373737;
         color: white;
+        font-size: 1rem;
+        line-height: 1;
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
-            margin: 0;
+            margin: 10px 0;
         }
     }
 
@@ -529,6 +549,7 @@ footer {
         P {
             font-weight: bold;
             font-size: 1.4rem;
+            margin: 5px auto;
         }
 
         #logos {
@@ -538,7 +559,8 @@ footer {
             justify-content: space-around;
 
             img {
-                margin: 20px 30px;
+                margin: 20px;
+                width: 130px;
             }
         }
     }
@@ -643,9 +665,33 @@ footer {
         }
     }
 
+    #frequent-questions {
+        .content-section {
+            .content-image {
+                min-height: 600px;
+            }
+        }
+    }
+
+    #contact-us {
+        .content-section {
+            .content-image {
+                min-height: 600px;
+            }
+        }
+    }
+
     footer {
         #info-footer {
-            padding: 15px 5%;
+            padding: 20px 10%;
+        }
+
+        #logos-footer {
+            #logos {
+                img {
+                    margin: 20px 25px;
+                }
+            }
         }
     }
 }
@@ -692,6 +738,23 @@ footer {
             .history_box:nth-child(2n) {
                 width: 40%;
                 margin-left: 60%;
+            }
+        }
+    }
+
+    footer {
+        #info-footer {
+            .col-pseudo {
+                position: relative;
+            }
+
+            .col-pseudo::after {
+                content: "";
+                position: absolute;
+                left: -30px;
+                border: 1px solid white;
+                top: 5px;
+                bottom: 5px;
             }
         }
     }

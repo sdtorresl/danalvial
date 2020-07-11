@@ -47,15 +47,15 @@ $menuCell = $this->cell('HomeMenu');
 
     <footer>
         <div id="info-footer" class="row">
-            <div class="col s12 l4">
+            <div class="col s12 m12 l4">
                 <h1>Danalvial</h1>
             </div>
-            <div class="col s6 l4">
+            <div class="col s12 m6 l4 col-pseudo">
                 <p>Danalvial escuela de conducción automovilística</p>
                 <p>Dirección: <?= $branch[0]->address ?></p>
                 <p>Horario: <?= $branch[0]->schedule ?></p>
             </div>
-            <div class="col s6 l4">
+            <div class="col s12 m6 l4">
                 <p><?= $branch[0]->location ?></p>
                 <p>© Danalvial. Todos los derechos reservados.2020</p>
             </div>
