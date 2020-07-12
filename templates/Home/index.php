@@ -21,7 +21,7 @@
                         <div class="row">
                             <h2 class="col m10"><?= $gallery->title ?></h2>
                         </div>
-                        <?= $this->Html->link(__('View categories'), ['controller' => 'training', 'action' => 'index'], ['class' => 'waves-effect waves-light btn center']) ?>
+                        <?= $this->Html->link(__('View categories'), ['controller' => 'courses', 'action' => 'index'], ['class' => 'waves-effect waves-light btn center']) ?>
                     </div>
                 </div>
             </div>
