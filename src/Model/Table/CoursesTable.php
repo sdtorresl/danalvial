@@ -89,9 +89,9 @@ class CoursesTable extends Table
             ->notEmptyString('short_description');
 
         $validator
-            ->scalar('long_description')
-            ->requirePresence('long_description', 'create')
-            ->notEmptyString('long_description');
+            ->scalar('profile')
+            ->requirePresence('profile', 'create')
+            ->notEmptyString('profile');
 
         $validator
             ->scalar('category')

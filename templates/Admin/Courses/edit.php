@@ -25,7 +25,7 @@ $this->loadHelper('Form', [
                         echo $this->Form->control('branch_id', ['options' => $branches]);
                         echo $this->Form->control('title');
                         echo $this->Form->control('short_description');
-                        echo $this->Form->control('long_description');
+                        echo $this->Form->control('profile');
                         echo $this->Form->control('category');
                         echo $this->Form->control('practical_time');
                         echo $this->Form->control('theoretical_time');

@@ -264,7 +264,7 @@ class Initial extends AbstractMigration
                 'limit' => 150,
                 'null' => false,
             ])
-            ->addColumn('long_description', 'text', [
+            ->addColumn('profile', 'text', [
                 'default' => null,
                 'limit' => null,
                 'null' => false,

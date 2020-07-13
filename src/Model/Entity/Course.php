@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property int $branch_id
  * @property string $title
  * @property string $short_description
- * @property string $long_description
+ * @property string $profile
  * @property string $category
  * @property string $type
  * @property string $schedule
@@ -47,7 +47,7 @@ class Course extends Entity
         'branch_id' => true,
         'title' => true,
         'short_description' => true,
-        'long_description' => true,
+        'profile' => true,
         'category' => true,
         'type' => true,
         'schedule' => true,

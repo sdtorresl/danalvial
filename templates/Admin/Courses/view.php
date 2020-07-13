@@ -29,8 +29,8 @@ $requirements = new Lexer($course->requirements);
                         <td><?= h($course->short_description) ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Long Description') ?></th>
-                        <td><?= h($course->long_description) ?></td>
+                        <th><?= __('Profile') ?></th>
+                        <td><?= h($course->profile) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Category') ?></th>
