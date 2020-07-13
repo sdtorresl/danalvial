@@ -66,6 +66,25 @@ figure {
     padding: 0;
 }
 
+.text-editor {
+    margin-bottom: 15px;
+
+    p {
+        color: #333;
+        font-size: 0.85rem;
+        margin-bottom: 5px !important;
+    }
+}
+
+.ul-default {
+    ul {
+        padding-left: 20px;
+        li {
+            list-style-type: initial !important;
+        }
+    }
+}
+
 .bg-red {
     background-color: $primary-red;
 }

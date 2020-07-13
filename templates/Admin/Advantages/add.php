@@ -26,7 +26,10 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('logo');
                     echo $this->Form->hidden('description');
                 ?>
-                <div id="editor"></div>
+                <div class="text-editor">
+                    <p><?= __('Description') ?></p>
+                    <div id="editor"></div>
+                </div>
                 <div class="form-submit d-flex jc-end">
                     <?= $this->Html->link(__('Cancel'), ['controller' => 'advantages', 'action' => 'index'], ['class' => ['btn', 'cancel']]) ?>
                     <?= $this->Form->button(__('Submit'), ['class' => 'btn']) ?>
@@ -41,7 +44,6 @@ $this->loadHelper('Form', [
 <script>
 var toolbarOptions = [
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['clean']                                         // remove formatting button
 ];
 

@@ -26,7 +26,7 @@ $description = new Lexer($advantage->description);
                     </tr>
                     <tr>
                         <th><?= __('Description') ?></th>
-                        <td><?= $description->render() ?></td>
+                        <td class="ul-default"><?= $description->render() ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Logo') ?></th>

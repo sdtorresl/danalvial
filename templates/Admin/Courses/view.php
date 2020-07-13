@@ -3,6 +3,11 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Course $course
  */
+
+use nadar\quill\Lexer;
+
+$requirements = new Lexer($course->requirements);
+
 ?>
 
 <section class="courses view card">
@@ -57,7 +62,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Requirements') ?></th>
-                        <td><?= h($course->requirements) ?></td>
+                        <td class="ul-default"><?= $requirements->render() ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Price') ?></th>

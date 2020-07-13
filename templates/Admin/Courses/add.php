@@ -10,6 +10,9 @@ $this->loadHelper('Form', [
 
 ?>
 
+<?= $this->Html->script('/node_modules/quill/dist/quill.min.js') ?>
+<?= $this->Html->css('/node_modules/quill/dist/quill.snow.css') ?>
+
 <section class="courses index card">
     <div class="card-content">
         <span class="card-title"><?=__('Add course') ?></span>
@@ -29,7 +32,13 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('type');
                     echo $this->Form->control('schedule');
                     echo $this->Form->control('medical_exam');
-                    echo $this->Form->control('requirements');
+                    echo $this->Form->hidden('requirements');
+                ?>
+                <div class="text-editor">
+                    <p><?= __('Requirements') ?></p>
+                    <div id="editor"></div>
+                </div>
+                <?php
                     echo $this->Form->control('price');
                     echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image')]);
                 ?>
@@ -43,3 +52,30 @@ $this->loadHelper('Form', [
         </div>
     </div>
 </section>
+
+<script>
+var toolbarOptions = [
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    ['clean']                                         // remove formatting button
+];
+
+var quill = new Quill('#editor', {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+});
+
+var form = document.querySelector('form');
+form.onsubmit = function() {
+    // Populate hidden form on submit
+    var requirements = document.querySelector('input[name=requirements]');
+    requirements.value = JSON.stringify(quill.getContents());
+    
+    console.log("Submitted", $(form).serialize(), $(form).serializeArray());
+    
+    // No back end to actually submit to!
+    alert('Open the console to see the submit data!')
+    return false;
+};
+</script>

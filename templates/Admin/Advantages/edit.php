@@ -43,7 +43,6 @@ $this->loadHelper('Form', [
 <script>
 var toolbarOptions = [
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    ['bold', 'italic', 'underline', 'strike'], // toggled buttons
     ['clean']                                // remove formatting button
     ];
 
