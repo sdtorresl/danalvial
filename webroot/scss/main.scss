@@ -45,6 +45,16 @@ strong {
     font-weight: 900;
 }
 
+.ul-default {
+    ul {
+        padding-left: 20px;
+
+        li {
+            list-style-type: initial !important;
+        }
+    }
+}
+
 nav {
     background: white;
     color: $primary-dark;
@@ -522,6 +532,82 @@ nav {
     }
 }
 
+#course-page {
+    .content-section {
+        .content-text {
+            font-size: 1.2rem;
+    
+            .category {
+                color: $primary-color;
+                font-size: 5rem;
+                font-weight: 900;
+            }
+    
+            h2 {
+                font-size: 2.5rem;
+            }
+    
+            i {
+                font-size: 1.5rem;
+                width: 30px;
+                margin: 0.4rem;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .container {
+        padding: 50px 0;
+        h3 {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        #graduate {
+            background-color: #FC5F6D;
+            color: white;
+            padding: 20px 35px;
+
+            h3 {
+                //margin: 0;
+            }
+        }
+    }
+
+    .item-wrap {
+        background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
+        padding: 40px 0;
+
+        .item {
+            background-color: white;
+            padding: 0 30px;
+            padding-bottom: 25px;
+            width: 380px;
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+    }
+
+    #course-schedule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        margin-left: 5%;
+        margin-right: 5%;
+
+        h3 {
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 35px;
+            max-width: 550px;
+            text-align: center;
+        }
+    }
+}
+
 footer {
 
     #info-footer {
@@ -641,6 +727,14 @@ footer {
             width: 85%;
         }
     }
+
+    #course-page {
+        .container {
+            #graduate {
+                padding: 20px 50px;
+            }
+        }
+    }    
 
     #content-section {
         #content {

@@ -29,4 +29,13 @@ class CoursesController extends AppController
 
         $this->set(compact('contentCourses', 'courses'));
     }
+
+    public function course($id = null)
+    {
+        $coursesTable = TableRegistry::getTableLocator()->get('Courses');
+        $course = $coursesTable->findByBranch_idAndId($this->branchId, $id);
+        $course = $course->toArray();
+
+        $this->set(compact('course'));
+    }
 }

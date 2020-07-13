@@ -25,7 +25,13 @@ $this->loadHelper('Form', [
                         echo $this->Form->control('branch_id', ['options' => $branches]);
                         echo $this->Form->control('title');
                         echo $this->Form->control('short_description');
-                        echo $this->Form->control('profile');
+                        echo $this->Form->hidden('profile');
+                        ?>
+                        <div class="text-editor">
+                            <p><?= __('Profile') ?></p>
+                            <div id="editor2"></div>
+                        </div>
+                        <?php
                         echo $this->Form->control('category');
                         echo $this->Form->control('practical_time');
                         echo $this->Form->control('theoretical_time');
@@ -37,7 +43,7 @@ $this->loadHelper('Form', [
                         ?>
                         <div class="text-editor">
                             <p><?= __('Requirements') ?></p>
-                            <div id="editor"></div>
+                            <div id="editor1"></div>
                         </div>
                         <?php
                         echo $this->Form->control('price');
@@ -60,20 +66,31 @@ var toolbarOptions = [
     ['clean']                                         // remove formatting button
 ];
 
-var quill = new Quill('#editor', {
+var quill1 = new Quill('#editor1', {
     modules: {
         toolbar: toolbarOptions
     },
     theme: 'snow'
 });
 
-quill.setContents(<?= $course->requirements ?>);
+var quill2 = new Quill('#editor2', {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+});
+
+quill1.setContents(<?= $course->requirements ?>);
+quill2.setContents(<?= $course->profile ?>);
 
 var form = document.querySelector('form');
 form.onsubmit = function() {
     // Populate hidden form on submit
     var requirements = document.querySelector('input[name=requirements]');
-    requirements.value = JSON.stringify(quill.getContents());
+    requirements.value = JSON.stringify(quill1.getContents());
+
+    var profile = document.querySelector('input[name=profile]');
+    profile.value = JSON.stringify(quill2.getContents());
     
     console.log("Submitted", $(form).serialize(), $(form).serializeArray());
     

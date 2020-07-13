@@ -7,6 +7,7 @@
 use nadar\quill\Lexer;
 
 $requirements = new Lexer($course->requirements);
+$profile = new Lexer($course->profile);
 
 ?>
 
@@ -30,7 +31,7 @@ $requirements = new Lexer($course->requirements);
                     </tr>
                     <tr>
                         <th><?= __('Profile') ?></th>
-                        <td><?= h($course->profile) ?></td>
+                        <td class="ul-default"><?= $profile->render() ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Category') ?></th>

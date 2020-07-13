@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="course-button">
-                <a class="waves-effect waves-light btn center">Ver más información</a>
+                <?= $this->Html->link(__('View more info'), ['controller' => 'courses', 'action' => 'course', $course->id], ['class' => 'waves-effect waves-light btn center']) ?>
             </div>
         </div>
         <?php endforeach; ?>
