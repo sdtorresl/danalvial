@@ -55,11 +55,13 @@ strong {
     }
 }
 
+.mask {
+    background-size: 100% auto;
+}
+
 nav {
     background: white;
     color: $primary-dark;
-    height: 50px;
-    line-height: 50px;
 
     i {
         color: $primary-dark;
@@ -191,7 +193,7 @@ nav {
 
 #courses-section {
     background: radial-gradient(circle, #00A8F9 0%, #00287C 100%);
-    padding: 40px 0;
+    padding: 10px 5% 40px 5%;
 
     #course-header {
         font-size: 2.7rem;
@@ -249,16 +251,16 @@ nav {
         background-color: $secondary-color;
 
         .carousel {
-            height: 600px;
+            height: 500px;
 
             .carousel-item {
                 padding-top: 60px;
 
                 .carousel-content {
                     h2 {
-                        font-size: 4rem;
+                        font-size: 3.2rem;
                         font-weight: 900;
-                        line-height: 70px;
+                        line-height: 60px;
                     }
                 }
             }
@@ -266,6 +268,7 @@ nav {
     }
 
     #advantages-section {
+        padding-top: 30px;
 
         h2 {
             font-size: 2.5rem;
@@ -464,6 +467,8 @@ nav {
 
     .content-section {
         background-color: transparent;
+        position: relative;
+        z-index: 1;
 
         .content-image {
             min-height: 0;
@@ -472,15 +477,32 @@ nav {
         h2 {
             font-size: 2.5rem;
             font-weight: 900;
+            margin-bottom: 40px;
         }
 
         .collapsible {
             margin-top: 35px;
 
+            .collapsible-header {
+                background-color: #F7F7F7;
+            }
+
             .collapsible-body {
                 background-color: white;
             }
         }
+    }
+
+    .content-section::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.8;
     }
 }
 
@@ -490,15 +512,30 @@ nav {
 
     .content-section {
         background-color: transparent;
+        position: relative;
+        z-index: 1;
 
         .content-image {
             min-height: 0;
         }
     }
 
+    .content-section::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.8;
+    }
+
     h2 {
         font-size: 2.5rem;
         font-weight: 900;
+        margin-bottom: 40px;
     }
 
     .form {
@@ -683,10 +720,21 @@ footer {
     }
 
     #courses-section {
-        padding: 70px 10%;
+        padding: 10px 10% 60px 10%;
     }
 
     #home-page {
+        #gallery-section {
+            .carousel {
+                .carousel-content {
+                    h2 {
+                        font-size: 4rem !important;
+                        line-height: 70px !important;
+                    }
+                }
+            }
+        }
+
         #advantages-section {
             #advantages {
                 .advantage_item {
@@ -802,10 +850,16 @@ footer {
     }
 
     #courses-section {
-        padding: 100px 10%;
+        padding: 50px 10% 80px 10%;
     }
 
     #home-page {
+        #gallery-section {
+            .carousel {
+                height: 600px !important;
+            }
+        }
+
         #advantages-section {
             #advantages {
                 .advantage_item {

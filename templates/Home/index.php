@@ -12,11 +12,11 @@
             $galleryImageURL = str_replace('\\', '/', $galleryImagePath);
             ?>
             <div class="carousel-item white-text" style="background: url('<?= $galleryImageURL . $gallery->image ?>') center center; background-size: cover;">
-                <div style="background: url('/img/mask_1.png');
+                <div style="background-image: url('/img/mask_1.png');
                     height: 100%;
                     background-repeat: no-repeat;
                     background-position: bottom right;
-                    background-size: 40% 55%;">
+                    background-size: 40% auto;">
                     <div class="carousel-content left-align container">
                         <div class="row">
                             <h2 class="col m10"><?= $gallery->title ?></h2>
@@ -80,10 +80,9 @@
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
         <div id="" class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentHome[0]->primary_image ?>') center center; background-size: cover;">
-            <div style="background: url('/img/mask_2.png');
+            <div class="mask" style="background-image: url('/img/mask_2.png');
                     height: 100%;
-                    background-repeat: no-repeat;
-                    background-size: 100% 100%;"></div>
+                    background-repeat: no-repeat;"></div>
         </div>
         <div id="" class="content col s12 m7 l6">
             <div id="" class="content-text container">

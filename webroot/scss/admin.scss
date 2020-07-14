@@ -389,15 +389,20 @@ section.card {
 
     .card-content {
         table {
-
             overflow-x: scroll;
 
             tbody {
-
                 tr {
                     &:hover {
                         cursor: pointer;
                         background-color: rgba($color: $primary-red, $alpha: 0.1);
+                    }
+                }
+
+                td {
+                    .materialboxed {
+                        width: 100%;
+                        max-width: 300px;
                     }
                 }
             }
@@ -461,6 +466,7 @@ section.card {
 
         .btn {
             width: 100%;
+            margin: 0;
         }
     }
 
