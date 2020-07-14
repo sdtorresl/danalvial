@@ -3,6 +3,8 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Contact[]|\Cake\Collection\CollectionInterface $contacts
  */
+$no_check = '<i class="fas fa-minus-square" style="color: gray;"></i>';
+$check = '<i class="fas fa-check-square" style="color: green;"></i>';
 ?>
 
 <section class="contacts index card">
@@ -33,7 +35,17 @@
                     <td><?= $contact->has('course') ? $this->Html->link($contact->course->title, ['controller' => 'Courses', 'action' => 'view', $contact->course->id]) : '' ?></td>
                     <td><?= $contact->has('branch') ? $this->Html->link($contact->branch->name, ['controller' => 'Branches', 'action' => 'view', $contact->branch->id]) : '' ?></td>
                     <td><?= h($contact->created) ?></td>
-                    <td><?= $this->Number->format($contact->viewed) ?></td>
+                    <td>
+                    <?php
+                    if($contact->viewed=='0') {
+                        $view_icon = $no_check;
+                    }
+                    else {
+                        $view_icon  = $check;
+                    }
+                    ?>
+                    <?= $view_icon ?>
+                    </td>
 
                     <td class="actions">
                         <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $contact->id], ['escape' => false, 'title' => __('View')] ) ?>

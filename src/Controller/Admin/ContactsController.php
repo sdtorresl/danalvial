@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\ORM\Locator\LocatorAwareTrait;
 
 /**
  * Contacts Controller
@@ -37,6 +38,12 @@ class ContactsController extends AppController
      */
     public function view($id = null)
     {
+        // viewed message
+        $contactViewTable = $this->getTableLocator()->get('Contacts');
+        $contactView = $contactViewTable->find('all')->where(['id' => $id])->first();
+        $contactView->viewed = '1';
+        $contactViewTable->save($contactView);
+
         $contact = $this->Contacts->get($id, [
             'contain' => ['Courses', 'Branches'],
         ]);

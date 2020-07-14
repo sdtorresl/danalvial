@@ -3,6 +3,9 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Contact $contact
  */
+
+$no_check = '<i class="fas fa-minus-square" style="color: gray;"></i>';
+$check = '<i class="fas fa-check-square" style="color: green;"></i>';
 ?>
 
 <section class="contacts view card">
@@ -40,10 +43,6 @@
                         <th><?= __('Branch') ?></th>
                         <td><?= $contact->has('branch') ? $this->Html->link($contact->branch->name, ['controller' => 'Branches', 'action' => 'view', $contact->branch->id]) : '' ?>
                         </td>
-                    </tr>
-                    <tr>
-                        <th><?= __('Viewed') ?></th>
-                        <td><?= $this->Number->format($contact->viewed) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
