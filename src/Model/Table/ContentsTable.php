@@ -58,11 +58,6 @@ class ContentsTable extends Table
                 'file' => 'primary_image',
                 'file_dir' => 'primary_image_dir',
                 'file_type' => 'primary_image_type'
-            ],
-            'secondary_image' => [
-                'file' => 'secondary_image',
-                'file_dir' => 'secondary_image_dir',
-                'file_type' => 'secondary_image_type'
             ]
         ]);
     }
@@ -111,22 +106,6 @@ class ContentsTable extends Table
         $validator
             ->maxLength('primary_image_type', 45)
             ->allowEmptyString('primary_image_type');
-
-        $validator
-            ->requirePresence('secondary_image', 'create')
-            ->allowEmptyFile('secondary_image');
-
-        $validator
-            ->maxLength('secondary_image_dir', 255)
-            ->allowEmptyString('secondary_image_dir');
-
-        $validator
-            ->maxLength('secondary_image_size', 45)
-            ->allowEmptyString('secondary_image_size');
-
-        $validator
-            ->maxLength('secondary_image_type', 45)
-            ->allowEmptyString('secondary_image_type');
 
         return $validator;
     }

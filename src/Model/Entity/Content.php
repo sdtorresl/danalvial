@@ -16,10 +16,6 @@ use Cake\ORM\Entity;
  * @property string|null $primary_image_dir
  * @property string|null $primary_image_size
  * @property string|null $primary_image_type
- * @property string|null $secondary_image
- * @property string|null $secondary_image_dir
- * @property string|null $secondary_image_size
- * @property string|null $secondary_image_type
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
@@ -42,10 +38,6 @@ class Content extends Entity
         'primary_image_dir' => true,
         'primary_image_size' => true,
         'primary_image_type' => true,
-        'secondary_image' => true,
-        'secondary_image_dir' => true,
-        'secondary_image_size' => true,
-        'secondary_image_type' => true,
         'created' => true,
         'modified' => true,
         'branch_id' => true,
