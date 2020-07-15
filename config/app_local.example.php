@@ -90,4 +90,12 @@ return [
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
     ],
+
+    /*
+     * reCaptcha keys.
+     */
+    'reCaptchaKeys' => [
+        'secret' => 'reCAPTCHA_secret_key',
+        'site_key' => 'reCAPTCHA_site_key',
+    ],
 ];

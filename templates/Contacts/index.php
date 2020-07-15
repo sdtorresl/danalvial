@@ -8,6 +8,9 @@ $this->loadHelper('Form', [
     'templates' => 'MaterializeTheme.materialize_form',
 ]);
 
+use Cake\Core\Configure;
+use Cake\Core\Configure\Engine\PhpConfig;
+
 ?>
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -20,7 +23,7 @@ $this->loadHelper('Form', [
                     <h2><?= $contentContactUs[0]->title ?></h2>
                     <p><?= $contentContactUs[0]->text ?></p>
                 </div>
-                <?= $this->Form->create($contact, ['class' => 'form']) ?>
+                <?= $this->Form->create($contact, ['class' => 'form', 'id' => 'contacts-form']) ?>
                 <?php
                     echo $this->Form->control('first_name');
                     echo $this->Form->control('last_name');
@@ -33,7 +36,7 @@ $this->loadHelper('Form', [
                 <div class="form-submit d-flex jc-end">
                     <?= $this->Form->button(__('Submit'), [
                         'class' => 'btn g-recaptcha',
-                        'data-sitekey' => 'reCAPTCHA_site_key', /* CHANGE */
+                        'data-sitekey' => Configure::read('reCaptchaKeys.site_key'),
                         'data-callback' => 'onSubmit',
                         'data-action' => 'submit'
                     ]) ?>
@@ -55,6 +58,6 @@ $this->loadHelper('Form', [
 
 <script>
     function onSubmit(token) {
-        document.getElementById("demo-form").submit();
+        document.getElementById("contacts-form").submit();
     }
 </script>
