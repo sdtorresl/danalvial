@@ -11,6 +11,7 @@
                </div>
                <?php endforeach; ?>
           </div>
+          <div id='welcome-banner'></div>
      </section>
 
      <section id="branches">
