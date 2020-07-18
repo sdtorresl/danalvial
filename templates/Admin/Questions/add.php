@@ -20,7 +20,7 @@ $this->loadHelper('Form', [
                 <?php
                     echo $this->Form->control('test_id', ['options' => $tests, 'value' => $test_id, 'disabled']);
                     echo $this->Form->control('question');
-                    echo $this->Form->control('category');
+                    echo $this->Form->control('category', ['options' => $categories]);
                     echo $this->Form->control('title');
                     echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image')]);
                 ?>

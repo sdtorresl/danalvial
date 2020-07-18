@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\EventInterface;
 
 /**
  * Questions Controller
@@ -13,6 +14,13 @@ use App\Controller\AppController;
  */
 class QuestionsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        $categories = ["category1" => __("category 1"), "category2" => __("category 2"), "category3" => __("category 3"), "category4" => __("category 4")];
+
+        $this->set(compact('categories'));
+    }
+
     /**
      * Index method
      *

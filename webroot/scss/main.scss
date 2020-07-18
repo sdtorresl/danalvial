@@ -74,6 +74,26 @@ nav {
     }
 }
 
+.table-style {
+    max-width: 800px;
+    margin-left:auto; 
+    margin-right:auto;
+
+    tr {
+        border: 2px solid rgba(0,0,0,0.12);
+
+        th {
+            background-color: $primary-color;
+            color: white;
+            padding: 20px 15px;
+        }
+
+        td {
+            padding: 15px;
+        }
+    }
+}
+
 #branches-options {
     p {
         font-size: 2.3rem;
@@ -510,7 +530,7 @@ nav {
         right: 0;
         left: 0;
         background-color: white;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 }
 
@@ -537,7 +557,7 @@ nav {
         right: 0;
         left: 0;
         background-color: white;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     h2 {
@@ -649,6 +669,66 @@ nav {
             margin-bottom: 35px;
             max-width: 550px;
             text-align: center;
+        }
+    }
+}
+
+#test {
+    padding: 15px;
+
+    .test-item {
+        margin: 15px auto 15px auto;
+        background-color: #F7F7F7;
+        border-radius: 5px;
+        padding: 40px 8%;
+        max-width: 800px;
+
+        .test-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .question {
+            font-weight: bold;
+        }
+        label {
+            color: black;
+        }
+    }
+}
+
+#test-results {
+    padding: 70px 6% 100px 6%;
+
+    #result-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        padding: 20px 15px;
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
+    }
+
+    #result-title::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    table {
+        th {
+            font-size: 1.2rem;
+        }
+
+        td {
+            background-color: white;
         }
     }
 }
@@ -836,6 +916,14 @@ footer {
         }
     }
 
+    #test-results {
+        table {
+            th {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
     footer {
         #info-footer {
             padding: 20px 10%;
@@ -902,6 +990,12 @@ footer {
                 width: 40%;
                 margin-left: 60%;
             }
+        }
+    }
+
+    #test {
+        .test-item {
+            padding: 40px 5%;
         }
     }
 

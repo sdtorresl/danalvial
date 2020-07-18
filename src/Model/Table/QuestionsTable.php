@@ -97,7 +97,7 @@ class QuestionsTable extends Table
 
         $validator
             ->requirePresence('image', 'create')
-            ->notEmptyFile('image');
+            ->allowEmptyFile('image');
 
         $validator
             ->maxLength('image_dir', 255)
