@@ -414,18 +414,18 @@ nav {
 }
 
 #us {
-
     #history {
         background-image: url('/img/road-us.png');
         background-repeat: repeat-y;
         background-position: center bottom;
-        background-attachment: fixed;
         background-size: 90% auto;
+        padding-top: 5rem;
 
         .history_box {
-            border: 1px solid black; //BORRAR
-            padding: 0 15px 0 15px;
-            //margin: 150px 0;
+            padding: 5px 25px 15px 25px;
+            border-radius: 15px;
+            background-color: #f4f4f4;
+            margin-bottom: 5rem;
 
             h3 {
                 font-size: 1.8rem;
@@ -447,7 +447,7 @@ nav {
         #welcome-banner {
             background-image: url('/img/road-us_2.png');
             background-repeat: no-repeat;
-            height: 100px;
+            height: 130px;
             background-position: bottom;
             background-size: auto 100%;
         }
@@ -861,6 +861,10 @@ footer {
     #us {
         #history {
             background-size: 80% auto;
+
+            #welcome-banner {
+                height: 160px;
+            }
         }
     }
 

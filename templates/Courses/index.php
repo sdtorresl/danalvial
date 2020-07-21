@@ -1,18 +1,18 @@
 <section id="courses-page">
-    <section id="" class="content-section row">
+    <section class="content-section row">
         <?php 
         $imagePath = str_replace(WWW_ROOT, '', $contentCourses[0]->primary_image_dir) . DS;
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
-        <div id="" class="content-image col s12 m5 l6"
+        <div class="content-image col s12 m5 l6"
             style="background: url('<?= $imageURL . $contentCourses[0]->primary_image ?>') center center; background-size: cover;">
             <div style="background: url('/img/mask_3.png');
                     height: 100%;
                     background-repeat: no-repeat;
                     background-size: 100% 100%;"></div>
         </div>
-        <div id="" class="content col s12 m7 l6">
-            <div id="" class="content-text container">
+        <div class="content col s12 m7 l6">
+            <div class="content-text container">
                 <h2><?= $contentCourses[0]->title ?></h2>
                 <p><?= $contentCourses[0]->text ?></p>
             </div>

@@ -5,9 +5,9 @@
      <section id="history">
           <div class="container">
                <?php foreach ($histories as $history): ?>
-               <div class="history_box" data-aos="zoom-in-up" >
-               <h3><?= $history->title ?></h3>
-               <p><?= $history->text ?></p>
+               <div class="history_box z-depth-2" data-aos="zoom-in-up" >
+                    <h3><?= $history->title ?></h3>
+                    <p><?= $history->text ?></p>
                </div>
                <?php endforeach; ?>
           </div>

@@ -49,7 +49,7 @@
     </section>
 
     <section id="video-section">
-        <?= $this->Html->media('road-video.mp4', ['pathPrefix' => 'img/', ['autoplay'], 'width' => "100%"]) ?>
+        <?= $this->Html->media('road-video.mp4', ['pathPrefix' => 'img/', 'autoplay', 'loop', 'muted', 'width' => "100%"]) ?>
         <div id="video-title">
             <div id="video-title-pseudo">
                 <h2>¿Quieres aprender<br> a conducir?</h2>
@@ -74,18 +74,18 @@
 
     <?= $this->element('reinforcement') ?>
 
-    <section id="" class="content-section row">
+    <section class="content-section row">
         <?php 
         $imagePath = str_replace(WWW_ROOT, '', $contentHome[0]->primary_image_dir) . DS;
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
-        <div id="" class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentHome[0]->primary_image ?>') center center; background-size: cover;">
+        <div class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $contentHome[0]->primary_image ?>') center center; background-size: cover;">
             <div class="mask" style="background-image: url('/img/mask_2.png');
                     height: 100%;
                     background-repeat: no-repeat;"></div>
         </div>
-        <div id="" class="content col s12 m7 l6">
-            <div id="" class="content-text container">
+        <div class="content col s12 m7 l6">
+            <div class="content-text container">
                 <h2><?= $contentHome[0]->title ?></h2>
                 <p><?= $contentHome[0]->text ?></p>
                 <a class="waves-effect waves-light btn center"><?= __('Take a theoretical test') ?></a>
