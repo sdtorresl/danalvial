@@ -81,9 +81,19 @@ $menuCell = $this->cell('HomeMenu');
                 fullWidth: true,
                 indicators: true
             });
-        });
-        
 
+            autoplay(instances);
+        });
+
+        function autoplay(instances) {
+            for (let index = 0; index < instances.length; index++) {
+                const instance = instances[index];
+                instance.next();
+            }
+
+            setTimeout(autoplay, 6000, instances);
+            console.log('esa 2');
+        }
     </script>
 
 </body>
