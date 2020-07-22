@@ -7,17 +7,13 @@
 
 <section class="questions view card">
     <div class="card-content">
-        <span class="card-title"><?= h($question->title) ?></span>
+        <span class="card-title"><?= h($question->question) ?></span>
         <div class="row">
             <div class="col s12">
                 <table>
                     <tr>
                         <th><?= __('Test') ?></th>
                         <td><?= $question->has('test') ? $this->Html->link($question->test->name, ['controller' => 'Tests', 'action' => 'view', $question->test->id]) : '' ?></td>
-                    </tr>
-                    <tr>
-                        <th><?= __('Question') ?></th>
-                        <td><?= h($question->question) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Category') ?></th>
@@ -47,7 +43,7 @@
                     <div class="table-responsive">
                         <table>
                             <tr>
-                                <th><?= __('Question') ?></th>
+                                <th><?= __('Answer') ?></th>
                                 <th><?= __('Status') ?></th>
                                 <th><?= __('Created') ?></th>
                                 <th><?= __('Modified') ?></th>
@@ -57,16 +53,16 @@
                             <tr>
                                 <td><?= h($answers->answer) ?></td>
                                 <td>
-                                    <?php if ($answers->result == TRUE) : ?>
-                                    Incorrect
+                                    <?php if ($answers->result == FALSE) : ?>
+                                    Incorrecta
                                     <?php else : ?>
-                                    Correct
+                                    Correcta
                                     <?php endif; ?>
                                 </td>
                                 <td><?= h($answers->created) ?></td>
                                 <td><?= h($answers->modified) ?></td>
                                 <td class="actions">
-                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Answers', 'action' => 'edit', $answers->id]) ?>
+                                    <?= $this->Html->link('<i class="fal fa-eye"></i>', ['controller' => 'Answers', 'action' => 'view', $answers->id], ['escape' => false, 'title' => __('View')] ) ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

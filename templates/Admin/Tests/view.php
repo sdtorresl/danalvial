@@ -16,10 +16,6 @@
                         <td><?= $test->has('branch') ? $this->Html->link($test->branch->name, ['controller' => 'Branches', 'action' => 'view', $test->branch->id]) : '' ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Name') ?></th>
-                        <td><?= h($test->name) ?></td>
-                    </tr>
-                    <tr>
                         <th><?= __('Description') ?></th>
                         <td><?= h($test->description) ?></td>
                     </tr>
@@ -46,7 +42,7 @@
                                 <td><?= h($questions->created) ?></td>
                                 <td><?= h($questions->modified) ?></td>
                                 <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['controller' => 'Questions', 'action' => 'view', $questions->id]) ?>
+                                    <?= $this->Html->link('<i class="fal fa-eye"></i>', ['controller' => 'Questions', 'action' => 'view', $questions->id], ['escape' => false, 'title' => __('View')] ) ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

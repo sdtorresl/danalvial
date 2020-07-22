@@ -7,7 +7,7 @@
 
 <section class="answers view card">
     <div class="card-content">
-        <span class="card-title"><?= h($answer->id) ?></span>
+        <span class="card-title"><?= h($answer->answer) ?></span>
         <div class="row">
             <div class="col s12">
                 <table>
@@ -17,16 +17,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <th><?= __('Answer') ?></th>
-                        <td><?= h($answer->answer) ?></td>
-                    </tr>
-                    <tr>
-                        <th><?= __('Id') ?></th>
-                        <td><?= $this->Number->format($answer->id) ?></td>
-                    </tr>
-                    <tr>
                         <th><?= __('Result') ?></th>
-                        <td><?= $this->Number->format($answer->result) ?></td>
+                        <td>
+                            <?php if ($answer->result == FALSE) : ?>
+                            Incorrecta
+                            <?php else : ?>
+                            Correcta
+                            <?php endif; ?>
+                        </td>
+                    </td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
@@ -45,7 +44,7 @@
             <div class="d-flex jc-end">
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $answer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $answer->id), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $answer->id], ['class' => 'btn']) ?>
-                <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
+                <?= $this->Html->link(__('Cancel'), ['controller' => 'Questions', 'action' => 'view', $answer->question_id], ['class' => 'btn']) ?>
             </div>
         </div>
     </div>
