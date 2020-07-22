@@ -65,9 +65,9 @@ $profile = new Lexer($course[0]->profile);
             <?= $this->Html->link(__('Download content'), ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
         </div>
         <div class="item">
-            <h3>Obtén tu certificado</h3>
-            <p>Si ya realizaste el curso con nosotros puedes descargar tu certificado aquí.</p>
-            <?= $this->Html->link(__('Download my certificate'), ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
+            <h3>Test de prueba</h3>
+            <p>Si eres uno de nuestros estudiantes puedes tomar tu test de prueba aquí.</p>
+            <?= $this->Html->link('Realizar Test', ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
         </div>
     </section>
     

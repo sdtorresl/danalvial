@@ -718,6 +718,45 @@ nav {
     }
 }
 
+#student-login {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .content-section {
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
+
+        .content-image {
+            min-height: 0;
+        }
+    }
+
+    .content-section::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 40px;
+    }
+
+    .form {
+        .row {
+            margin-bottom: 0;
+        }
+    }
+}
+
 #test {
     padding: 15px;
 
@@ -966,6 +1005,14 @@ footer {
     }
 
     #contact-us {
+        .content-section {
+            .content-image {
+                min-height: 600px;
+            }
+        }
+    }
+
+    #student-login {
         .content-section {
             .content-image {
                 min-height: 600px;
