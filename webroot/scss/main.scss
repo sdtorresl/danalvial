@@ -63,6 +63,10 @@ nav {
     background: white;
     color: $primary-dark;
 
+    .brand-logo {
+        padding: 0 30px;
+    }
+
     i {
         color: $primary-dark;
     }
@@ -72,6 +76,10 @@ nav {
             color: $primary-dark;
         }
     }
+}
+
+.sidenav-overlay {
+    z-index: 996;
 }
 
 #social-media {
