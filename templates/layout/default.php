@@ -16,6 +16,7 @@
 
 $cakeDescription = 'Danalvial';
 $menuCell = $this->cell('HomeMenu');
+$socialCell = $this->cell('SocialMedia');
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +42,7 @@ $menuCell = $this->cell('HomeMenu');
 <body>
     <?= $menuCell ?>
     <main class="main">
+        <?= $socialCell ?>
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </main>
@@ -90,9 +92,7 @@ $menuCell = $this->cell('HomeMenu');
                 const instance = instances[index];
                 instance.next();
             }
-
             setTimeout(autoplay, 6000, instances);
-            console.log('esa 2');
         }
     </script>
 

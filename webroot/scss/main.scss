@@ -74,6 +74,43 @@ nav {
     }
 }
 
+#social-media {
+    position: fixed;
+    z-index: 50;
+    bottom: 0;
+    right: 0;
+    border-radius: 3px;
+    background-color: #FC5F6D;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+
+    .social-icon {
+        height: 1.3rem;
+        width: 1.3rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: 5px;
+    }
+
+    #facebook {
+        background-image: url('/img/facebook.png');
+    }
+
+    #youtube {
+        background-image: url('/img/youtube.png');
+    }
+
+    #twitter {
+        background-image: url('/img/twitter.png');
+    }
+
+    #instagram {
+        background-image: url('/img/instagram.png');
+    }
+}
+
 .table-style {
     max-width: 800px;
     margin-left:auto; 
@@ -799,6 +836,14 @@ footer {
 
 // styles for medium screens and larger
 @media #{$medium-and-up} {
+
+    #social-media {
+        flex-direction: column;
+        top: 30%;
+        left: 0;
+        right: initial;
+        bottom: initial;
+    }
 
     #reinforcement-section {
         #reinforcement {

@@ -112,9 +112,9 @@ class MenuCell extends Cell
                     "add" => __("Crear")
                 ]
             ],
-            "settings" => [
-                "label" => __("Settings"),
-                "icon" => "fal fa-cog",
+            "socials" => [
+                "label" => __("Social Media"),
+                "icon" => "far fa-thumbs-up",
                 "action" => "index"
             ],
         ];
