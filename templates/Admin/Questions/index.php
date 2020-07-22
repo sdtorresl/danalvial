@@ -15,7 +15,6 @@
                     <th scope="col"><?= $this->Paginator->sort('test_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('question') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('category') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -27,7 +26,6 @@
                     <td><?= $question->has('test') ? $this->Html->link($question->test->name, ['controller' => 'Tests', 'action' => 'view', $question->test->id]) : '' ?></td>
                     <td><?= h($question->question) ?></td>
                     <td><?= h($question->category) ?></td>
-                    <td><?= h($question->title) ?></td>
                     <td><?= h($question->created) ?></td>
                     <td><?= h($question->modified) ?></td>
 

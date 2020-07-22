@@ -13,7 +13,7 @@
                 <table>
                     <tr>
                         <th><?= __('Question') ?></th>
-                        <td><?= $answer->has('question') ? $this->Html->link($answer->question->title, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?>
+                        <td><?= $answer->has('question') ? $this->Html->link($answer->question->question, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?>
                         </td>
                     </tr>
                     <tr>

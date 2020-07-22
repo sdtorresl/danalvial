@@ -25,7 +25,7 @@
                 <?php foreach ($answers as $answer): ?>
                 <tr>
                     <td><?= $this->Number->format($answer->id) ?></td>
-                    <td><?= $answer->has('question') ? $this->Html->link($answer->question->title, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?></td>
+                    <td><?= $answer->has('question') ? $this->Html->link($answer->question->question, ['controller' => 'Questions', 'action' => 'view', $answer->question->id]) : '' ?></td>
                     <td><?= h($answer->answer) ?></td>
                     <td><?= $this->Number->format($answer->result) ?></td>
                     <td><?= h($answer->created) ?></td>

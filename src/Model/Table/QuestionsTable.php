@@ -42,7 +42,7 @@ class QuestionsTable extends Table
         parent::initialize($config);
 
         $this->setTable('questions');
-        $this->setDisplayField('title');
+        $this->setDisplayField('question');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -89,13 +89,6 @@ class QuestionsTable extends Table
             ->notEmptyString('category');
 
         $validator
-            ->scalar('title')
-            ->maxLength('title', 20)
-            ->requirePresence('title', 'create')
-            ->notEmptyString('title')
-            ->add('title', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
-        $validator
             ->requirePresence('image', 'create')
             ->allowEmptyFile('image');
 
@@ -123,7 +116,6 @@ class QuestionsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['title']));
         $rules->add($rules->existsIn(['test_id'], 'Tests'));
 
         return $rules;

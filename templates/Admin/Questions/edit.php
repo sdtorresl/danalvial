@@ -22,7 +22,6 @@ $this->loadHelper('Form', [
                         echo $this->Form->control('test_id', ['options' => $tests, 'disabled']);
                         echo $this->Form->control('question');
                         echo $this->Form->control('category', ['options' => $categories]);
-                        echo $this->Form->control('title');
                         echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image')]);
                     ?>
                     <div class="form-submit d-flex jc-end">
