@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
 use App\Controller\AppController;
+use Cake\Event\EventInterface;
 
 /**
  * Tests Controller
@@ -14,6 +15,14 @@ use App\Controller\AppController;
  */
 class TestsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        $this->Authentication->addUnauthenticatedActions(['index']);
+    }
+
     /**
      * Index method
      *

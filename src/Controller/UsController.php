@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
+use Cake\Event\EventInterface;
 
 /**
  * Us Controller
@@ -12,6 +13,14 @@ use Cake\ORM\TableRegistry;
  */
 class UsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        $this->Authentication->addUnauthenticatedActions(['index', 'frequentQuestions']);
+    }
+    
     /**
      * Index method
      *

@@ -139,14 +139,30 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
         // Load the authenticators, you want session first
         $authenticationService->loadAuthenticator('Authentication.Session');
-        // Configure form data check to pick email and password
-        $authenticationService->loadAuthenticator('Authentication.Form', [
-            'fields' => [
-                'username' => 'email',
-                'password' => 'password',
-            ],
-            'loginUrl' => '/admin/users/login',
-        ]);
+
+        $params = $request->getAttribute("params");
+        if ( array_key_exists("prefix", $params) ) {
+            if($params['prefix'] == 'Admin') {
+                // Configure form data check to pick email and password for Admin
+                $authenticationService->loadAuthenticator('Authentication.Form', [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password',
+                    ],
+                    'loginUrl' => '/admin/users/login',
+                ]);
+            }
+        }
+        else {
+            // Configure form data check to pick email and password
+            $authenticationService->loadAuthenticator('Authentication.Form', [
+                'fields' => [
+                    'username' => 'email',
+                    'password' => 'password',
+                ],
+                'loginUrl' => '/users/login',
+            ]);
+        }
 
         return $authenticationService;
     }

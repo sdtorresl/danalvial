@@ -88,7 +88,7 @@
             <div class="content-text container">
                 <h2><?= $contentHome[0]->title ?></h2>
                 <p><?= $contentHome[0]->text ?></p>
-                <a class="waves-effect waves-light btn center"><?= __('Take a theoretical test') ?></a>
+                <?= $this->Html->link(__('Take a theoretical test'), ['controller' => 'users', 'action' => 'login'], ['class' => 'waves-effect waves-light btn center']) ?>
             </div>
         </div>
     </section>

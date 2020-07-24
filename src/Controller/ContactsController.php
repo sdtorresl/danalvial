@@ -8,6 +8,7 @@ use Cake\Http\Client;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
 use Cake\Mailer\Mailer;
+use Cake\Event\EventInterface;
 
 /**
  * Contacts Controller
@@ -17,6 +18,14 @@ use Cake\Mailer\Mailer;
  */
 class ContactsController extends AppController
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        $this->Authentication->addUnauthenticatedActions(['index']);
+    }
+
     /**
      * Add method
      *

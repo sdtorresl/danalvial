@@ -67,7 +67,7 @@ $profile = new Lexer($course[0]->profile);
         <div class="item">
             <h3>Test de prueba</h3>
             <p>Si eres uno de nuestros estudiantes puedes tomar tu test de prueba aquí.</p>
-            <?= $this->Html->link('Realizar Test', ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
+            <?= $this->Html->link('Realizar Test', ['controller' => 'users', 'action' => 'login'], ['class' => 'waves-effect waves-light btn center']) ?>
         </div>
     </section>
     
