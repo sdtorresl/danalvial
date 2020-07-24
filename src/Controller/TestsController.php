@@ -15,29 +15,6 @@ use Cake\Event\EventInterface;
  */
 class TestsController extends AppController
 {
-    public function beforeFilter(EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        // Configure the login action to not require authentication, preventing
-        // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['index']);
-    }
-
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null|void Renders view
-     */
-    public function index()
-    {
-        $this->paginate = [
-            'contain' => ['Branches'],
-        ];
-        $tests = $this->paginate($this->Tests);
-
-        $this->set(compact('tests'));
-    }
-
     /**
      * View method
      *
@@ -59,43 +36,44 @@ class TestsController extends AppController
     public function result($id = null) {
         // getting questions quantity for each category
         $questionsTable = TableRegistry::getTableLocator()->get('Questions');
-        $testResults = $questionsTable->find();
-        $testResults->select(['category', 'total' => $testResults->func()->count('*')])
+        $categoryResults = $questionsTable->find();
+        $categoryResults->select(['category',])
             ->group(['category']);
-        $testResults = $testResults->toArray();
-        for($n=0;$n<count($testResults);$n++) {
-            $testResults[$n]['correct'] = 0;
+        $categoryResults = $categoryResults->toArray();
+
+        for($n=0;$n<count($categoryResults);$n++) {
+            $categoryResults[$n]['total'] = 0;
+            $categoryResults[$n]['correct'] = 0;
         }
 
-        
-        if ($this->request->is('post')) {
-            $test = $this->Tests->get($id, [
-                'contain' => ['Questions.Answers'],
-                ]);
-                
-                // getting user answers
-                $requestAnswers = $this->request->getData();
-                foreach($requestAnswers as $requestAnswer) {
-                    $splitAnswer = explode("_", $requestAnswer);
-                    $userAnswers[] = ['question_id' => $splitAnswer[0], 'answer_id' => $splitAnswer[1]];
-                }
-                
-                // getting user's results
-                foreach($test->questions as $question) {
-                    for($i=0;$i<count($userAnswers);$i++) {
-                        if($question->id == $userAnswers[$i]['question_id']) {
-                            $this->Flash->success('A ' . $question->id . ' B ' . $userAnswers[$i]['question_id']);
-                            
-                            foreach($question->answers as $answer) {
-                                if($answer->id == $userAnswers[$i]['answer_id']) {
-                                    $resultadito = $answer->result ? 'true' : 'false';
-                                $this->Flash->success($question->category . ' ' . $resultadito);
-                                //$this->Flash->success('X ' . $answer->id . ' Y ' . $userAnswers[$i]['answer_id'] . $resultadito);
+        $total = 0;
+        $correct = 0;
+        $percentageResult = 0;
 
-                                foreach ($testResults as $testResult) {
-                                    if($testResult['category'] == $question->category && $answer->result) {
-                                        //$this->Flash->success('O ' . $testResult['category'] . ' O ' . $question->category);
-                                        $testResult['correct'] = $testResult['correct'] + 1;
+        if ($this->request->is('post')) {
+            $test = $this->Tests->get($id, ['contain' => ['Questions.Answers'],]);
+
+            // getting user answers
+            $requestAnswers = $this->request->getData();
+            foreach($requestAnswers as $requestAnswer) {
+                $splitAnswer = explode("_", $requestAnswer);
+                $userAnswers[] = ['question_id' => $splitAnswer[0], 'answer_id' => $splitAnswer[1]];
+            }
+
+            // getting user's results
+            foreach($test->questions as $question) {
+                for($i=0;$i<count($userAnswers);$i++) {
+                    if($question->id == $userAnswers[$i]['question_id']) {
+                        foreach($question->answers as $answer) {
+                            if($answer->id == $userAnswers[$i]['answer_id']) {
+                                foreach ($categoryResults as $categoryResult) {
+                                    if($categoryResult['category'] == $question->category) {
+                                        $categoryResult['total'] = $categoryResult['total'] + 1;
+                                        $total = $total + 1;
+                                        if($answer->result) {
+                                            $categoryResult['correct'] = $categoryResult['correct'] + 1;
+                                            $correct = $correct + 1;
+                                        }
                                     }
                                 }
                             }
@@ -103,10 +81,12 @@ class TestsController extends AppController
                     }
                 }
             }
-            
-            $this->set(compact('test', 'userAnswers'));
+
+            $percentageResult = ($correct * 100) / $total;
+
+            $this->set(compact('test', 'percentageResult'));
         }
 
-        $this->set(compact('testResults'));
+        $this->set(compact('categoryResults'));
     }
 }

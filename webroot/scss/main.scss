@@ -775,10 +775,26 @@ nav {
 
         .question {
             font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 5px;
         }
+
+        img {
+            max-width: 100%;
+        }
+
         label {
             color: black;
         }
+    }
+
+    .test-button {
+        margin: 15px auto 15px auto;
+        max-width: 800px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: flex-end;
     }
 }
 
@@ -813,6 +829,11 @@ nav {
 
         td {
             background-color: white;
+        }
+
+        .test-total {
+            background-color: #F7F7F7;
+            font-weight: bold;
         }
     }
 }

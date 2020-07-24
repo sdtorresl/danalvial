@@ -27,16 +27,14 @@ $this->loadHelper('Form', [
                         <div class="question">
                             <?= h($questions->question) ?>
                         </div>
-                    <div>
-                        <?= __('Category') ?>
-                        <?= h($questions->category) ?>
+                        <div>
+                            <?php if (!empty($questions->image)) : ?>
+                            <img class="materialboxed"
+                                src="<?= str_replace(WWW_ROOT, '', $questions->image_dir) . DS . $questions->image ?>"
+                                alt="Image">
+                            <?php endif; ?>
+                        </div>
                     </div>
-                    <div>
-                        <?php if (!empty($questions->image)) : ?>
-                            <img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $questions->image_dir) . DS . $questions->image ?>" alt="Image"></td>
-                    <?php endif; ?>
-                    </div>
-                </div>
                 <div>
                     <?php foreach ($questions->answers as $answers) : ?>
                         <p>
@@ -51,7 +49,9 @@ $this->loadHelper('Form', [
                 <?php endif; ?>
             <?php endforeach; ?>
             <?php endif; ?>
-            <button class="btn" type="submit">Submit</button>
+            <div class="test-button">
+                <button class="btn" type="submit">Enviar respuestas</button>
+            </div>
        </form>
     </div>
 </section>

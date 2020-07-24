@@ -7,11 +7,17 @@
             <th class="center">Módulos evaluados</th>
             <th class="center">Resultados</th>
         </tr>
-        <?php foreach ($testResults as $key => $testResult): ?>
+        <?php foreach ($categoryResults as $key => $categoryResult): ?>
         <tr>
-            <td>Módulo <?= $key ?> : <?= $testResult->category ?></td>
-            <td class="center"><?= $testResult->correct ?> / <?= $testResult->total ?></td>
+            <td>Módulo <?= $key ?> : <?= $categoryResult->category ?></td>
+            <td class="center"><?= $categoryResult->correct ?> / <?= $categoryResult->total ?></td>
         </tr>
         <?php endforeach; ?>
+        <tr class="test-total">
+            <td class="right test-total">TOTAL</td>
+            <?php if (!empty($percentageResult)) : ?>
+            <td class="center test-total"><?= $percentageResult ?>%</td>
+            <?php endif; ?>
+        </tr>
     </table>
 </section>
