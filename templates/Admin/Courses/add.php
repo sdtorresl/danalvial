@@ -24,20 +24,10 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('branch_id', ['options' => $branches]);
                     echo $this->Form->control('title');
                     echo $this->Form->control('short_description');
-                    echo $this->Form->hidden('profile');
-                ?>
-                <div class="text-editor">
-                    <p><?= __('Profile') ?></p>
-                    <div id="editor2"></div>
-                </div>
-                <?php
                     echo $this->Form->control('category');
                     echo $this->Form->control('practical_time');
                     echo $this->Form->control('theoretical_time');
                     echo $this->Form->control('workshop_time');
-                    echo $this->Form->control('type');
-                    echo $this->Form->control('schedule');
-                    echo $this->Form->control('medical_exam');
                     echo $this->Form->hidden('requirements');
                 ?>
                 <div class="text-editor">
@@ -45,7 +35,22 @@ $this->loadHelper('Form', [
                     <div id="editor1"></div>
                 </div>
                 <?php
-                    echo $this->Form->control('price');
+                    echo $this->Form->hidden('curriculum_content');
+                ?>
+                <div class="text-editor">
+                    <p>Contenido curricular</p>
+                    <div id="editor3"></div>
+                </div>
+                <?php
+                    echo $this->Form->hidden('profile');
+                ?>
+                <div class="text-editor">
+                    <p><?= __('Profile') ?></p>
+                    <div id="editor2"></div>
+                </div>
+                <?php
+                    echo $this->Form->control('curriculum', ['type' => 'file', 'label' => false, 'placeholder' => 'Currículo']);
+                    echo $this->Form->control('schedule', ['type' => 'file', 'label' => false, 'placeholder' => 'Horario']);
                     echo $this->Form->control('image', ['type' => 'file', 'label' => false, 'placeholder' => __('Image')]);
                 ?>
                 <div class="form-submit d-flex jc-end">
@@ -79,6 +84,13 @@ var quill2 = new Quill('#editor2', {
     theme: 'snow'
 });
 
+var quill3 = new Quill('#editor3', {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+});
+
 var form = document.querySelector('form');
 form.onsubmit = function() {
     // Populate hidden form on submit
@@ -87,7 +99,10 @@ form.onsubmit = function() {
 
     var profile = document.querySelector('input[name=profile]');
     profile.value = JSON.stringify(quill2.getContents());
-    
+
+    var curriculumContent = document.querySelector('input[name=curriculum_content]');
+    curriculumContent.value = JSON.stringify(quill3.getContents());
+
     console.log("Submitted", $(form).serialize(), $(form).serializeArray());
     
     // No back end to actually submit to!

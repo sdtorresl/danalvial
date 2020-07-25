@@ -15,8 +15,6 @@
                     <th scope="col"><?= $this->Paginator->sort('branch_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('category') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('type') ?></th>
-                    <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -29,8 +27,6 @@
                     </td>
                     <td><?= h($course->title) ?></td>
                     <td><?= $categories[$course->category] ?></td>
-                    <td><?= $types[$course->type] ?></td>
-                    <td><?= $this->Number->format($course->price) ?></td>
                     <td><?= h($course->created) ?></td>
                     <td><?= h($course->modified) ?></td>
 

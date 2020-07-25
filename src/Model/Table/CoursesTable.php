@@ -52,6 +52,16 @@ class CoursesTable extends Table
                 'file' => 'image',
                 'file_dir' => 'image_dir',
                 'file_type' => 'image_type'
+            ],
+            'schedule' => [
+                'file' => 'schedule',
+                'file_dir' => 'schedule_dir',
+                'file_type' => 'schedule_type'
+            ],
+            'curriculum' => [
+                'file' => 'curriculum',
+                'file_dir' => 'curriculum_dir',
+                'file_type' => 'curriculum_type'
             ]
         ]);
 
@@ -100,31 +110,25 @@ class CoursesTable extends Table
             ->notEmptyString('category');
 
         $validator
-            ->scalar('type')
-            ->maxLength('type', 45)
-            ->requirePresence('type', 'create')
-            ->notEmptyString('type');
-
-        $validator
-            ->scalar('schedule')
-            ->maxLength('schedule', 100)
             ->requirePresence('schedule', 'create')
-            ->notEmptyString('schedule');
+            ->notEmptyFile('schedule');
 
         $validator
-            ->scalar('medical_exam')
-            ->maxLength('medical_exam', 150)
-            ->requirePresence('medical_exam', 'create')
-            ->notEmptyString('medical_exam');
+            ->maxLength('schedule_dir', 255)
+            ->allowEmptyString('schedule_dir');
+
+        $validator
+            ->maxLength('schedule_size', 45)
+            ->allowEmptyString('schedule_size');
+
+        $validator
+            ->maxLength('schedule_type', 45)
+            ->allowEmptyString('schedule_type');
 
         $validator
             ->scalar('requirements')
             ->requirePresence('requirements', 'create')
             ->notEmptyString('requirements');
-
-        $validator
-            ->integer('price')
-            ->allowEmptyString('price');
 
         $validator
             ->requirePresence('image', 'create')
@@ -156,6 +160,27 @@ class CoursesTable extends Table
             ->integer('workshop_time')
             ->maxLength('workshop_time', 3)
             ->notEmptyString('workshop_time');
+
+        $validator
+            ->requirePresence('curriculum', 'create')
+            ->notEmptyFile('curriculum');
+
+        $validator
+            ->maxLength('curriculum_dir', 255)
+            ->allowEmptyString('curriculum_dir');
+
+        $validator
+            ->maxLength('curriculum_size', 45)
+            ->allowEmptyString('curriculum_size');
+
+        $validator
+            ->maxLength('curriculum_type', 45)
+            ->allowEmptyString('curriculum_type');
+
+        $validator
+            ->scalar('curriculum_content')
+            ->requirePresence('curriculum_content', 'create')
+            ->notEmptyString('curriculum_content');
 
         return $validator;
     }

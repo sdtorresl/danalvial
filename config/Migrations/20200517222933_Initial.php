@@ -281,7 +281,7 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('schedule', 'string', [
                 'default' => null,
-                'limit' => 100,
+                'limit' => 255,
                 'null' => false,
             ])
             ->addColumn('medical_exam', 'string', [

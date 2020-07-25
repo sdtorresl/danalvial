@@ -4,6 +4,7 @@ use nadar\quill\Lexer;
 
 $requirements = new Lexer($course[0]->requirements);
 $profile = new Lexer($course[0]->profile);
+$curriculumContent = new Lexer($course[0]->curriculum_content);
 
 ?>
 
@@ -48,9 +49,9 @@ $profile = new Lexer($course[0]->profile);
             <h3 class="center-align">Requisitos indispensables</h3>
             <div class="ul-default"><?= $requirements->render() ?></div>
         </div>
-        <div>
+        <div id="curriculum-content">
             <h3 class="center-align">Plan de estudios</h3>
-            <p>Se desarrollará en tres módulos. Los módulos se darán de forma teórica, práctica y talleres</p>
+            <div class="ul-default"><?= $curriculumContent->render() ?></div>
         </div>
         <div id="graduate">
             <h3>Perfil del egresado</h3>
@@ -62,7 +63,7 @@ $profile = new Lexer($course[0]->profile);
         <div class="item">
             <h3>Contenido curricular</h3>
             <p>Conoce el contenido de cada uno de los módulos de nuestro plan de estudio.</p>
-            <?= $this->Html->link(__('Download content'), ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
+            <a class="waves-effect waves-light btn center" href="<?= str_replace(WWW_ROOT, '', $course[0]->curriculum_dir) . DS . $course[0]->curriculum ?>" target="_blank"><?= __('Download content') ?></a>
         </div>
         <div class="item">
             <h3>Test de prueba</h3>
@@ -73,6 +74,6 @@ $profile = new Lexer($course[0]->profile);
     
     <section id="course-schedule">
         <h3>Consulta los horarios académicos para agendar tu clase</h3>
-        <?= $this->Html->link('Ver horarios', ['controller' => 'courses', 'action' => 'course'], ['class' => 'waves-effect waves-light btn center']) ?>
+        <a class="waves-effect waves-light btn center" href="<?= str_replace(WWW_ROOT, '', $course[0]->schedule_dir) . DS . $course[0]->schedule ?>" target="_blank"><?= 'Ver horarios' ?></a>
     </section>
 </section>

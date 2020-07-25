@@ -14,11 +14,8 @@ use Cake\ORM\Entity;
  * @property string $short_description
  * @property string $profile
  * @property string $category
- * @property string $type
  * @property string $schedule
- * @property string $medical_exam
  * @property string $requirements
- * @property int|null $price
  * @property |null $image
  * @property string|null $image_dir
  * @property string|null $image_size
@@ -28,6 +25,14 @@ use Cake\ORM\Entity;
  * @property int $practical_time
  * @property int $theoretical_time
  * @property int $workshop_time
+ * @property string $schedule_dir
+ * @property string $schedule_size
+ * @property string $schedule_type
+ * @property string $curriculum
+ * @property string $curriculum_dir
+ * @property string $curriculum_size
+ * @property string $curriculum_type
+ * @property $curriculum_content
  *
  * @property \App\Model\Entity\Branch $branch
  * @property \App\Model\Entity\Contact[] $contacts
@@ -49,11 +54,8 @@ class Course extends Entity
         'short_description' => true,
         'profile' => true,
         'category' => true,
-        'type' => true,
         'schedule' => true,
-        'medical_exam' => true,
         'requirements' => true,
-        'price' => true,
         'image' => true,
         'image_dir' => true,
         'image_size' => true,
@@ -65,5 +67,13 @@ class Course extends Entity
         'workshop_time' => true,
         'branch' => true,
         'contacts' => true,
+        'schedule_dir' => true,
+        'schedule_size' => true,
+        'schedule_type' => true,
+        'curriculum' => true,
+        'curriculum_dir' => true,
+        'curriculum_size' => true,
+        'curriculum_type' => true,
+        'curriculum_content' => true,
     ];
 }

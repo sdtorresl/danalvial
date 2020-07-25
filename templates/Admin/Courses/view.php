@@ -8,6 +8,7 @@ use nadar\quill\Lexer;
 
 $requirements = new Lexer($course->requirements);
 $profile = new Lexer($course->profile);
+$curriculumContent = new Lexer($course->curriculum_content);
 
 ?>
 
@@ -30,10 +31,6 @@ $profile = new Lexer($course->profile);
                         <td><?= h($course->short_description) ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Profile') ?></th>
-                        <td class="ul-default"><?= $profile->render() ?></td>
-                    </tr>
-                    <tr>
                         <th><?= __('Category') ?></th>
                         <td><?= h($course->category) ?></td>
                     </tr>
@@ -50,24 +47,24 @@ $profile = new Lexer($course->profile);
                         <td><?= h($course->workshop_time) ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Type') ?></th>
-                        <td><?= h($course->type) ?></td>
-                    </tr>
-                    <tr>
-                        <th><?= __('Schedule') ?></th>
-                        <td><?= h($course->schedule) ?></td>
-                    </tr>
-                    <tr>
-                        <th><?= __('Medical Exam') ?></th>
-                        <td><?= h($course->medical_exam) ?></td>
-                    </tr>
-                    <tr>
                         <th><?= __('Requirements') ?></th>
                         <td class="ul-default"><?= $requirements->render() ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Price') ?></th>
-                        <td><?= $this->Number->format($course->price) ?></td>
+                        <th>Contenido curricular</th>
+                        <td class="ul-default"><?= $curriculumContent->render() ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= __('Profile') ?></th>
+                        <td class="ul-default"><?= $profile->render() ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= 'Currículo' ?></th>
+                        <td><a href="<?= str_replace(WWW_ROOT, '', $course->curriculum_dir) . DS . $course->curriculum ?>" class="button" target="_blank"><?= $course->curriculum ?></a>
+                    </tr>
+                    <tr>
+                        <th><?= 'Horario' ?></th>
+                        <td><a href="<?= str_replace(WWW_ROOT, '', $course->schedule_dir) . DS . $course->schedule ?>" class="button" target="_blank"><?= $course->schedule ?></a>
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>

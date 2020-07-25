@@ -16,11 +16,9 @@ class CoursesController extends AppController
 {
     public function beforeFilter(EventInterface $event)
     {
-        $categories = ["a1" => "A1", "A2" => "A2", "B1" => "B1", "B2" => "B2", "B3" => "B3", "C1" => "C1", "C2" => "C2", "C3" => "C3"];
-        $types = ["private" => __("Private Service"), "public" => __("Public Service")];
+        $categories = ["A1" => "A1", "A2" => "A2", "B1" => "B1", "B2" => "B2", "B3" => "B3", "C1" => "C1", "C2" => "C2", "C3" => "C3"];
 
         $this->set(compact('categories'));
-        $this->set(compact('types'));
     }
 
     /**

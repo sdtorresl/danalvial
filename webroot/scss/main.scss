@@ -668,14 +668,21 @@ nav {
 
     .container {
         padding: 50px 0;
+
         h3 {
             font-weight: bold;
             font-size: 1.5rem;
         }
+
+        #curriculum-content {
+            margin-top: 60px;
+        }
+
         #graduate {
             background-color: #FC5F6D;
             color: white;
             padding: 20px 35px;
+            margin-top: 50px;
 
             h3 {
                 //margin: 0;
