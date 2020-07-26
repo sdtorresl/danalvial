@@ -36,9 +36,9 @@ use Cake\Core\Configure\Engine\PhpConfig;
             $imageURL = str_replace('\\', '/', $imagePath);
             ?>
             <div class="content-image col s12 m5 l6" style="background: url('<?= $imageURL . $branch[0]->image ?>');
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-position: 0 95px;">
+                    background-size: 100% auto;
+                    background-repeat: no-repeat;
+                    background-position: 0 95px;">
             </div>
         </div>
     </div>
