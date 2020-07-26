@@ -76,7 +76,7 @@ class AdvantagesTable extends Table
 
         $validator
             ->scalar('logo')
-            ->maxLength('logo', 15)
+            ->maxLength('logo', 50)
             ->requirePresence('logo', 'create')
             ->notEmptyString('logo');
 

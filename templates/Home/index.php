@@ -1,5 +1,7 @@
 <?php use nadar\quill\Lexer; ?>
 
+<?= $this->Html->css('https://fonts.googleapis.com/icon?family=Material+Icons') ?>
+
 <section id="home-page">
     <section id="gallery-section">
         <div class="carousel carousel-slider center">
@@ -36,7 +38,7 @@
             <?php foreach ($advantages as $advantage): ?>
             <div class="advantage_item white-text">
                 <div class="icon">
-                    <i class="<?= $advantage->logo ?>"></i>
+                    <i class="material-icons"><?= $advantage->logo ?></i>
                 </div>
                 <div class="advantage-content">
                     <h3><?= h($advantage->title) ?></h3>

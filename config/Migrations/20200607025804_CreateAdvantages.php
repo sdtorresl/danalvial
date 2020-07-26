@@ -26,7 +26,7 @@ class CreateAdvantages extends AbstractMigration
         ]);
         $table->addColumn('logo', 'string', [
             'default' => null,
-            'limit' => 15,
+            'limit' => 50,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [

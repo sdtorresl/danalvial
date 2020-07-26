@@ -5,6 +5,8 @@
  */
 ?>
 
+<?= $this->Html->css('https://fonts.googleapis.com/icon?family=Material+Icons') ?>
+
 <section class="advantages index card">
     <div class="card-content">
         <span class="card-title"><?=__('Advantages') ?></span>
@@ -26,7 +28,7 @@
                     <td><?= $advantage->has('branch') ? $this->Html->link($advantage->branch->name, ['controller' => 'Branches', 'action' => 'view', $advantage->branch->id]) : '' ?>
                     </td>
                     <td><?= h($advantage->title) ?></td>
-                    <td><?= h($advantage->logo) ?></td>
+                    <td><i class="material-icons"><?= $advantage->logo ?></i></td>
                     <td><?= h($advantage->created) ?></td>
                     <td><?= h($advantage->modified) ?></td>
 

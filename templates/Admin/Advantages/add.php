@@ -12,6 +12,7 @@ $this->loadHelper('Form', [
 
 <?= $this->Html->script('/node_modules/quill/dist/quill.min.js') ?>
 <?= $this->Html->css('/node_modules/quill/dist/quill.snow.css') ?>
+<?= $this->Html->css('https://fonts.googleapis.com/icon?family=Material+Icons') ?>
 
 <section class="advantages index card">
     <div class="card-content">
@@ -23,7 +24,7 @@ $this->loadHelper('Form', [
                 <?php
                     echo $this->Form->control('branch_id', ['options' => $branches]);
                     echo $this->Form->control('title');
-                    echo $this->Form->control('logo');
+                    echo $this->Form->control('logo', ['class' => 'use-material-icon-picker', 'value' => 'directions_car']);
                     echo $this->Form->hidden('description');
                 ?>
                 <div class="text-editor">
@@ -40,6 +41,9 @@ $this->loadHelper('Form', [
         </div>
     </div>
 </section>
+
+<?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js') ?>
+<?= $this->Html->script('/js/icons.js') ?>
 
 <script>
 var toolbarOptions = [
@@ -60,10 +64,6 @@ form.onsubmit = function() {
     var description = document.querySelector('input[name=description]');
     description.value = JSON.stringify(quill.getContents());
     
-    console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-    
-    // No back end to actually submit to!
-    alert('Open the console to see the submit data!')
-    return false;
+    return true;
 };
 </script>

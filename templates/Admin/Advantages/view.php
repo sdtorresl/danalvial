@@ -10,6 +10,8 @@ $description = new Lexer($advantage->description);
 
 ?>
 
+<?= $this->Html->css('https://fonts.googleapis.com/icon?family=Material+Icons') ?>
+
 <section class="advantages view card">
     <div class="card-content">
         <span class="card-title"><?= h($advantage->title) ?></span>
@@ -30,7 +32,7 @@ $description = new Lexer($advantage->description);
                     </tr>
                     <tr>
                         <th><?= __('Logo') ?></th>
-                        <td><?= h($advantage->logo) ?></td>
+                        <td><i class="material-icons"><?= $advantage->logo ?></i></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
