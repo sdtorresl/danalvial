@@ -1,0 +1,1042 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-07-22 20:28+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/Admin/AdvantagesController.php:58
+#: Controller/Admin/AdvantagesController.php:83
+msgid "The advantage has been saved."
+msgstr "La ventaja ha sido guardada."
+
+#: Controller/Admin/AdvantagesController.php:62
+#: Controller/Admin/AdvantagesController.php:87
+msgid "The advantage could not be saved. Please, try again."
+msgstr "La ventaja no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/AdvantagesController.php:105
+msgid "The advantage has been deleted."
+msgstr "La ventaja ha sido eliminada."
+
+#: Controller/Admin/AdvantagesController.php:107
+msgid "The advantage could not be deleted. Please, try again."
+msgstr "La ventaja no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/AnswersController.php:59
+#: Controller/Admin/AnswersController.php:84
+msgid "The answer has been saved."
+msgstr "La respuesta ha sido guardada."
+
+#: Controller/Admin/AnswersController.php:63
+#: Controller/Admin/AnswersController.php:88
+msgid "The answer could not be saved. Please, try again."
+msgstr "La respuesta no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/AnswersController.php:106
+msgid "The answer has been deleted."
+msgstr "La respuesta ha sido eliminada."
+
+#: Controller/Admin/AnswersController.php:108
+msgid "The answer could not be deleted. Please, try again."
+msgstr "La respuesta no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/BranchesController.php:55
+#: Controller/Admin/BranchesController.php:79
+msgid "The branch has been saved."
+msgstr "La rama ha sido guardada."
+
+#: Controller/Admin/BranchesController.php:59
+#: Controller/Admin/BranchesController.php:83
+msgid "The branch could not be saved. Please, try again."
+msgstr "La sede no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/BranchesController.php:101
+msgid "The branch has been deleted."
+msgstr "La sede ha sido eliminada."
+
+#: Controller/Admin/BranchesController.php:103
+msgid "The branch could not be deleted. Please, try again."
+msgstr "La sede no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/BranchesController.php:106
+msgid "The branch has associated data, could not be deleted. Please, try again."
+msgstr "La sede tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/BranchesHistoriesController.php:58
+#: Controller/Admin/BranchesHistoriesController.php:83
+msgid "The branches history has been saved."
+msgstr "No se pudo guardar la historia de la sede. Inténtalo de nuevo."
+
+#: Controller/Admin/BranchesHistoriesController.php:62
+#: Controller/Admin/BranchesHistoriesController.php:87
+msgid "The branches history could not be saved. Please, try again."
+msgstr "La historia de la sede"
+
+#: Controller/Admin/BranchesHistoriesController.php:105
+msgid "The branches history has been deleted."
+msgstr "La historia de la sede ha sido eliminada."
+
+#: Controller/Admin/BranchesHistoriesController.php:107
+msgid "The branches history could not be deleted. Please, try again."
+msgstr "No se pudo eliminar la historia de la sede. Inténtalo de nuevo."
+
+#: Controller/Admin/ContentsController.php:19
+msgid "Home Page"
+msgstr "Página de inicio"
+
+#: Controller/Admin/ContentsController.php:19
+#: View/Cell/MenuCell.php:71
+#: Admin/Courses/index.php:10
+msgid "Courses"
+msgstr "Cursos"
+
+#: Controller/Admin/ContentsController.php:19
+#: Admin/FrequentQuestions/index.php:10
+msgid "Frequent Questions"
+msgstr "Preguntas frecuentes"
+
+#: Controller/Admin/ContentsController.php:19
+msgid "Contact Us"
+msgstr "Contactanos"
+
+#: Controller/Admin/ContentsController.php:66
+#: Controller/Admin/ContentsController.php:91
+msgid "The content has been saved."
+msgstr "El contenido ha sido guardado."
+
+#: Controller/Admin/ContentsController.php:70
+#: Controller/Admin/ContentsController.php:95
+msgid "The content could not be saved. Please, try again."
+msgstr "El contenido no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/ContentsController.php:113
+msgid "The content has been deleted."
+msgstr "El contenido ha sido eliminado."
+
+#: Controller/Admin/ContentsController.php:115
+msgid "The content could not be deleted. Please, try again."
+msgstr "El contenido no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/CoursesController.php:68
+#: Controller/Admin/CoursesController.php:93
+msgid "The course has been saved."
+msgstr "El curso ha sido guardado."
+
+#: Controller/Admin/CoursesController.php:72
+#: Controller/Admin/CoursesController.php:97
+msgid "The course could not be saved. Please, try again."
+msgstr "El curso no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/CoursesController.php:115
+msgid "The course has been deleted."
+msgstr "El curso ha sido eliminado."
+
+#: Controller/Admin/CoursesController.php:117
+msgid "The course could not be deleted. Please, try again."
+msgstr "El curso no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/FrequentQuestionsController.php:55
+#: Controller/Admin/FrequentQuestionsController.php:79
+msgid "The frequent question has been saved."
+msgstr "La pregunta frecuente se ha guardado."
+
+#: Controller/Admin/FrequentQuestionsController.php:59
+#: Controller/Admin/FrequentQuestionsController.php:83
+msgid "The frequent question could not be saved. Please, try again."
+msgstr "La pregunta frecuente no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/FrequentQuestionsController.php:100
+msgid "The frequent question has been deleted."
+msgstr "La pregunta frecuente ha sido eliminada"
+
+#: Controller/Admin/FrequentQuestionsController.php:102
+msgid "The frequent question could not be deleted. Please, try again."
+msgstr "La pregunta frecuente no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/GalleriesController.php:58
+#: Controller/Admin/GalleriesController.php:83
+msgid "The gallery has been saved."
+msgstr "La galería ha sido guardada."
+
+#: Controller/Admin/GalleriesController.php:62
+#: Controller/Admin/GalleriesController.php:87
+msgid "The gallery could not be saved. Please, try again."
+msgstr "La galería no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/GalleriesController.php:105
+msgid "The gallery has been deleted."
+msgstr "La galería ha sido eliminada."
+
+#: Controller/Admin/GalleriesController.php:107
+msgid "The gallery could not be deleted. Please, try again."
+msgstr "La galería no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/QuestionsController.php:67
+#: Controller/Admin/QuestionsController.php:99
+msgid "The question has been saved."
+msgstr "La pregunta ha sido guardada."
+
+#: Controller/Admin/QuestionsController.php:78
+#: Controller/Admin/QuestionsController.php:103
+msgid "The question could not be saved. Please, try again."
+msgstr "La pregunta no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/QuestionsController.php:121
+msgid "The question has been deleted."
+msgstr "La pregunta ha sido eliminada."
+
+#: Controller/Admin/QuestionsController.php:123
+msgid "The question could not be deleted. Please, try again."
+msgstr "La pregunta no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/SocialsController.php:55
+#: Controller/Admin/SocialsController.php:79
+msgid "The social has been saved."
+msgstr "La red social se ha guardado."
+
+#: Controller/Admin/SocialsController.php:59
+#: Controller/Admin/SocialsController.php:83
+msgid "The social could not be saved. Please, try again."
+msgstr "La red social no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/SocialsController.php:100
+msgid "The social has been deleted."
+msgstr "La red social ha sido eliminada."
+
+#: Controller/Admin/SocialsController.php:102
+msgid "The social could not be deleted. Please, try again."
+msgstr "La red social no pudo ser eliminada. Inténtalo de nuevo."
+
+#: Controller/Admin/TestsController.php:58
+#: Controller/Admin/TestsController.php:90
+msgid "The test has been saved."
+msgstr "La prueba ha sido guardada."
+
+#: Controller/Admin/TestsController.php:69
+#: Controller/Admin/TestsController.php:94
+msgid "The test could not be saved. Please, try again."
+msgstr "La prueba no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/Admin/TestsController.php:112
+msgid "The test has been deleted."
+msgstr "La prueba ha sido eliminada."
+
+#: Controller/Admin/TestsController.php:114
+msgid "The test could not be deleted. Please, try again."
+msgstr "La prueba no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/Admin/UsersController.php:24
+msgid "Administrator"
+msgstr "Administrador"
+
+#: Controller/Admin/UsersController.php:24
+msgid "Student"
+msgstr "Estudiante"
+
+#: Controller/Admin/UsersController.php:67
+#: Controller/Admin/UsersController.php:91
+msgid "The user has been saved."
+msgstr "El usuario ha sido guardado."
+
+#: Controller/Admin/UsersController.php:71
+#: Controller/Admin/UsersController.php:95
+msgid "The user could not be saved. Please, try again."
+msgstr "El usuario no pudo ser guardado. Inténtalo de nuevo."
+
+#: Controller/Admin/UsersController.php:112
+msgid "The user has been deleted."
+msgstr "El usuario ha sido eliminado."
+
+#: Controller/Admin/UsersController.php:114
+msgid "The user could not be deleted. Please, try again."
+msgstr "El usuario no pudo ser eliminado. Inténtalo de nuevo."
+
+#: Controller/Admin/UsersController.php:138
+#: Controller/UsersController.php:38
+msgid "Invalid email or password"
+msgstr "Correo electrónico o contraseña invalidos"
+
+#: Controller/ContactsController.php:51
+msgid "Your message has been sent!"
+msgstr "¡Tu mensaje ha sido enviado!"
+
+#: Controller/ContactsController.php:65
+#: Controller/ContactsController.php:81
+msgid "New message on Danalvial Ltda."
+msgstr "Nuevo mensaje en Danalvial Ltda."
+
+#: Controller/ContactsController.php:86
+msgid "Your message hasn't been sent. Please, try again."
+msgstr "Tu mensaje no ha sido enviado. Inténtalo de nuevo."
+
+#: Controller/ContactsController.php:89
+msgid "Your didn't pass captcha validation. Please, try again."
+msgstr "No has pasado la validación de captcha. Inténtalo de nuevo."
+
+#: Controller/UsersController.php:34
+msgid "The user is correct."
+msgstr "El usuario es correcto."
+
+#: View/Cell/MenuCell.php:39
+#: Admin/Branches/index.php:10
+msgid "Branches"
+msgstr "Sedes"
+
+#: View/Cell/MenuCell.php:42
+#: View/Cell/MenuCell.php:58
+#: View/Cell/MenuCell.php:82
+#: View/Cell/MenuCell.php:90
+#: View/Cell/MenuCell.php:98
+msgid "Listar"
+msgstr ""
+
+#: View/Cell/MenuCell.php:43
+#: View/Cell/MenuCell.php:51
+#: View/Cell/MenuCell.php:59
+#: View/Cell/MenuCell.php:67
+#: View/Cell/MenuCell.php:75
+#: View/Cell/MenuCell.php:83
+#: View/Cell/MenuCell.php:91
+#: View/Cell/MenuCell.php:99
+#: View/Cell/MenuCell.php:112
+msgid "Crear"
+msgstr ""
+
+#: View/Cell/MenuCell.php:47
+msgid "Content"
+msgstr "Contenido"
+
+#: View/Cell/MenuCell.php:50
+#: View/Cell/MenuCell.php:66
+#: View/Cell/MenuCell.php:74
+#: View/Cell/MenuCell.php:111
+msgid "Ver"
+msgstr "Ver"
+
+#: View/Cell/MenuCell.php:55
+msgid "Gallery"
+msgstr "Galería"
+
+#: View/Cell/MenuCell.php:63
+#: Admin/Advantages/index.php:10
+msgid "Advantages"
+msgstr "Ventajas"
+
+#: View/Cell/MenuCell.php:79
+#: Admin/BranchesHistories/index.php:10
+msgid "Branches Histories"
+msgstr "Historias de las Sedes"
+
+#: View/Cell/MenuCell.php:87
+#: Admin/Users/index.php:10
+msgid "Users"
+msgstr "Usuarios"
+
+#: View/Cell/MenuCell.php:95
+#: Admin/Tests/index.php:10
+#: Tests/index.php:10
+msgid "Tests"
+msgstr "Pruebas"
+
+#: View/Cell/MenuCell.php:103
+#: Admin/Contacts/index.php:12
+msgid "Contacts"
+msgstr "Contactos"
+
+#: View/Cell/MenuCell.php:108
+msgid "Frequent questions"
+msgstr "Preguntas frecuentes"
+
+#: View/Cell/MenuCell.php:116
+msgid "Social Media"
+msgstr "Redes Sociales"
+
+#: Admin/Advantages/add.php:18
+#: Admin/Advantages/index.php:61
+msgid "Add advantage"
+msgstr "Agregar ventaja"
+
+#: Admin/Advantages/add.php:30
+#: Admin/Advantages/view.php:28
+#: Admin/Tests/view.php:19
+msgid "Description"
+msgstr "Descripción"
+
+#: Admin/Advantages/add.php:34
+#: Admin/Advantages/edit.php:32
+#: Admin/Advantages/view.php:51
+#: Admin/Answers/add.php:27
+#: Admin/Answers/edit.php:27
+#: Admin/Answers/view.php:47
+#: Admin/BranchesHistories/add.php:26
+#: Admin/BranchesHistories/edit.php:26
+#: Admin/BranchesHistories/view.php:39
+#: Admin/Branches/add.php:30
+#: Admin/Branches/edit.php:31
+#: Admin/Branches/view.php:58
+#: Admin/Contacts/view.php:58
+#: Admin/Contents/add.php:28
+#: Admin/Contents/edit.php:29
+#: Admin/Contents/view.php:52
+#: Admin/Courses/add.php:52
+#: Admin/Courses/edit.php:53
+#: Admin/Courses/view.php:92
+#: Admin/FrequentQuestions/add.php:25
+#: Admin/FrequentQuestions/edit.php:26
+#: Admin/FrequentQuestions/view.php:34
+#: Admin/Galleries/add.php:26
+#: Admin/Galleries/edit.php:27
+#: Admin/Galleries/view.php:40
+#: Admin/Questions/add.php:27
+#: Admin/Questions/edit.php:28
+#: Admin/Socials/add.php:25
+#: Admin/Socials/edit.php:26
+#: Admin/Tests/add.php:26
+#: Admin/Tests/edit.php:27
+#: Admin/Users/add.php:27
+#: Admin/Users/edit.php:29
+#: Admin/Users/view.php:47
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: Admin/Advantages/add.php:35
+#: Admin/Advantages/edit.php:33
+#: Admin/Answers/edit.php:28
+#: Admin/BranchesHistories/add.php:27
+#: Admin/BranchesHistories/edit.php:27
+#: Admin/Branches/add.php:31
+#: Admin/Branches/edit.php:32
+#: Admin/Contents/add.php:29
+#: Admin/Contents/edit.php:30
+#: Admin/Courses/add.php:53
+#: Admin/Courses/edit.php:54
+#: Admin/FrequentQuestions/add.php:26
+#: Admin/FrequentQuestions/edit.php:27
+#: Admin/Galleries/add.php:27
+#: Admin/Galleries/edit.php:28
+#: Admin/Questions/edit.php:29
+#: Admin/Socials/add.php:26
+#: Admin/Socials/edit.php:27
+#: Admin/Users/add.php:28
+#: Admin/Users/edit.php:30
+#: Contacts/index.php:37
+#: Users/login.php:25
+msgid "Submit"
+msgstr "Enviar"
+
+#: Admin/Advantages/edit.php:19
+msgid "Edit advantage"
+msgstr "Editar ventaja"
+
+#: Admin/Advantages/index.php:20
+#: Admin/Answers/index.php:21
+#: Admin/BranchesHistories/index.php:19
+#: Admin/Branches/index.php:19
+#: Admin/Contacts/index.php:25
+#: Admin/Contents/index.php:20
+#: Admin/Courses/index.php:22
+#: Admin/FrequentQuestions/index.php:18
+#: Admin/Galleries/index.php:19
+#: Admin/Questions/index.php:20
+#: Admin/Questions/view.php:46
+#: Admin/Socials/index.php:19
+#: Admin/Tests/index.php:18
+#: Admin/Tests/view.php:37
+#: Admin/Users/index.php:22
+#: Tests/index.php:20
+msgid "Actions"
+msgstr "Acciones"
+
+#: Admin/Advantages/index.php:34
+#: Admin/Answers/index.php:35
+#: Admin/BranchesHistories/index.php:31
+#: Admin/Branches/index.php:31
+#: Admin/Contacts/index.php:51
+#: Admin/Contents/index.php:35
+#: Admin/Courses/index.php:38
+#: Admin/FrequentQuestions/index.php:29
+#: Admin/Galleries/index.php:31
+#: Admin/Questions/index.php:33
+#: Admin/Questions/view.php:61
+#: Admin/Socials/index.php:31
+#: Admin/Tests/index.php:29
+#: Admin/Tests/view.php:45
+#: Admin/Users/index.php:36
+#: Tests/index.php:34
+msgid "View"
+msgstr "Ver"
+
+#: Admin/Advantages/index.php:35
+#: Admin/Advantages/view.php:50
+#: Admin/Answers/index.php:36
+#: Admin/Answers/view.php:46
+#: Admin/BranchesHistories/index.php:32
+#: Admin/BranchesHistories/view.php:38
+#: Admin/Branches/index.php:32
+#: Admin/Branches/view.php:57
+#: Admin/Contents/index.php:36
+#: Admin/Contents/view.php:51
+#: Admin/Courses/index.php:39
+#: Admin/Courses/view.php:91
+#: Admin/FrequentQuestions/index.php:30
+#: Admin/FrequentQuestions/view.php:33
+#: Admin/Galleries/index.php:32
+#: Admin/Galleries/view.php:39
+#: Admin/Questions/index.php:34
+#: Admin/Questions/view.php:77
+#: Admin/Socials/index.php:32
+#: Admin/Socials/view.php:33
+#: Admin/Tests/index.php:30
+#: Admin/Tests/view.php:60
+#: Admin/Users/index.php:37
+#: Admin/Users/view.php:46
+#: Tests/index.php:35
+msgid "Edit"
+msgstr "Editar"
+
+#: Admin/Advantages/index.php:37
+#: Admin/Advantages/view.php:49
+#: Admin/BranchesHistories/index.php:34
+#: Admin/BranchesHistories/view.php:37
+#: Admin/Galleries/index.php:34
+msgid "Are you sure you want to delete {0}?"
+msgstr "¿Estás seguro de que quieres eliminar {0}?"
+
+#: Admin/Advantages/index.php:40
+#: Admin/Advantages/view.php:49
+#: Admin/Answers/index.php:41
+#: Admin/Answers/view.php:45
+#: Admin/BranchesHistories/index.php:37
+#: Admin/BranchesHistories/view.php:37
+#: Admin/Branches/index.php:37
+#: Admin/Branches/view.php:56
+#: Admin/Contents/index.php:41
+#: Admin/Contents/view.php:50
+#: Admin/Courses/index.php:44
+#: Admin/Courses/view.php:90
+#: Admin/FrequentQuestions/index.php:35
+#: Admin/FrequentQuestions/view.php:32
+#: Admin/Galleries/index.php:37
+#: Admin/Galleries/view.php:38
+#: Admin/Questions/index.php:39
+#: Admin/Questions/view.php:75
+#: Admin/Tests/index.php:35
+#: Admin/Tests/view.php:58
+#: Admin/Users/index.php:42
+#: Admin/Users/view.php:45
+#: Tests/index.php:40
+msgid "Delete"
+msgstr "Borrar"
+
+#: Admin/Advantages/index.php:55
+#: Admin/Answers/index.php:56
+#: Admin/BranchesHistories/index.php:52
+#: Admin/Branches/index.php:52
+#: Admin/Contacts/index.php:66
+#: Admin/Contents/index.php:56
+#: Admin/Courses/index.php:59
+#: Admin/FrequentQuestions/index.php:50
+#: Admin/Galleries/index.php:52
+#: Admin/Questions/index.php:54
+#: Admin/Socials/index.php:47
+#: Admin/Tests/index.php:50
+#: Admin/Users/index.php:57
+#: Tests/index.php:55
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} en total"
+
+#: Admin/Advantages/view.php:20
+#: Admin/BranchesHistories/view.php:15
+#: Admin/Contacts/view.php:43
+#: Admin/Contents/view.php:15
+#: Admin/Courses/view.php:21
+#: Admin/Galleries/view.php:15
+#: Admin/Tests/view.php:15
+msgid "Branch"
+msgstr "Sede"
+
+#: Admin/Advantages/view.php:24
+#: Admin/Contents/view.php:24
+#: Admin/Courses/view.php:25
+msgid "Title"
+msgstr "Titulo"
+
+#: Admin/Advantages/view.php:32
+#: Admin/Branches/add.php:22
+#: Admin/Branches/edit.php:23
+msgid "Logo"
+msgstr "Logo"
+
+#: Admin/Advantages/view.php:36
+#: Admin/Answers/view.php:31
+#: Admin/BranchesHistories/view.php:24
+#: Admin/Branches/view.php:43
+#: Admin/Contacts/view.php:48
+#: Admin/Contents/view.php:36
+#: Admin/Courses/view.php:77
+#: Admin/FrequentQuestions/view.php:19
+#: Admin/Galleries/view.php:24
+#: Admin/Questions/view.php:27
+#: Admin/Questions/view.php:44
+#: Admin/Socials/view.php:19
+#: Admin/Tests/view.php:23
+#: Admin/Tests/view.php:35
+#: Admin/Users/view.php:31
+msgid "Created"
+msgstr "Creado"
+
+#: Admin/Advantages/view.php:40
+#: Admin/Answers/view.php:35
+#: Admin/BranchesHistories/view.php:20
+#: Admin/BranchesHistories/view.php:28
+#: Admin/Branches/view.php:47
+#: Admin/Contents/view.php:40
+#: Admin/Courses/view.php:81
+#: Admin/FrequentQuestions/view.php:23
+#: Admin/Galleries/view.php:28
+#: Admin/Questions/view.php:31
+#: Admin/Questions/view.php:45
+#: Admin/Socials/view.php:23
+#: Admin/Tests/view.php:36
+#: Admin/Users/view.php:35
+msgid "Modified"
+msgstr "Modificado"
+
+#: Admin/Answers/add.php:15
+#: Admin/Answers/index.php:61
+msgid "Add answer"
+msgstr "Agregar respuesta"
+
+#: Admin/Answers/add.php:28
+#: Admin/Questions/add.php:28
+#: Admin/Tests/add.php:27
+#: Admin/Tests/edit.php:28
+msgid "Save"
+msgstr "Guardar"
+
+#: Admin/Answers/edit.php:16
+msgid "Edit answer"
+msgstr "Editar respuesta"
+
+#: Admin/Answers/index.php:10
+msgid "Answers"
+msgstr "Respuestas"
+
+#: Admin/Answers/index.php:38
+#: Admin/Answers/view.php:45
+#: Admin/Contents/view.php:50
+#: Admin/Galleries/view.php:38
+#: Tests/index.php:37
+msgid "Are you sure you want to delete # {0}?"
+msgstr "¿Estás seguro de que quieres eliminar # {0}?"
+
+#: Admin/Answers/view.php:15
+#: Admin/Tests/view.php:34
+msgid "Question"
+msgstr "Pregunta"
+
+#: Admin/Answers/view.php:20
+msgid "Result"
+msgstr "Resultado"
+
+#: Admin/BranchesHistories/add.php:15
+msgid "Add branchesHistory"
+msgstr "Agregar historia de la sede"
+
+#: Admin/BranchesHistories/edit.php:15
+msgid "Edit branchesHistory"
+msgstr "Editar historia de la sede"
+
+#: Admin/BranchesHistories/index.php:58
+msgid "Add Branch History"
+msgstr "Agregar historia de la sede"
+
+#: Admin/Branches/add.php:15
+#: Admin/Branches/index.php:58
+msgid "Add branch"
+msgstr "Agregar sede"
+
+#: Admin/Branches/edit.php:16
+msgid "Edit branch"
+msgstr "Editar sede"
+
+#: Admin/Branches/index.php:34
+#: Admin/Branches/view.php:56
+msgid "Are you sure you want to delete the branche {0}?"
+msgstr "¿Está seguro de que desea eliminar la rama {0}?"
+
+#: Admin/Branches/view.php:15
+msgid "Name"
+msgstr "Nombre"
+
+#: Admin/Branches/view.php:19
+#: Admin/Courses/add.php:49
+#: Admin/Courses/edit.php:50
+#: Admin/Courses/view.php:73
+#: Admin/Galleries/add.php:23
+#: Admin/Galleries/edit.php:24
+#: Admin/Galleries/view.php:20
+#: Admin/Questions/add.php:24
+#: Admin/Questions/edit.php:25
+#: Admin/Questions/view.php:23
+msgid "Image"
+msgstr "Imagen"
+
+#: Admin/Branches/view.php:23
+msgid "Address"
+msgstr "Dirección"
+
+#: Admin/Branches/view.php:27
+msgid "Contact Number 1"
+msgstr "Número de contacto 1"
+
+#: Admin/Branches/view.php:31
+msgid "Contact Number 2"
+msgstr "Número de contacto 2"
+
+#: Admin/Branches/view.php:35
+#: Admin/Courses/view.php:57
+msgid "Schedule"
+msgstr "Horario"
+
+#: Admin/Branches/view.php:39
+msgid "Location"
+msgstr "Ubicación"
+
+#: Admin/Contacts/view.php:13
+msgid "Message # "
+msgstr "Mensaje #"
+
+#: Admin/Contacts/view.php:18
+#: Admin/Users/view.php:15
+msgid "First Name"
+msgstr "Nombre"
+
+#: Admin/Contacts/view.php:22
+#: Admin/Users/view.php:19
+msgid "Last Name"
+msgstr "Apellido"
+
+#: Admin/Contacts/view.php:26
+#: Admin/Users/view.php:23
+msgid "Email"
+msgstr ""
+
+#: Admin/Contacts/view.php:30
+msgid "Message"
+msgstr "Mensaje"
+
+#: Admin/Contacts/view.php:34
+msgid "Telephone"
+msgstr "Teléfono"
+
+#: Admin/Contacts/view.php:38
+msgid "Course"
+msgstr "Curso"
+
+#: Admin/Contents/add.php:15
+#: Admin/Contents/index.php:62
+msgid "Add content"
+msgstr "Agregar contenido"
+
+#: Admin/Contents/add.php:25
+#: Admin/Contents/edit.php:26
+msgid "Image 1"
+msgstr "Imagen 1"
+
+#: Admin/Contents/edit.php:16
+msgid "Edit content"
+msgstr "Editar contenido"
+
+#: Admin/Contents/index.php:10
+msgid "Contents"
+msgstr "Contenidos"
+
+#: Admin/Contents/index.php:38
+msgid "Are you sure you want to delete the content {0}?"
+msgstr "¿Está seguro de que desea eliminar el contenido {0}?"
+
+#: Admin/Contents/view.php:19
+msgid "Identifier"
+msgstr "Identificador"
+
+#: Admin/Contents/view.php:28
+msgid "Text"
+msgstr "Texto"
+
+#: Admin/Contents/view.php:32
+msgid "Primary Image"
+msgstr "Imagen primaria"
+
+#: Admin/Courses/add.php:18
+#: Admin/Courses/index.php:65
+msgid "Add course"
+msgstr "Agregar curso"
+
+#: Admin/Courses/add.php:30
+#: Admin/Courses/edit.php:31
+#: Admin/Courses/view.php:33
+msgid "Profile"
+msgstr "Perfil"
+
+#: Admin/Courses/add.php:44
+#: Admin/Courses/edit.php:45
+#: Admin/Courses/view.php:65
+msgid "Requirements"
+msgstr "Requerimientos"
+
+#: Admin/Courses/edit.php:19
+msgid "Edit course"
+msgstr "Editar curso"
+
+#: Admin/Courses/index.php:41
+#: Admin/Courses/view.php:90
+msgid "Are you sure you want to delete the course {0}?"
+msgstr "¿Está seguro de que desea eliminar el curso {0}?"
+
+#: Admin/Courses/view.php:29
+msgid "Short Description"
+msgstr "Descripción corta"
+
+#: Admin/Courses/view.php:37
+#: Admin/Questions/view.php:19
+#: Tests/view.php:31
+msgid "Category"
+msgstr "Categoría"
+
+#: Admin/Courses/view.php:41
+msgid "Practical Time"
+msgstr "Tiempo práctico"
+
+#: Admin/Courses/view.php:45
+msgid "Theoretical Time"
+msgstr "Tiempo teórico"
+
+#: Admin/Courses/view.php:49
+msgid "Workshop Time"
+msgstr "Tiempo de taller"
+
+#: Admin/Courses/view.php:53
+msgid "Type"
+msgstr "Tipo"
+
+#: Admin/Courses/view.php:61
+msgid "Medical Exam"
+msgstr "Examen médico"
+
+#: Admin/Courses/view.php:69
+msgid "Price"
+msgstr "Precio"
+
+#: Admin/FrequentQuestions/add.php:15
+#: Admin/FrequentQuestions/index.php:56
+msgid "Add frequentQuestion"
+msgstr "Agregar pregunta frecuente"
+
+#: Admin/FrequentQuestions/edit.php:16
+msgid "Edit frequentQuestion"
+msgstr "Editar pregunta frecuente"
+
+#: Admin/FrequentQuestions/index.php:32
+#: Admin/FrequentQuestions/view.php:32
+#: Admin/Questions/index.php:36
+#: Admin/Questions/view.php:75
+msgid "Are you sure you want to delete the question {0}?"
+msgstr "¿Está seguro de que desea eliminar la pregunta {0}?"
+
+#: Admin/FrequentQuestions/view.php:15
+#: Admin/Questions/view.php:42
+msgid "Answer"
+msgstr "Respuesta"
+
+#: Admin/Galleries/add.php:15
+#: Admin/Galleries/index.php:58
+msgid "Add gallery"
+msgstr "Agregar galería"
+
+#: Admin/Galleries/edit.php:16
+msgid "Edit gallery"
+msgstr "Editar galería"
+
+#: Admin/Galleries/index.php:10
+msgid "Galleries"
+msgstr "Galerías"
+
+#: Admin/Questions/add.php:15
+#: Admin/Questions/index.php:60
+msgid "Add question"
+msgstr "Agregar pregunta"
+
+#: Admin/Questions/add.php:29
+msgid "Save and Add Answer"
+msgstr "Guardar y agregar respuesta"
+
+#: Admin/Questions/edit.php:16
+msgid "Edit question"
+msgstr "Editar pregunta"
+
+#: Admin/Questions/index.php:10
+msgid "Questions"
+msgstr "Preguntas"
+
+#: Admin/Questions/view.php:15
+msgid "Test"
+msgstr "Prueba"
+
+#: Admin/Questions/view.php:37
+msgid "Related Answers"
+msgstr "Respuestas Relacionadas"
+
+#: Admin/Questions/view.php:43
+msgid "Status"
+msgstr "Estado"
+
+#: Admin/Questions/view.php:76
+msgid "View questions"
+msgstr "Ver preguntas"
+
+#: Admin/Questions/view.php:78
+msgid "Add Answer"
+msgstr "Agregar respuesta"
+
+#: Admin/Socials/add.php:15
+msgid "Add social"
+msgstr "Agregar sociales"
+
+#: Admin/Socials/edit.php:16
+msgid "Edit social"
+msgstr "Editar sociales"
+
+#: Admin/Socials/index.php:10
+msgid "Socials"
+msgstr "Sociales"
+
+#: Admin/Socials/view.php:15
+msgid "Link"
+msgstr "Enlace"
+
+#: Admin/Tests/add.php:15
+#: Admin/Tests/index.php:55
+#: Tests/index.php:61
+msgid "Add test"
+msgstr "Agregar prueba"
+
+#: Admin/Tests/add.php:28
+msgid "Save and Add Question"
+msgstr "Guardar y agregar pregunta"
+
+#: Admin/Tests/edit.php:16
+msgid "Edit test"
+msgstr "Editar prueba"
+
+#: Admin/Tests/index.php:32
+#: Admin/Tests/view.php:58
+msgid "Are you sure you want to delete the test {0}?"
+msgstr "¿Está seguro de que desea eliminar la prueba {0}?"
+
+#: Admin/Tests/view.php:29
+msgid "Related Questions"
+msgstr "Preguntas Relacionadas"
+
+#: Admin/Tests/view.php:59
+msgid "View tests"
+msgstr "Ver Pruebas"
+
+#: Admin/Tests/view.php:61
+msgid "Add Question"
+msgstr "Agregar pregunta"
+
+#: Admin/Users/add.php:15
+#: Admin/Users/index.php:62
+msgid "Add user"
+msgstr "Agregar usuario"
+
+#: Admin/Users/edit.php:16
+msgid "Edit user"
+msgstr "Editar usuario"
+
+#: Admin/Users/index.php:39
+#: Admin/Users/view.php:45
+msgid "Are you sure you want to delete the user {0}?"
+msgstr "¿Está seguro de que desea eliminar el usuario {0}?"
+
+#: Admin/Users/login.php:18
+#: Users/login.php:22
+msgid "Please input your username"
+msgstr "Por favor ingrese su usuario"
+
+#: Admin/Users/login.php:19
+#: Users/login.php:23
+msgid "Please input your password"
+msgstr "Por favor ingrese su contraseña"
+
+#: Admin/Users/login.php:21
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: Admin/Users/login.php:26
+msgid "Have you forgotten your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: Admin/Users/view.php:27
+msgid "Role"
+msgstr "Rol"
+
+#: Courses/course.php:65
+msgid "Download content"
+msgstr "Descarga contenido"
+
+#: Home/index.php:24
+msgid "View categories"
+msgstr "Ver categorías"
+
+#: Home/index.php:34
+msgid "Why choose us?"
+msgstr "¿Por qué elegirnos?"
+
+#: Home/index.php:64
+msgid "Check RUNT"
+msgstr "Consulta RUNT"
+
+#: Home/index.php:69
+msgid "Check comparendo"
+msgstr "Consulta tus comparendos"
+
+#: Home/index.php:91
+msgid "Take a theoretical test"
+msgstr "Realizar test teórico"
+
+#: Home/option.php:2
+msgid "Choose a branch"
+msgstr "Selecciona una sede"
+
+#: Us/index.php:18
+msgid "Our branches"
+msgstr "Nuestras sedes"
+
+#: element/courses.php:2
+msgid "Discover the category you need"
+msgstr "Descubre la categoría que necesitas"
+
+#: element/courses.php:26
+msgid "View more info"
+msgstr "Ver más información"
+
+#: layout/default.php:66
+msgid "WHATCHED BY"
+msgstr "VIGILADOS POR"
+
+#: layout/error.php:40
+msgid "Back"
+msgstr "Atras"
+

@@ -77,11 +77,18 @@ return [
      * Email configuration.
      *
      * Host and credential configuration in case you are using SmtpTransport
+     * 
+     * Each transport needs a `className`. Valid options are as follows:
+     *
+     * Mail   - Send using PHP mail function
+     * Smtp   - Send using SMTP
+     * Debug  - Do not send the email, just return the result
      *
      * See app.php for more configuration options.
      */
     'EmailTransport' => [
         'default' => [
+            'className' => '',
             'host' => 'localhost',
             'port' => 25,
             'username' => null,
@@ -89,5 +96,13 @@ return [
             'client' => null,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
+    ],
+
+    /*
+     * reCaptcha keys.
+     */
+    'reCaptchaKeys' => [
+        'secret' => 'reCAPTCHA_secret_key',
+        'site_key' => 'reCAPTCHA_site_key',
     ],
 ];

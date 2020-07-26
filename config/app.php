@@ -50,7 +50,7 @@ return [
     'App' => [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
-        'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
+        'defaultLocale' => env('APP_DEFAULT_LOCALE', 'es_CO'),
         'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'UTC'),
         'base' => false,
         'dir' => 'src',
@@ -397,5 +397,9 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+        // TODO: Delete the follow line after enable SSL
+        'ini' => [
+            'session.cookie_secure' => false
+        ]
     ],
 ];

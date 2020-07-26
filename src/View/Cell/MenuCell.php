@@ -26,7 +26,7 @@ class MenuCell extends Cell
     public function initialize(): void
     {
     }
-
+    
     /**
      * Default display method.
      *
@@ -35,35 +35,51 @@ class MenuCell extends Cell
     public function display()
     {
         $menuItems = [
-            "courses" => [
-                "label" => __("Courses-label"),
-                "icon" => "fal fa-book",
+            "branches" => [
+                "label" => __("Branches"),
+                "icon" => "fal fa-building",
                 "actions" => [
                     "index" => __("Listar"),
                     "add" => __("Crear")
                 ]
             ],
-            "podcasts" => [
-                "label" => __("Podcasts"),
-                "icon" => "fal fa-podcast",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "products" => [
-                "label" => __("Products"),
-                "icon" => "fal fa-shopping-bag",
-                "actions" => [
-                    "index" => __("Listar"),
-                    "add" => __("Crear")
-                ]
-            ],
-            "discounts" => [
-                "label" => __("Discounts"),
-                "icon" => "fal fa-percent",
+            "contents" => [
+                "label" => __("Content"),
+                "icon" => "fal fa-th-list",
                 "actions" => [
                     "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "galleries" => [
+                "label" => __("Gallery"),
+                "icon" => "fal fa-images",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "advantages" => [
+                "label" => __("Advantages"),
+                "icon" => "fal fa-th-list",
+                "actions" => [
+                    "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "courses" => [
+                "label" => __("Courses"),
+                "icon" => "fal fa-road",
+                "actions" => [
+                    "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "branches_histories" => [
+                "label" => __("Branches Histories"),
+                "icon" => "fal fa-trophy",
+                "actions" => [
+                    "index" => __("Listar"),
                     "add" => __("Crear")
                 ]
             ],
@@ -75,9 +91,30 @@ class MenuCell extends Cell
                     "add" => __("Crear")
                 ]
             ],
-            "settings" => [
-                "label" => __("Settings"),
-                "icon" => "fal fa-cog",
+            "tests" => [
+                "label" => __("Tests"),
+                "icon" => "fal fa-book-open",
+                "actions" => [
+                    "index" => __("Listar"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "contacts" => [
+                "label" => __("Contacts"),
+                "icon" => "fal fa-comment-alt-dots",
+                "action" => "index"
+            ],
+            "frequent_questions" => [
+                "label" => __("Frequent questions"),
+                "icon" => "fal fa-question",
+                "actions" => [
+                    "index" => __("Ver"),
+                    "add" => __("Crear")
+                ]
+            ],
+            "socials" => [
+                "label" => __("Social Media"),
+                "icon" => "far fa-thumbs-up",
                 "action" => "index"
             ],
         ];

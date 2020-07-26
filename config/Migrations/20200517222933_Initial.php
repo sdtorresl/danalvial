@@ -15,14 +15,14 @@ class Initial extends AbstractMigration
     public function up()
     {
         $this->table('answers')
-            ->addColumn('questions_id', 'integer', [
+            ->addColumn('question_id', 'integer', [
                 'default' => null,
                 'limit' => 11,
                 'null' => false,
             ])
             ->addColumn('answer', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 500,
                 'null' => true,
             ])
             ->addColumn('result', 'boolean', [
@@ -42,7 +42,7 @@ class Initial extends AbstractMigration
             ])
             ->addIndex(
                 [
-                    'questions_id',
+                    'question_id',
                 ]
             )
             ->create();
@@ -78,12 +78,12 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('contact_number_1', 'string', [
+            ->addColumn('contact_number_1', 'integer', [
                 'default' => null,
                 'limit' => 15,
                 'null' => false,
             ])
-            ->addColumn('contact_number_2', 'string', [
+            ->addColumn('contact_number_2', 'integer', [
                 'default' => null,
                 'limit' => 15,
                 'null' => true,
@@ -132,14 +132,14 @@ class Initial extends AbstractMigration
                 'limit' => 45,
                 'null' => false,
             ])
-            ->addColumn('message', 'string', [
+            ->addColumn('message', 'text', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => null,
                 'null' => false,
             ])
-            ->addColumn('telephone', 'string', [
+            ->addColumn('telephone', 'integer', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 15,
                 'null' => false,
             ])
             ->addColumn('course_id', 'integer', [
@@ -264,7 +264,7 @@ class Initial extends AbstractMigration
                 'limit' => 150,
                 'null' => false,
             ])
-            ->addColumn('long_description', 'text', [
+            ->addColumn('profile', 'text', [
                 'default' => null,
                 'limit' => null,
                 'null' => false,
@@ -281,7 +281,7 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('schedule', 'string', [
                 'default' => null,
-                'limit' => 100,
+                'limit' => 255,
                 'null' => false,
             ])
             ->addColumn('medical_exam', 'string', [
@@ -332,12 +332,6 @@ class Initial extends AbstractMigration
             ->addIndex(
                 [
                     'branch_id',
-                ],
-                ['unique' => true]
-            )
-            ->addIndex(
-                [
-                    'branch_id',
                 ]
             )
             ->create();
@@ -373,17 +367,12 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('question', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 400,
                 'null' => false,
             ])
             ->addColumn('category', 'string', [
                 'default' => null,
                 'limit' => 45,
-                'null' => false,
-            ])
-            ->addColumn('answer_description', 'string', [
-                'default' => null,
-                'limit' => 150,
                 'null' => false,
             ])
             ->addColumn('title', 'string', [
@@ -483,10 +472,10 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('rol', 'string', [
+            ->addColumn('role', 'string', [
                 'default' => null,
                 'limit' => 45,
-                'null' => true,
+                'null' => false,
             ])
             ->addColumn('token', 'string', [
                 'default' => null,
@@ -529,7 +518,7 @@ class Initial extends AbstractMigration
 
         $this->table('answers')
             ->addForeignKey(
-                'questions_id',
+                'question_id',
                 'questions',
                 'id',
                 [
@@ -608,7 +597,7 @@ class Initial extends AbstractMigration
     {
         $this->table('answers')
             ->dropForeignKey(
-                'questions_id'
+                'question_id'
             )->save();
 
         $this->table('contacts')

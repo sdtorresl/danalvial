@@ -14,8 +14,11 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Danalvial';
+$menuCell = $this->cell('HomeMenu');
+$socialCell = $this->cell('SocialMedia');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,33 +30,71 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
-
-    <?= $this->Html->css('milligram.min.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->script('/node_modules/materialize-css/dist/js/materialize.min.js') ?>
+    <?= $this->Html->css('main.min.css') ?>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="/"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <a target="_blank" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" href="https://api.cakephp.org/4/">API</a>
-        </div>
-    </nav>
+    <?= $menuCell ?>
     <main class="main">
-        <div class="container">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
-        </div>
+        <?= $socialCell ?>
+        <?= $this->Flash->render() ?>
+        <?= $this->fetch('content') ?>
     </main>
+
     <footer>
+        <div id="info-footer" class="row">
+            <div class="col s12 m12 l4">
+                <h1>Danalvial</h1>
+            </div>
+            <div class="col s12 m6 l4 col-pseudo">
+                <p>Danalvial escuela de conducción automovilística</p>
+                <p>Dirección: <?= $branch[0]->address ?></p>
+                <p>Horario: <?= $branch[0]->schedule ?></p>
+            </div>
+            <div class="col s12 m6 l4">
+                <p><?= $branch[0]->location ?></p>
+                <p>© Danalvial. Todos los derechos reservados.2020</p>
+            </div>
+        </div>
+        <div id="logos-footer">
+            <p><?= __('WHATCHED BY') ?></p>
+            <div id="logos">
+                <?= $this->Html->image('min-transporte.png') ?>
+                <?= $this->Html->image('vigilado-st.png') ?>
+                <?= $this->Html->image('runt.png') ?>
+                <?= $this->Html->image('icc.png') ?>
+                <?= $this->Html->image('aulapp.png') ?>
+                <?= $this->Html->image('min-educacion.png') ?>
+            </div>
+        </div>
     </footer>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true
+            });
+
+            autoplay(instances);
+        });
+
+        function autoplay(instances) {
+            for (let index = 0; index < instances.length; index++) {
+                const instance = instances[index];
+                instance.next();
+            }
+            setTimeout(autoplay, 6000, instances);
+        }
+    </script>
+
 </body>
 </html>
