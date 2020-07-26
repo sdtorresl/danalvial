@@ -124,10 +124,22 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
-        $authenticationService = new AuthenticationService([
-            'unauthenticatedRedirect' => '/admin/users/login',
-            'queryParam' => 'redirect',
-        ]);
+        $params = $request->getAttribute("params");
+
+        if ( array_key_exists("prefix", $params) ) {
+            if($params['prefix'] == 'Admin') {
+                $authenticationService = new AuthenticationService([
+                    'unauthenticatedRedirect' => '/admin/users/login',
+                    'queryParam' => 'redirect',
+                ]);
+            }
+        }
+        else {
+            $authenticationService = new AuthenticationService([
+                'unauthenticatedRedirect' => '/users/login',
+                'queryParam' => 'redirect',
+            ]);
+        }
 
         // Load identifiers, ensure we check email and password fields
         $authenticationService->loadIdentifier('Authentication.Password', [
@@ -140,10 +152,9 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         // Load the authenticators, you want session first
         $authenticationService->loadAuthenticator('Authentication.Session');
 
-        $params = $request->getAttribute("params");
+        // Configure form data check to pick email and password
         if ( array_key_exists("prefix", $params) ) {
             if($params['prefix'] == 'Admin') {
-                // Configure form data check to pick email and password for Admin
                 $authenticationService->loadAuthenticator('Authentication.Form', [
                     'fields' => [
                         'username' => 'email',
@@ -154,7 +165,6 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             }
         }
         else {
-            // Configure form data check to pick email and password
             $authenticationService->loadAuthenticator('Authentication.Form', [
                 'fields' => [
                     'username' => 'email',
