@@ -1026,7 +1026,7 @@ msgstr "Nuestras sedes"
 
 #: element/courses.php:2
 msgid "Discover the category you need"
-msgstr "Descruble la categoría que necesitas"
+msgstr "Descubre la categoría que necesitas"
 
 #: element/courses.php:26
 msgid "View more info"
