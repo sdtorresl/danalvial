@@ -101,10 +101,15 @@ class BranchesHistoriesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $branchesHistory = $this->BranchesHistories->get($id);
-        if ($this->BranchesHistories->delete($branchesHistory)) {
-            $this->Flash->success(__('The branches history has been deleted.'));
-        } else {
-            $this->Flash->error(__('The branches history could not be deleted. Please, try again.'));
+        try {
+            if ($this->BranchesHistories->delete($branchesHistory)) {
+                $this->Flash->success(__('The branches history has been deleted.'));
+            } else {
+                $this->Flash->error(__('The branches history could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La historia de la sede tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

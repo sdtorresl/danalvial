@@ -96,10 +96,15 @@ class SocialsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $social = $this->Socials->get($id);
-        if ($this->Socials->delete($social)) {
-            $this->Flash->success(__('The social has been deleted.'));
-        } else {
-            $this->Flash->error(__('The social could not be deleted. Please, try again.'));
+        try {
+            if ($this->Socials->delete($social)) {
+                $this->Flash->success(__('The social has been deleted.'));
+            } else {
+                $this->Flash->error(__('The social could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La red social tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

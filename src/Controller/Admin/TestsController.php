@@ -108,10 +108,15 @@ class TestsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $test = $this->Tests->get($id);
-        if ($this->Tests->delete($test)) {
-            $this->Flash->success(__('The test has been deleted.'));
-        } else {
-            $this->Flash->error(__('The test could not be deleted. Please, try again.'));
+        try {
+            if ($this->Tests->delete($test)) {
+                $this->Flash->success(__('The test has been deleted.'));
+            } else {
+                $this->Flash->error(__('The test could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La prueba tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

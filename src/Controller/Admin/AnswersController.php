@@ -102,10 +102,15 @@ class AnswersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $answer = $this->Answers->get($id);
-        if ($this->Answers->delete($answer)) {
-            $this->Flash->success(__('The answer has been deleted.'));
-        } else {
-            $this->Flash->error(__('The answer could not be deleted. Please, try again.'));
+        try {
+            if ($this->Answers->delete($answer)) {
+                $this->Flash->success(__('The answer has been deleted.'));
+            } else {
+                $this->Flash->error(__('The answer could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La respuesta tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['controller' => 'Questions', 'action' => 'view', $answer->question_id]);

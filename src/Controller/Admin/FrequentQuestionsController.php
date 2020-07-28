@@ -96,10 +96,15 @@ class FrequentQuestionsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $frequentQuestion = $this->FrequentQuestions->get($id);
-        if ($this->FrequentQuestions->delete($frequentQuestion)) {
-            $this->Flash->success(__('The frequent question has been deleted.'));
-        } else {
-            $this->Flash->error(__('The frequent question could not be deleted. Please, try again.'));
+        try {
+            if ($this->FrequentQuestions->delete($frequentQuestion)) {
+                $this->Flash->success(__('The frequent question has been deleted.'));
+            } else {
+                $this->Flash->error(__('The frequent question could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La pregunta frecuente tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

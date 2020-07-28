@@ -109,12 +109,17 @@ class ContentsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $content = $this->Contents->get($id);
-        if ($this->Contents->delete($content)) {
-            $this->Flash->success(__('The content has been deleted.'));
-        } else {
-            $this->Flash->error(__('The content could not be deleted. Please, try again.'));
+        try {
+            if ($this->Contents->delete($content)) {
+                $this->Flash->success(__('The content has been deleted.'));
+            } else {
+                $this->Flash->error(__('The content could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('El contenido tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
-
+        
         return $this->redirect(['action' => 'index']);
     }
 }

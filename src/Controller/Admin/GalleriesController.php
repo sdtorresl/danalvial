@@ -101,10 +101,15 @@ class GalleriesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $gallery = $this->Galleries->get($id);
-        if ($this->Galleries->delete($gallery)) {
-            $this->Flash->success(__('The gallery has been deleted.'));
-        } else {
-            $this->Flash->error(__('The gallery could not be deleted. Please, try again.'));
+        try {
+            if ($this->Galleries->delete($gallery)) {
+                $this->Flash->success(__('The gallery has been deleted.'));
+            } else {
+                $this->Flash->error(__('The gallery could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La galería tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

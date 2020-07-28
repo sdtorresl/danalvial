@@ -109,10 +109,15 @@ class CoursesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $course = $this->Courses->get($id);
-        if ($this->Courses->delete($course)) {
-            $this->Flash->success(__('The course has been deleted.'));
-        } else {
-            $this->Flash->error(__('The course could not be deleted. Please, try again.'));
+        try {
+            if ($this->Courses->delete($course)) {
+                $this->Flash->success(__('The course has been deleted.'));
+            } else {
+                $this->Flash->error(__('The course could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('El curso tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['action' => 'index']);

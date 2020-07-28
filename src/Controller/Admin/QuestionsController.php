@@ -117,10 +117,15 @@ class QuestionsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $question = $this->Questions->get($id);
-        if ($this->Questions->delete($question)) {
-            $this->Flash->success(__('The question has been deleted.'));
-        } else {
-            $this->Flash->error(__('The question could not be deleted. Please, try again.'));
+        try {
+            if ($this->Questions->delete($question)) {
+                $this->Flash->success(__('The question has been deleted.'));
+            } else {
+                $this->Flash->error(__('The question could not be deleted. Please, try again.'));
+            }
+        } catch (\PDOException $th) {
+            $this->Flash->error('La pregunta tiene datos asociados, no se pudo eliminar. Inténtalo de nuevo.');
+            //throw $th;
         }
 
         return $this->redirect(['controller' => 'Tests', 'action' => 'view', $question->test_id]);
