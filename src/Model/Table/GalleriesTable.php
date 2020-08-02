@@ -81,7 +81,7 @@ class GalleriesTable extends Table
 
         $validator
             ->requirePresence('image', 'create')
-            ->notEmptyFile('image');
+            ->allowEmptyFile('image', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
 
         $validator
             ->maxLength('image_dir', 255)

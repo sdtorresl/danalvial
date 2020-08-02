@@ -46,7 +46,7 @@ class FileBehavior extends Behavior
      */
     protected function getFileName(EntityInterface $entity, string $field, string $name) {
         //Log::debug("Entity: " . debug($entity));
-        return $field . '-' . strtolower($name);
+        return $field . '-' . date('Y-m-d H:i:s') . '-' . strtolower($name);
     }
 
     protected function clean($string) {

@@ -94,6 +94,7 @@ class ContactsTable extends Table
 
         $validator
             ->integer('telephone')
+            ->maxLength('telephone', 15)
             ->requirePresence('telephone', 'create')
             ->notEmptyString('telephone');
 

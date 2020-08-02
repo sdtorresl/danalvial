@@ -93,7 +93,7 @@ class ContentsTable extends Table
 
         $validator
             ->requirePresence('primary_image', 'create')
-            ->allowEmptyFile('primary_image');
+            ->allowEmptyFile('primary_image', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
 
         $validator
             ->maxLength('primary_image_dir', 255)

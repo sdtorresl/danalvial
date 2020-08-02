@@ -38,7 +38,7 @@ class CreateGalleries extends AbstractMigration
         $table->addColumn('image_size', 'string', [
             'default' => null,
             'limit' => 45,
-            'null' => false,
+            'null' => true,
         ]);
         $table->addColumn('image_type', 'string', [
             'default' => null,

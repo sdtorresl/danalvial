@@ -66,7 +66,7 @@ class Initial extends AbstractMigration
             ->addColumn('image_size', 'string', [
                 'default' => null,
                 'limit' => 45,
-                'null' => false,
+                'null' => true,
             ])
             ->addColumn('image_type', 'string', [
                 'default' => null,

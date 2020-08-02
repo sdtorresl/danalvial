@@ -111,7 +111,7 @@ class CoursesTable extends Table
 
         $validator
             ->requirePresence('schedule', 'create')
-            ->notEmptyFile('schedule');
+            ->allowEmptyFile('schedule', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
 
         $validator
             ->maxLength('schedule_dir', 255)
@@ -132,7 +132,7 @@ class CoursesTable extends Table
 
         $validator
             ->requirePresence('image', 'create')
-            ->notEmptyFile('image');
+            ->allowEmptyFile('image', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
 
         $validator
             ->maxLength('image_dir', 255)
@@ -163,7 +163,7 @@ class CoursesTable extends Table
 
         $validator
             ->requirePresence('curriculum', 'create')
-            ->notEmptyFile('curriculum');
+            ->allowEmptyFile('curriculum', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
 
         $validator
             ->maxLength('curriculum_dir', 255)
