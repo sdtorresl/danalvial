@@ -33,6 +33,18 @@ class ContactsController extends AppController
      */
     public function index()
     {
+        $courses = $this->Contacts->Courses->find('list', ['limit' => 200])->where(['branch_id =' => $this->branchId]);
+        $courses = $courses->toArray();
+
+        $branches = $this->Contacts->Branches->find('list', ['limit' => 200]);
+        $branches = $branches->toArray();
+
+        $contentsTable = TableRegistry::getTableLocator()->get('Contents');
+        $contentContactUs = $contentsTable->findByBranch_idAndIdentifier($this->branchId, 'contact_us' . $this->branchId);
+        $contentContactUs = $contentContactUs->toArray();
+        
+        $this->set(compact('courses', 'branches', 'contentContactUs'));
+
         $contact = $this->Contacts->newEmptyEntity();
         if ($this->request->is('post')) {
             // reCaptcha validation
@@ -51,12 +63,12 @@ class ContactsController extends AppController
                     $this->Flash->success(__('Your message has been sent!'));
 
                     $message = 'Hemos recibido su mensaje en nuestra página web:<br><br>';
-                    $message .= 'Nombres: ' . $contact->first_name . '<br>';
-                    $message .= 'Apellidos: ' . $contact->last_name . '<br>';
-                    $message .= 'Teléfono: ' . $contact->telephone . '<br>';
-                    $message .= 'Sede: ' . $contact->branch_id . '<br>';
-                    $message .= 'Curso de interes: ' . $contact->course_id . '<br>';
-                    $message .= 'Mensaje: ' . $contact->message . '<br>';
+                    $message .= 'Nombres:  ' . $contact->first_name . '<br>';
+                    $message .= 'Apellidos:  ' . $contact->last_name . '<br>';
+                    $message .= 'Teléfono:  ' . $contact->telephone . '<br>';
+                    $message .= 'Sede:  ' . $branches[$contact->branch_id] . '<br>';
+                    $message .= 'Curso de interes:  ' . $courses[$contact->course_id] . '<br>';
+                    $message .= 'Mensaje:  ' . $contact->message . '<br>';
 
                     // Mail to contact
                     $mail = new Mailer('default');
@@ -66,13 +78,13 @@ class ContactsController extends AppController
                         ->deliver($message);
 
                     $message = 'Un usuario ha enviado un nuevo mensaje en la página web.<br><br>';
-                    $message .= 'Nombres: ' . $contact->first_name . '<br>';
-                    $message .= 'Apellidos: ' . $contact->last_name . '<br>';
-                    $message .= 'Correo: ' . $contact->email . '<br>';
-                    $message .= 'Teléfono: ' . $contact->telephone . '<br>';
-                    $message .= 'Sede: ' . $contact->branch_id . '<br>';
-                    $message .= 'Curso de interes: ' . $contact->course_id . '<br>';
-                    $message .= 'Mensaje: ' . $contact->message . '<br>';
+                    $message .= 'Nombres:  ' . $contact->first_name . '<br>';
+                    $message .= 'Apellidos:  ' . $contact->last_name . '<br>';
+                    $message .= 'Correo:  ' . $contact->email . '<br>';
+                    $message .= 'Teléfono:  ' . $contact->telephone . '<br>';
+                    $message .= 'Sede:  ' . $branches[$contact->branch_id] . '<br>';
+                    $message .= 'Curso de interes:  ' . $courses[$contact->course_id] . '<br>';
+                    $message .= 'Mensaje:  ' . $contact->message . '<br>';
 
                     // Mail to Admin
                     $mail = new Mailer('default');
@@ -90,14 +102,6 @@ class ContactsController extends AppController
             }
         }
 
-        $courses = $this->Contacts->Courses->find('list', ['limit' => 200])->where(['branch_id =' => $this->branchId]);
-        $branches = $this->Contacts->Branches->find('list', ['limit' => 200]);
-        $this->set(compact('contact', 'courses', 'branches'));
-
-        $contentsTable = TableRegistry::getTableLocator()->get('Contents');
-        $contentContactUs = $contentsTable->findByBranch_idAndIdentifier($this->branchId, 'contact_us' . $this->branchId);
-        $contentContactUs = $contentContactUs->toArray();
-
-        $this->set(compact("contentContactUs"));
+        $this->set(compact('contact'));
     }
 }

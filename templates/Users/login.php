@@ -19,8 +19,8 @@ use Cake\Core\Configure\Engine\PhpConfig;
                 </div>
                 <?= $this->Form->create() ?>
                 <div class="form form-control">
-                    <?= $this->Form->control('email', ['placeholder' => __('Please input your username')]) ?>
-                    <?= $this->Form->control('password', ['placeholder' => __('Please input your password')]) ?>
+                    <?= $this->Form->control('Correo', ['placeholder' => __('Please input your username')]) ?>
+                    <?= $this->Form->control('Contraseña', ['placeholder' => __('Please input your password')]) ?>
                     <div class="form-submit d-flex jc-end">
                         <?= $this->Form->button(__('Submit'), [
                             'class' => 'btn g-recaptcha',
