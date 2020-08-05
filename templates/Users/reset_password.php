@@ -14,21 +14,15 @@ use Cake\Core\Configure\Engine\PhpConfig;
         <div class="content-section row">
             <div class="col s12 m7 l6">
                 <div>
-                    <h2>Iniciar Sesión</h2>
-                    <p>Si eres uno de nuestros alumnos ingresa tu usuario y contraseña asignados, si no tienes uno aún cómunicate con nosotros.</p>
+                    <h2>Recupera tu cuenta</h2>
+                    <p>Ingresa tu nueva contraseña.</p>
                 </div>
                 <?= $this->Form->create() ?>
                 <div class="form form-control">
-                    <?= $this->Form->control('email', ['label' => 'Correo', 'placeholder' => 'Por favor ingrese su correo']) ?>
-                    <?= $this->Form->control('password', ['label' => 'Contraseña', 'placeholder' => __('Please input your password')]) ?>
-                    <div id="password-remember">
-                        <p><?= $this->Html->link(
-                            __('Have you forgotten your password?'), 
-                            ['controller' => 'Users', 'action' => 'forgotPassword']) ?>
-                        </p>
-                    </div>
-                    <div class="form-submit">
-                        <?= $this->Form->button('Iniciar sesión', [
+                    <?= $this->Form->control('password', ['label' => 'Contraseña', 'placeholder' => 'Por favor ingrese su contraseña']) ?>
+                    <?= $this->Form->control('passwordConfirmation', ['label' => 'Confirmación de contraseña', 'type' => 'password', 'placeholder' => 'Por favor ingrese su contraseña']) ?>
+                    <div class="form-submit d-flex jc-end">
+                        <?= $this->Form->button(__('Submit'), [
                             'class' => 'btn g-recaptcha',
                             'data-sitekey' => Configure::read('reCaptchaKeys.site_key'),
                             'data-callback' => 'onSubmit',
