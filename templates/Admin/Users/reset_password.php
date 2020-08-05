@@ -17,15 +17,15 @@ use Cake\Core\Configure\Engine\PhpConfig;
         </figure>
 
         <?= $this->Flash->render() ?>
-        
+
         <div class="form">
             <?= $this->Form->create() ?>
             <div class="form form-control">
-                <?= $this->Form->control('email', ['label' => 'Correo', 'placeholder' => __('Please input your username')]) ?>
-                <?= $this->Form->control('password', ['label' => 'Contraseña', 'placeholder' => __('Please input your password')]) ?>
+                <?= $this->Form->control('password', ['label' => 'Contraseña', 'placeholder' => 'Por favor ingrese su contraseña']) ?>
+                <?= $this->Form->control('passwordConfirmation', ['label' => 'Confirmación de contraseña', 'type' => 'password', 'placeholder' => 'Por favor ingrese su contraseña']) ?>
                 <div id="login-btn">
-                    <div class="form-submit">
-                        <?= $this->Form->button('Iniciar sesión', [
+                    <div class="form-submit d-flex jc-end">
+                        <?= $this->Form->button('Enviar', [
                             'class' => 'btn g-recaptcha',
                             'data-sitekey' => Configure::read('reCaptchaKeys.site_key'),
                             'data-callback' => 'onSubmit',
@@ -35,10 +35,7 @@ use Cake\Core\Configure\Engine\PhpConfig;
                 </div>
 
                 <div id="password-remember" class="center-align">
-                    <p><?= $this->Html->link(
-                        __('Have you forgotten your password?'), 
-                        ['controller' => 'Users', 'action' => 'forgotPassword']) ?>
-                    </p>
+                   
                 </div>
             </div>
             <?= $this->Form->end() ?>

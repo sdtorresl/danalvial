@@ -69,7 +69,7 @@ class AppController extends Controller
         // Use admin layout on admin prefix
         if ( array_key_exists("prefix", $params) ) {
             if($params['prefix'] == 'Admin') {
-                if ($controller->name == 'Users' && $params['action'] == 'login') {
+                if ($controller->name == 'Users' && ($params['action'] == 'login' || $params['action'] == 'forgotPassword' || $params['action'] == 'resetPassword')) {
                     $this->viewBuilder()->setLayout('login');
                 }
                 else {
