@@ -129,7 +129,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         if ( array_key_exists("prefix", $params) ) {
             if($params['prefix'] == 'Admin') {
                 $authenticationService = new AuthenticationService([
-                    'unauthenticatedRedirect' => '/admin/users/login',
+                    'unauthenticatedRedirect' => '/admin',
                     'queryParam' => 'redirect',
                 ]);
             }
@@ -160,7 +160,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                         'username' => 'email',
                         'password' => 'password',
                     ],
-                    'loginUrl' => '/admin/users/login',
+                    'loginUrl' => '/admin',
                 ]);
             }
         }
