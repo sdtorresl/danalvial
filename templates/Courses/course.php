@@ -15,11 +15,11 @@ $curriculumContent = new Lexer($course[0]->curriculum_content);
         $imageURL = str_replace('\\', '/', $imagePath);
         ?>
         <div class="content-image col s12 m5 l6"
-            style="background: url('<?= $imageURL . $course[0]->image ?>') center center; background-size: cover;">
+            style="background: url('<?= DS . $imageURL . $course[0]->image ?>') center center; background-size: cover;">
             <div style="background: url('/img/mask_3.png');
-                    height: 100%;
-                    background-repeat: no-repeat;
-                    background-size: 100% 100%;"></div>
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;"></div>
         </div>
         <div class="content col s12 m7 l6">
             <div class="content-text container">
