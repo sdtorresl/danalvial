@@ -148,9 +148,14 @@ nav {
 
     .item {
         width: 380px;
+        transition: 0.1s linear all;
 
         .branch-image {
             height: 270px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
         }
     }
 
