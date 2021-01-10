@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Category') ?></th>
-                        <td><?= h($question->category) ?></td>
+                        <td><?= h($categories[$question->category]) ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>

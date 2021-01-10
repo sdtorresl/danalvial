@@ -9,7 +9,7 @@
         </tr>
         <?php foreach ($categoryResults as $key => $categoryResult): ?>
         <tr>
-            <td>Módulo <?= $key ?> : <?= $categoryResult->category ?></td>
+            <td>Módulo <?= $key ?> : <?= $categories[$categoryResult->category] ?></td>
             <td class="center"><?= $categoryResult->correct ?> / <?= $categoryResult->total ?></td>
         </tr>
         <?php endforeach; ?>

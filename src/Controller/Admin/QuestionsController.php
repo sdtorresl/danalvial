@@ -16,7 +16,7 @@ class QuestionsController extends AppController
 {
     public function beforeFilter(EventInterface $event)
     {
-        $categories = ["category1" => __("category 1"), "category2" => __("category 2"), "category3" => __("category 3"), "category4" => __("category 4")];
+        $categories = ["medio" => "Adaptación al medio", "ética" => "Ética", "legal" => "Marco Legal", "mecánica" => "Mecánica Basica", "técnicas" => "Técnicas de conducción"];
 
         $this->set(compact('categories'));
     }

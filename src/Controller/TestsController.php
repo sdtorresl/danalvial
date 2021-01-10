@@ -87,6 +87,8 @@ class TestsController extends AppController
             $this->set(compact('test', 'percentageResult'));
         }
 
-        $this->set(compact('categoryResults'));
+        $categories = ["medio" => "Adaptación al medio", "ética" => "Ética", "legal" => "Marco Legal", "mecánica" => "Mecánica Basica", "técnicas" => "Técnicas de conducción"];
+
+        $this->set(compact('categories', 'categoryResults'));
     }
 }
