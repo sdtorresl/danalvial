@@ -90,7 +90,7 @@ class QuestionsTable extends Table
 
         $validator
             ->requirePresence('image', 'create')
-            ->allowEmptyFile('image', 'Este campo no puede estar vacío', Validator::WHEN_UPDATE);
+            ->allowEmptyFile('image');
 
         $validator
             ->maxLength('image_dir', 255)
