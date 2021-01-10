@@ -36,7 +36,7 @@
                         <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $advantage->id], ['escape' => false, 'title' => __('View')] ) ?>
                         <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $advantage->id], ['escape' => false, 'title' => __('Edit')] ) ?>
                         <?= $this->Form->postLink('<i class="fal fa-trash"></i>', ['action' => 'delete', $advantage->id], [
-                            'confirm' => __('Are you sure you want to delete {0}?', $advantage->id),
+                            'confirm' => __('Are you sure you want to delete {0}?', $advantage->title),
                             'escape' => false,
                             'class' => 'delete',
                             'title' => __('Delete')]) ?>

@@ -48,7 +48,7 @@ $description = new Lexer($advantage->description);
 
         <div class="row">
             <div class="d-flex jc-end">
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $advantage->id], ['confirm' => __('Are you sure you want to delete {0}?', $advantage->id), 'class' => ['btn', 'cancel']]); ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $advantage->id], ['confirm' => __('Are you sure you want to delete {0}?', $advantage->title), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $advantage->id], ['class' => 'btn']) ?>
                 <?= $this->Html->link(__('Cancel'), ['controller' => 'advantages', 'action' => 'index'], ['class' => ['btn']]) ?>
             </div>

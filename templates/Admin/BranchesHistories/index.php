@@ -12,7 +12,7 @@
         <table class="centered responsive-table">
             <thead>
                 <tr>
-                    <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('branch_id') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -22,7 +22,8 @@
             <tbody>
                 <?php foreach ($branchesHistories as $branchesHistory): ?>
                 <tr>
-                    <td><?= $this->Number->format($branchesHistory->id) ?></td>
+                    <td><?= $branchesHistory->has('branch') ? $this->Html->link($branchesHistory->branch->name, ['controller' => 'Branches', 'action' => 'view', $branchesHistory->branch->id]) : '' ?>
+                    </td>
                     <td><?= h($branchesHistory->title) ?></td>
                     <td><?= h($branchesHistory->created) ?></td>
                     <td><?= h($branchesHistory->modified) ?></td>
@@ -31,7 +32,7 @@
                         <?= $this->Html->link('<i class="fal fa-eye"></i>', ['action' => 'view', $branchesHistory->id], ['escape' => false, 'title' => __('View')] ) ?>
                         <?= $this->Html->link('<i class="fal fa-edit"></i>', ['action' => 'edit', $branchesHistory->id], ['escape' => false, 'title' => __('Edit')] ) ?>
                         <?= $this->Form->postLink('<i class="fal fa-trash"></i>', ['action' => 'delete', $branchesHistory->id], [
-                            'confirm' => __('Are you sure you want to delete {0}?', $branchesHistory->id),
+                            'confirm' => __('Are you sure you want to delete {0}?', $branchesHistory->title),
                             'escape' => false,
                             'class' => 'delete',
                             'title' => __('Delete')]) ?>

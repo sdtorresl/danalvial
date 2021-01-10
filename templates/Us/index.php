@@ -28,7 +28,8 @@
                                    <?= $branch->address ?>
                               </li>
                               <li>
-                                   <i class="fal fa-book"></i>
+                                   <i class="fal fa-phone"></i>
+                                   <?= $branch->contact_number_1 ?>
                               </li>
                               <li>
                                    <i class="fal fa-clock"></i>

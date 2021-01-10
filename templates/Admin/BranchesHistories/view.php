@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="d-flex jc-end">
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $branchesHistory->id], ['confirm' => __('Are you sure you want to delete {0}?', $branchesHistory->id), 'class' => ['btn', 'cancel']]); ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $branchesHistory->id], ['confirm' => __('Are you sure you want to delete {0}?', $branchesHistory->title), 'class' => ['btn', 'cancel']]); ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $branchesHistory->id], ['class' => 'btn']) ?>
                 <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
             </div>
