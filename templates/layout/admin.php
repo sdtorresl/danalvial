@@ -20,6 +20,19 @@ $menuCell = $this->cell('Menu');
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176422656-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176422656-1');
+    </script>
+
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -42,7 +55,6 @@ $menuCell = $this->cell('Menu');
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fal fa-bars"></i></a>
 
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right">
                 <li>
                     <?= $this->Html->link(_('Logout'), [

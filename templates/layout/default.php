@@ -22,6 +22,19 @@ $socialCell = $this->cell('SocialMedia');
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176422656-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176422656-1');
+    </script>
+
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
@@ -55,6 +68,7 @@ $socialCell = $this->cell('SocialMedia');
             <div class="col s12 m6 l4 col-pseudo">
                 <p>Danalvial escuela de conducción automovilística</p>
                 <p>Dirección: <?= $branch[0]->address ?></p>
+                <p>Teléfono: <?= $branch[0]->contact_number_1 ?></p>
                 <p>Horario: <?= $branch[0]->schedule ?></p>
             </div>
             <div class="col s12 m6 l4">
