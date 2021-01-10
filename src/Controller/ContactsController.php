@@ -89,7 +89,7 @@ class ContactsController extends AppController
                     // Mail to Admin
                     $mail = new Mailer('default');
                     $mail->setFrom(['soporte@innovaciones.co' => 'Danalvial Ltda.'])
-                        ->setTo('slsanchezf@innovaciones.co')
+                        ->setTo('contacto@danalvial.com')
                         ->setSubject(__('New message on Danalvial Ltda.'))
                         ->deliver($message);
 
