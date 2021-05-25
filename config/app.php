@@ -399,7 +399,8 @@ return [
         'defaults' => 'php',
         // TODO: Delete the follow line after enable SSL
         'ini' => [
-            'session.cookie_secure' => false
+            'session.cookie_secure' => false,
+            'session.cookie_lifetime' => 7200
         ]
     ],
 ];

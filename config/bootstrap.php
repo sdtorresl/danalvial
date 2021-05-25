@@ -214,3 +214,7 @@ ServerRequest::addDetector('tablet', function ($request) {
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 Configure::write('Bake.theme', 'MaterializeTheme');
+Configure::write('Session', [
+    'defaults' => 'cake',
+    'timeout' => 120 // 6 hours
+]);
