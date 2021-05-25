@@ -18,7 +18,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>
-                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $gallery->image_dir) . DS . $gallery->image ?>" alt="Image"></td>
+                        <td><img class="materialboxed" src="<?= DS . str_replace(WWW_ROOT, '', $gallery->image_dir) . DS . $gallery->image ?>" alt="Image"></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>

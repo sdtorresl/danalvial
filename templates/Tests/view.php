@@ -30,7 +30,7 @@ $this->loadHelper('Form', [
                         <div>
                             <?php if (!empty($questions->image)) : ?>
                             <img class="materialboxed"
-                                src="<?= str_replace(WWW_ROOT, '', $questions->image_dir) . DS . $questions->image ?>"
+                                src="<?= DS . str_replace(WWW_ROOT, '', $questions->image_dir) . DS . $questions->image ?>"
                                 alt="Image">
                             <?php endif; ?>
                         </div>

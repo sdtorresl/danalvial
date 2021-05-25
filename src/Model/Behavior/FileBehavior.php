@@ -31,7 +31,7 @@ class FileBehavior extends Behavior
      * @return string 
      */
     protected function getRootFolder() {
-        $path = WWW_ROOT . DS . 'files' . DS . $this->_table->getTable();
+        $path = WWW_ROOT . 'files' . DS . $this->_table->getTable();
         $folder = new Folder();
         
         if($folder->create($path)) {

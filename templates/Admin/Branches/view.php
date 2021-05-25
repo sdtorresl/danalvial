@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>
-                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $branch->image_dir) . DS . $branch->image ?>" alt="Branch Logo"></td>
+                        <td><img class="materialboxed" src="<?= DS . str_replace(WWW_ROOT, '', $branch->image_dir) . DS . $branch->image ?>" alt="Branch Logo"></td>
                     </tr>
                     <tr>
                         <th><?= __('Address') ?></th>

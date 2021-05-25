@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Image') ?></th>
-                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $question->image_dir) . DS . $question->image ?>" alt="N/A"></td>
+                        <td><img class="materialboxed" src="<?= DS . str_replace(WWW_ROOT, '', $question->image_dir) . DS . $question->image ?>" alt="N/A"></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>

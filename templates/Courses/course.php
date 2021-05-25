@@ -63,7 +63,7 @@ $curriculumContent = new Lexer($course[0]->curriculum_content);
         <div class="item">
             <h3>Contenido curricular</h3>
             <p>Conoce el contenido de cada uno de los módulos de nuestro plan de estudio.</p>
-            <a class="waves-effect waves-light btn center" href="<?= str_replace(WWW_ROOT, '', $course[0]->curriculum_dir) . DS . $course[0]->curriculum ?>" target="_blank"><?= __('Download content') ?></a>
+            <a class="waves-effect waves-light btn center" href="<?= DS . str_replace(WWW_ROOT, '', $course[0]->curriculum_dir) . DS . $course[0]->curriculum ?>" target="_blank"><?= __('Download content') ?></a>
         </div>
         <div class="item">
             <h3>Test de prueba</h3>
@@ -74,6 +74,6 @@ $curriculumContent = new Lexer($course[0]->curriculum_content);
     
     <section id="course-schedule">
         <h3>Consulta los horarios académicos para agendar tu clase</h3>
-        <a class="waves-effect waves-light btn center" href="<?= str_replace(WWW_ROOT, '', $course[0]->schedule_dir) . DS . $course[0]->schedule ?>" target="_blank"><?= 'Ver horarios' ?></a>
+        <a class="waves-effect waves-light btn center" href="<?= DS . str_replace(WWW_ROOT, '', $course[0]->schedule_dir) . DS . $course[0]->schedule ?>" target="_blank"><?= 'Ver horarios' ?></a>
     </section>
 </section>

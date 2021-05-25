@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th><?= __('Primary Image') ?></th>
-                        <td><img class="materialboxed" src="<?= str_replace(WWW_ROOT, '', $content->primary_image_dir) . DS . $content->primary_image ?>" alt="Image_1"></td>
+                        <td><img class="materialboxed" src="<?= DS . str_replace(WWW_ROOT, '', $content->primary_image_dir) . DS . $content->primary_image ?>" alt="Image_1"></td>
                     </tr>
                     <tr>
                         <th><?= __('Created') ?></th>
