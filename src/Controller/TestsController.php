@@ -24,9 +24,8 @@ class TestsController extends AppController
      */
     public function view($id = null)
     {
-        $test = $this->Tests->get($id, [
-            'contain' => ['Questions.Answers'],
-        ]);
+        $test = $this->Tests->find();
+        $test = $test->contain('Questions.Answers')->where(['branch_id' => $id])->first();
 
         $token = $this->request->getCookie('csrfToken');
 
